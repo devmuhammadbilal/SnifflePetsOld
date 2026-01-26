@@ -11,7 +11,7 @@ const Hero = ({ onOpenModal }) => {
             
             {/* Kickstarter Badge */}
             <div className="kickstarter-badge">
-              <span className="rocket-icon">🚀</span> 
+              {/* <span className="rocket-icon">🚀</span>  */}
               <span className="badge-text">Launching Soon on Kickstarter</span>
             </div>
             
@@ -76,5 +76,6 @@ const Hero = ({ onOpenModal }) => {
     </section>
   );
 };
+
 
 export default Hero;
