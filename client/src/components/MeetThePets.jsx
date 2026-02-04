@@ -70,7 +70,7 @@ const MeetThePets = ({ onOpenModal }) => {
             </div>
             
             <div className="bento-item item-sub-3">
-              <img src="/3_MS.jpg" alt="Design 3" className="bento-img" />
+              <img src="/feature_image_02.jpg" alt="Design 3" className="bento-img" />
             </div>
 
           </div>
@@ -82,3 +82,4 @@ const MeetThePets = ({ onOpenModal }) => {
 };
 
 export default MeetThePets;
+
