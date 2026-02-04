@@ -59,8 +59,9 @@ function App() {
       <Features onOpenModal={() => setModalOpen(true)} />
       <MeetThePets onOpenModal={() => setModalOpen(true)} />
       <VideoSection onOpenModal={() => setModalOpen(true)} />
-      <Testimonials onOpenModal={() => setModalOpen(true)} />
+     
       <FounderStory />
+       <Testimonials onOpenModal={() => setModalOpen(true)} />
       <WhatsNext onOpenModal={() => setModalOpen(true)} />
       <JoinSquad />
       <Footer />
