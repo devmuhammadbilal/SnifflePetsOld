@@ -3,42 +3,53 @@
    ========================================= */
 :root {
   /* BRAND COLORS */
-  --primary: #D93846;
-  /* Sniffle Red */
-  --secondary: #0E365E;
-  /* Deep Navy */
-  --accent: #F4B630;
-  /* Playful Yellow */
-  --green: #5D7530;
-  /* Nature Green */
+  --primary: #D93846;   /* Sniffle Red */
+  --secondary: #0E365E; /* Deep Navy */
+  --accent: #F4B630;    /* Playful Yellow */
+  --green: #5D7530;     /* Nature Green */
 
   /* NEUTRALS */
-  --dark: #2d3436;
-  /* Main text */
-  --light: #f7f9fc;
-  /* Background */
+  --dark: #2d3436;      /* Main text */
+  --light: #f7f9fc;     /* Background */
   --white: #ffffff;
 }
 
+/* 1. SAFETY RESET */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box; /* CRITICAL: This fixes your Navbar width issue */
+}
+
+/* 2. BULLETPROOF NO-SCROLL LOGIC */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scroll on Mobile */
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 75px; /* Offset for sticky header */
 }
 
 body {
   background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif; /* Moved here for better performance */
   -webkit-font-smoothing: antialiased;
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  /* Prevents horizontal scroll from entry animations */
-  scroll-padding-top: 75px;
+/* 3. IMAGE SAFETY (Add this!) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes tiny gap under images */
+}
+
+/* Ensure form elements inherit font settings */
+input, button, textarea, select {
+  font-family: inherit;
 }
 
 /* =========================================
