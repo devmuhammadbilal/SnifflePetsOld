@@ -8,19 +8,15 @@ const Navbar = ({ onOpenModal }) => {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-      setMenuOpen(false); 
+      setScrolled(offset > 50);
+      
+      // Optional: Close menu on scroll for better UX on mobile
+      if(menuOpen) setMenuOpen(false); 
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuOpen]);
 
   // 2. Handle "Click Outside" to close menu
   useEffect(() => {
@@ -31,22 +27,26 @@ const Navbar = ({ onOpenModal }) => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen]);
+
+  const menuItems = [
+    { label: 'Benefits', link: '#features', sub: 'Thoughtfully designed for everyday sniffles' },
+    { label: 'How it Works', link: '#how-it-works', sub: 'See Sniffle Pets in Action' },
+    { label: 'Our Story', link: '#story', sub: 'The Heart Behind Sniffle Pets' }
+  ];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         
-       {/* Logo - Clicks Scroll to Top */}
+        {/* Logo */}
         <div 
           className="logo" 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
            <img 
-             src="/sniffle_pets_logo.png" 
+             src="/Logo_TM.png" 
              alt="Sniffle Pets Logo" 
              className="nav-logo-img" 
            />
@@ -54,26 +54,35 @@ const Navbar = ({ onOpenModal }) => {
 
         {/* Menu Links */}
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li><a href="#features" onClick={() => setMenuOpen(false)}>Benefits</a></li>
-          <li><a href="#how-it-works" onClick={() => setMenuOpen(false)}>How it Works</a></li>
-          <li><a href="#story" onClick={() => setMenuOpen(false)}>Our Story</a></li>
+          {menuItems.map((item) => (
+            <li key={item.label} className="nav-item-group">
+              <a href={item.link} onClick={() => setMenuOpen(false)}>
+                <span className="nav-main-text">{item.label}</span>
+                <span className="nav-hover-text">{item.sub}</span>
+              </a>
+            </li>
+          ))}
           
+          {/* Mobile Only Button */}
           <li className="mobile-only-btn">
             <button className="btn btn-primary" onClick={() => { onOpenModal(); setMenuOpen(false); }}>
-              Join Waitlist
+              Join the Waitlist
             </button>
           </li>
         </ul>
 
-        {/* Desktop Button */}
+        {/* Desktop Button (Hidden on Mobile) */}
         <div className="header-cta">
           <button className="btn btn-primary small-btn" onClick={onOpenModal}>
-            Join Waitlist
+            Join the Waitlist
           </button>
         </div>
 
-        {/* Hamburger Icon */}
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        {/* Hamburger Icon - UPDATED LINE BELOW */}
+        <div 
+          className={`hamburger ${menuOpen ? 'active' : ''}`} 
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
