@@ -42,7 +42,7 @@ const WhatsNext = ({ onOpenModal }) => {
 
         <div style={{ marginTop: '50px' }}>
           <button className="btn btn-primary big-btn" onClick={onOpenModal}>
-             Be First in Line for Sniffle Pets
+            Join the Waitlist
           </button>
         </div>
 
