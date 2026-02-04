@@ -11,49 +11,31 @@ const Hero = ({ onOpenModal }) => {
             
             {/* Kickstarter Badge */}
             <div className="kickstarter-badge">
-              {/* <span className="rocket-icon">🚀</span>  */}
               <span className="badge-text">Launching Soon on Kickstarter</span>
             </div>
             
             {/* Main Headline */}
             <h1>
-              Sniffle Pets <span className="highlight">—</span> <br/>
-              Because every sniffle deserves a smile.
+              Your Child’s Best Friend for Sniffles, Colds, and Allergies
             </h1>
             
             {/* Subtext */}
             <p>
-              Your Child’s Best Friend for Cold and Allergy Relief. Adorable plush pets worn as wristbands, keeping tissues handy and comfort close.
+              Because every sniffle deserves a smile
             </p>
 
             {/* CTA Button Wrapper */}
             <div className="hero-cta-wrapper">
               <button className="btn btn-primary hero-btn" onClick={onOpenModal}>
-                Be First in Line
+                Join the Waitlist
               </button>
               
               {/* Trust Indicator / Social Proof */}
               <div className="hero-guarantee">
                 <div className="avatars">
-                  {/* Real Image Avatars */}
-                  <img 
-                    src="/emily.jpg" 
-                    alt="Parent 1" 
-                    className="avatar" 
-                    style={{ objectFit: 'cover' }} 
-                  />
-                  <img 
-                    src="msrem.jpg" 
-                    alt="Parent 2" 
-                    className="avatar" 
-                    style={{ objectFit: 'cover' }} 
-                  />
-                  <img 
-                    src="sarah.jpg" 
-                    alt="Parent 3" 
-                    className="avatar" 
-                    style={{ objectFit: 'cover' }} 
-                  />
+                  <img src="/emily.jpg" alt="Parent 1" className="avatar" style={{ objectFit: 'cover' }} />
+                  <img src="msrem.jpg" alt="Parent 2" className="avatar" style={{ objectFit: 'cover' }} />
+                  <img src="sarah.jpg" alt="Parent 3" className="avatar" style={{ objectFit: 'cover' }} />
                 </div>
                 <span>Join <strong>300+ parents</strong> waiting</span>
               </div>
@@ -66,7 +48,7 @@ const Hero = ({ onOpenModal }) => {
             
             <img 
               src="/SnifflePets_HeroSection.jpg" 
-              alt="Child wearing Sniffle Pets wristband" 
+              alt="Group of children wearing Sniffle Pets" 
               className="hero-img"
             />
           </div>
@@ -76,6 +58,5 @@ const Hero = ({ onOpenModal }) => {
     </section>
   );
 };
-
 
 export default Hero;
