@@ -53,7 +53,7 @@ const JoinSquad = () => {
         <div className="join-image-wrapper">
           <div className="image-backdrop-glow"></div>
           <img 
-            src="/Join_Squad.jpg" 
+            src="/feature_image_03.jpg" 
             alt="Caregiver and child using Sniffle Pets" 
             className="join-lifestyle-img" 
           />
@@ -65,3 +65,4 @@ const JoinSquad = () => {
 };
 
 export default JoinSquad;
+
