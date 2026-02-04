@@ -65,7 +65,7 @@ const Testimonials = ({ onOpenModal }) => {
         {/* CTA Button */}
         <div style={{ marginTop: '50px' }}>
           <button className="btn btn-primary" onClick={onOpenModal}>
-            Get Early Access to Sniffle Pets
+            Join the Waitlist
           </button>
         </div>
 
