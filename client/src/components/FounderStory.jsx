@@ -7,24 +7,46 @@ const FounderStory = () => {
         
         {/* Left Side: The Story Text */}
         <div className="founder-text">
-          {/* Decorative Quote Icon for Storytelling Vibe */}
-          <div className="story-badge">Our Journey</div>
+          {/* Decorative Tag */}
+          <div className="story-badge">Our Story</div>
           
           <h2 className="founder-headline">
             Hi, I’m Lisa Trifiro.
           </h2>
           
-          <p className="founder-body">
-            I’ve always loved creating things that make everyday life easier and a little
-            brighter. <strong>Sniffle Pets</strong> started as a simple, fun idea — what if kids could have a cuddly 
-            animal friend that also kept tissues close at hand?
-          </p>
-          
-          <p className="founder-body">
-            What began as a sketch quickly grew into something bigger: a way to bring comfort, 
-            practicality, and a smile to every child, parent, and teacher. Sniffle Pets are 
-            more than just wristbands — they’re cuddly friends with a purpose.
-          </p>
+          <div className="founder-content">
+            <p>
+              <strong>Sniffle Pets</strong> began with a conversation between two creative moms, swapping ideas the way parents often do. Talking about kids, everyday life, and all the little moments that somehow turn into bigger challenges when you least expect them.
+            </p>
+            
+            <p>
+              Myla was part of that early spark. She created the very first prototype, a sweet crocheted idea inspired by the comfort kids find in something soft and familiar. That original concept planted the seed.
+            </p>
+            
+            <p>
+              But the idea kept growing.
+            </p>
+
+            <p>
+              As a mom myself, I couldn’t help thinking about my own experience. When my boys were little and sick, I was constantly chasing down tissues, digging through bags or reaching for whatever was nearby. By the time I found one, the moment had already passed, and more often than not, my boys would end up wiping their noses with their hands or their clothes.
+            </p>
+
+            <p>
+              Those sniffly moments happened everywhere. At home, in the car, at school, on outings, during travel. They always seemed to show up right in the middle of real life, when hands were already busy.
+            </p>
+
+            <p>
+              I began thinking about how that original idea could evolve. How it could move from a comforting concept into something children and parents could actually use, wear, and keep close. I refined the design, focused on wearability and ease, and thoughtfully transformed that early inspiration into what Sniffle Pets are today.
+            </p>
+
+            <p className="emphasis-text">
+              That’s when Sniffle Pets were born.
+            </p>
+
+            <p>
+              Today, Sniffle Pets are designed for real life. They stay close, make tissues easy to reach, and offer comfort without interrupting the moment. They’re not just wristbands. They’re soft companions created to support children while making everyday sniffly moments easier for parents, teachers, and caregivers too.
+            </p>
+          </div>
 
           <div className="signature-block">
             <p className="founder-quote">
@@ -36,14 +58,17 @@ const FounderStory = () => {
           </div>
         </div>
 
-       {/* Right Side: The Photo */}
-        <div className="founder-image-wrapper">
-          {/* Image is scaled in CSS to create the "Zoom In" effect */}
-          <img 
-            src="/Sniffle_StorySection.jpg" 
-            alt="Lisa Trifiro with Sniffle Pets" 
-            className="founder-real-img" 
-          />
+       {/* Right Side: The Photo (Now Bigger) */}
+        <div className="founder-image-column">
+          <div className="founder-image-wrapper">
+            <img 
+              src="/Sniffle_StorySection.jpg" 
+              alt="Lisa Trifiro Founder of Sniffle Pets" 
+              className="founder-real-img" 
+            />
+          </div>
+          {/* Decorative offset border for premium feel */}
+          <div className="image-offset-border"></div>
         </div>
 
       </div>
