@@ -18,37 +18,46 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* CRITICAL: This fixes your Navbar width issue */
+  box-sizing: border-box; 
 }
 
 /* 2. BULLETPROOF NO-SCROLL LOGIC */
-html, body {
+html,
+body {
   width: 100%;
-  overflow-x: hidden; /* Prevents horizontal scroll on Mobile */
+  
+  /* --- CRITICAL FIX START --- */
+  /* WAS: overflow-x: hidden;  <-- This breaks sticky! */
+  overflow-x: clip;            /* <-- This is the modern fix */
+  /* --- CRITICAL FIX END --- */
+  
   scroll-behavior: smooth;
 }
 
 html {
-  scroll-padding-top: 75px; /* Offset for sticky header */
+  scroll-padding-top: 75px;
 }
 
 body {
   background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;
-  font-family: 'Segoe UI', sans-serif; /* Moved here for better performance */
+  font-family: 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* 3. IMAGE SAFETY (Add this!) */
+/* 3. IMAGE SAFETY */
 img {
   max-width: 100%;
   height: auto;
-  display: block; /* Removes tiny gap under images */
+  display: block; 
 }
 
 /* Ensure form elements inherit font settings */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
 }
 
@@ -56,12 +65,14 @@ input, button, textarea, select {
    UTILITY CLASSES
    ========================================= */
 .container {
+  /* OPTIMIZATION: Ensure it doesn't touch edges on small screens if width isn't 100% */
+  width: 100%; 
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* RESPONSIVE: Tighter padding on mobile */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .container {
     padding: 0 16px;
@@ -79,6 +90,8 @@ input, button, textarea, select {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   overflow: hidden;
+  /* OPTIMIZATION: Fixes button alignment issues */
+  display: inline-block; 
 }
 
 .btn-primary {
@@ -101,7 +114,6 @@ input, button, textarea, select {
 .btn:active {
   transform: translateY(-1px);
 }
-
 /* =========================================
    MODAL COMPONENT
    ========================================= */
