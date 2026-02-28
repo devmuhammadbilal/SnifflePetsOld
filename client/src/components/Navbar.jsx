@@ -30,8 +30,11 @@ const Navbar = ({ onOpenModal }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen]);
 
+  // UPDATED: Added Home, Collection, and matched the screenshot's naming
   const menuItems = [
-    { label: 'Benefits', link: '#features', sub: 'Thoughtfully designed for everyday sniffles' },
+    { label: 'Home', link: '#top', sub: 'Welcome to Sniffle Pets' },
+     { label: 'Why Sniffle Pets', link: '#features', sub: 'Thoughtfully designed' },
+    { label: 'Collection', link: '#collection', sub: 'Meet the Sniffle Pets' },
     { label: 'How it Works', link: '#how-it-works', sub: 'See Sniffle Pets in Action' },
     { label: 'Our Story', link: '#story', sub: 'The Heart Behind Sniffle Pets' }
   ];
@@ -63,22 +66,40 @@ const Navbar = ({ onOpenModal }) => {
             </li>
           ))}
           
-          {/* Mobile Only Button */}
+          {/* Mobile Only Button & Icons */}
           <li className="mobile-only-btn">
-            <button className="btn btn-primary" onClick={() => { onOpenModal(); setMenuOpen(false); }}>
+            <button className="btn btn-primary" onClick={() => { onOpenModal(); setMenuOpen(false); }} style={{width: '100%', marginBottom: '20px'}}>
               Join the Waitlist
             </button>
+            <div className="mobile-nav-icons">
+              <a href="#account" className="nav-icon-link" aria-label="Account">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </a>
+              <a href="mailto:hello@snifflepets.com" className="nav-icon-link" aria-label="Contact Us">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </a>
+            </div>
           </li>
         </ul>
 
-        {/* Desktop Button (Hidden on Mobile) */}
+        {/* Desktop CTA & Icons (Hidden on Mobile) */}
         <div className="header-cta">
           <button className="btn btn-primary small-btn" onClick={onOpenModal}>
             Join the Waitlist
           </button>
+          
+          {/* NEW: Account & Email Icons */}
+          <div className="desktop-nav-icons">
+            <a href="#account" className="nav-icon-link" aria-label="Account">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+            <a href="mailto:hello@snifflepets.com" className="nav-icon-link" aria-label="Contact Us">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+          </div>
         </div>
 
-        {/* Hamburger Icon - UPDATED LINE BELOW */}
+        {/* Hamburger Icon */}
         <div 
           className={`hamburger ${menuOpen ? 'active' : ''}`} 
           onClick={() => setMenuOpen(!menuOpen)}
