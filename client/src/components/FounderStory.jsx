@@ -5,13 +5,13 @@ const FounderStory = () => {
     <section id="story" className="founder-section">
       <div className="container founder-container">
         
-        {/* Left Side: The Story Text */}
+        {/* === LEFT SIDE: THE SCROLLING STORY TEXT === */}
         <div className="founder-text">
           {/* Decorative Tag */}
           <div className="story-badge">Our Story</div>
           
           <h2 className="founder-headline">
-            Hi, I’m Lisa Trifiro.
+            Hi, I’m Lisa Trifiro
           </h2>
           
           <div className="founder-content">
@@ -58,17 +58,23 @@ const FounderStory = () => {
           </div>
         </div>
 
-       {/* Right Side: The Photo (Now Bigger) */}
+       {/* === RIGHT SIDE: THE STICKY PHOTO === */}
         <div className="founder-image-column">
-          <div className="founder-image-wrapper">
-            <img 
-              src="/Sniffle_StorySection.jpg" 
-              alt="Lisa Trifiro Founder of Sniffle Pets" 
-              className="founder-real-img" 
-            />
+          {/* NEW: We wrap both the image and border in this sticky container so they travel together! */}
+          <div className="sticky-image-container">
+            
+            <div className="founder-image-wrapper">
+              <img 
+                src="/Sniffle_StorySection.jpg" 
+                alt="Lisa Trifiro Founder of Sniffle Pets" 
+                className="founder-real-img" 
+              />
+            </div>
+            
+            {/* Decorative offset border for premium feel */}
+            <div className="image-offset-border"></div>
+            
           </div>
-          {/* Decorative offset border for premium feel */}
-          <div className="image-offset-border"></div>
         </div>
 
       </div>
