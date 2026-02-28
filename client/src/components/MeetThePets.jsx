@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const MeetThePets = ({ onOpenModal }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Your images array
+  const galleryItems = [
+    // Removed badge property from the first image
+    { id: 0, src: "/meet_sniffle_main_image.png", alt: "Sniffle Pets Group" },
+    { id: 1, src: "/meet_sp_1.png", alt: "Design 1" },
+    { id: 2, src: "/meet_sp_2.png", alt: "Design 2" },
+    { id: 3, src: "/meet_sp_3.png", alt: "Design 3" },
+     { id: 3, src: "/meet_sp_4.jpeg", alt: "Design 4" },
+    { id: 3, src: "/meet_sp_5.jpeg", alt: "Design 5" }
+  ];
+
+  // Handlers to rotate the carousel
+  const nextSlide = () => setActiveIndex((prev) => (prev + 1) % galleryItems.length);
+  const prevSlide = () => setActiveIndex((prev) => (prev - 1 + galleryItems.length) % galleryItems.length);
+
+  // Logic to determine slide position classes
+  const getSlideClass = (index) => {
+    if (index === activeIndex) return "slide-active";
+    if (index === (activeIndex - 1 + galleryItems.length) % galleryItems.length) return "slide-prev";
+    if (index === (activeIndex + 1) % galleryItems.length) return "slide-next";
+    return "slide-hidden";
+  };
+
   return (
-    <section className="meet-pets-section">
+    <section className="meet-pets-section" id='collection'>
       {/* Decorative Background Curve */}
       <div className="section-curve-bg"></div>
 
@@ -25,54 +50,55 @@ const MeetThePets = ({ onOpenModal }) => {
             </div>
             
             <p className="section-subtext">
-              Six lovable designs make it easy for every child to find a 
-              <strong> cuddly companion</strong> that feels just right. 
+              Six lovable characters. <strong>One simple solution</strong> for sniffles and tears. 
             </p>
-
-            {/* NEW: Highlight Box to fill empty space */}
-            {/* <div className="highlight-box">
-              <span className="highlight-icon">✨</span>
-              <p>Designed for comfort, styled for fun, and ready for every sniffle.</p>
-            </div> */}
 
             <div className="pets-cta-wrapper">
               <button className="btn btn-primary big-btn" onClick={onOpenModal}>
                 Join the Waitlist
               </button>
-              <span className="cta-note">Limited early release coming soon</span>
+              <span className="cta-note">Exclusive Early Bird pricing available at launch</span>
             </div>
           </div>
         </div>
 
-        {/* === RIGHT SIDE: BENTO GRID === */}
+        {/* === RIGHT SIDE: 3D CAROUSEL === */}
         <div className="meet-pets-visual">
-          <div className="bento-grid">
-            
-            {/* Main Featured Image */}
-            <div className="bento-item item-main">
-              <img 
-                src="/SnifflePets_HeroSection.jpg" 
-                alt="Sniffle Pets Group" 
-                className="bento-img" 
-              />
-              <div className="glass-badge">
-                Premium Quality
+          <div className="carousel-container">
+            {galleryItems.map((item, index) => (
+              <div 
+                key={item.id} 
+                className={`carousel-slide ${getSlideClass(index)}`}
+                onClick={() => setActiveIndex(index)}
+              >
+                <img 
+                  src={item.src} 
+                  alt={item.alt} 
+                  className="carousel-img" 
+                />
+                {item.badge && (
+                  <div className="glass-badge">
+                    {item.badge}
+                  </div>
+                )}
+                {/* Optional Play Button Overlay condition removed from here */}
               </div>
-            </div>
-            
-            {/* Sub Images */}
-            <div className="bento-item item-sub-1">
-              <img src="/1_MS.jpg" alt="Design 1" className="bento-img" />
-            </div>
-            
-            <div className="bento-item item-sub-2">
-              <img src="/2_MS.jpg" alt="Design 2" className="bento-img" />
-            </div>
-            
-            <div className="bento-item item-sub-3">
-              <img src="/feature_image_02.jpg" alt="Design 3" className="bento-img" />
-            </div>
+            ))}
+          </div>
 
+          {/* Carousel Navigation Controls */}
+          <div className="carousel-controls">
+            <button className="control-btn" onClick={prevSlide}>←</button>
+            <div className="carousel-indicators">
+              {galleryItems.map((_, index) => (
+                <span 
+                  key={index} 
+                  className={`dot ${index === activeIndex ? 'active-dot' : ''}`}
+                  onClick={() => setActiveIndex(index)}
+                />
+              ))}
+            </div>
+            <button className="control-btn" onClick={nextSlide}>→</button>
           </div>
         </div>
 
@@ -82,4 +108,3 @@ const MeetThePets = ({ onOpenModal }) => {
 };
 
 export default MeetThePets;
-
