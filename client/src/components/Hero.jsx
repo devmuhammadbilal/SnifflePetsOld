@@ -53,7 +53,7 @@ const Hero = ({ onOpenModal }) => {
             <div className="hero-blob"></div>
             
             <img 
-              src="/final_hero_image.png" 
+              src="/final_hero_image.jpg" 
               alt="Group of children wearing Sniffle Pets" 
               className="hero-img"
             />
@@ -66,3 +66,4 @@ const Hero = ({ onOpenModal }) => {
 };
 
 export default Hero;
+
