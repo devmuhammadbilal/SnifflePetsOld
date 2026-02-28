@@ -5,22 +5,22 @@ const Features = ({ onOpenModal }) => {
     {
       title: 'Universal Wristband Fit',
       text: 'Adjustable, soft, and comfy for kids of all ages.',
-      image: '/feature_image_01.jpg' 
+      image: '/universal_wristband_fit.png' 
     },
     {
       title: 'Cute & Comforting',
       text: 'Turns little sniffles into big smiles with cuddly plush pets.',
-      image: '/feature_image_02.jpg' 
+      image: '/cute_comforting.png' 
     },
     {
       title: 'Always Prepared',
       text: 'Keeps tissues close when kids need them most.',
-      image: '/feature_image_03.jpg' 
+      image: '/always_prepared.png' 
     },
     {
       title: 'Simple & Convenient',
       text: 'Easy to refill, machine-washable, ready for daily adventures.',
-      image: '/feature_image_04.jpg' 
+      image: '/simple_convieneint.png' 
     }
   ];
 
@@ -39,7 +39,7 @@ const Features = ({ onOpenModal }) => {
             />
           </h2>
           <p className="features-subtext">
-            Designed by parents, approved by teachers, loved by kids.
+           DESIGNED BY PARENTS, TRUSTED BY TEACHERS, LOVED BY KIDS.
           </p>
         </div>
         
