@@ -11,7 +11,13 @@ const Hero = ({ onOpenModal }) => {
             
             {/* Kickstarter Badge */}
             <div className="kickstarter-badge">
-              <span className="badge-text">Launching Soon on Kickstarter</span>
+              <span className="badge-text">Launching Soon On KickStarter</span>
+              {/* Note: Make sure to save the official Kickstarter wordmark in your public folder */}
+              <img 
+                src="/kickstarter-logo.png" 
+                alt="Kickstarter" 
+                className="kickstarter-logo" 
+              />
             </div>
             
             {/* Main Headline */}
@@ -34,10 +40,10 @@ const Hero = ({ onOpenModal }) => {
               <div className="hero-guarantee">
                 <div className="avatars">
                   <img src="/emily.jpg" alt="Parent 1" className="avatar" style={{ objectFit: 'cover' }} />
-                  <img src="msrem.jpg" alt="Parent 2" className="avatar" style={{ objectFit: 'cover' }} />
-                  <img src="sarah.jpg" alt="Parent 3" className="avatar" style={{ objectFit: 'cover' }} />
+                  <img src="/msrem.jpg" alt="Parent 2" className="avatar" style={{ objectFit: 'cover' }} />
+                  <img src="/sarah.jpg" alt="Parent 3" className="avatar" style={{ objectFit: 'cover' }} />
                 </div>
-                <span>Join <strong>300+ parents</strong> waiting</span>
+                <span><strong>300+</strong> parents & teachers already signed up</span>
               </div>
             </div>
           </div>
@@ -47,7 +53,7 @@ const Hero = ({ onOpenModal }) => {
             <div className="hero-blob"></div>
             
             <img 
-              src="/SnifflePets_HeroSection.jpg" 
+              src="/final_hero_image.png" 
               alt="Group of children wearing Sniffle Pets" 
               className="hero-img"
             />
