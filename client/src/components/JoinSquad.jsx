@@ -1,7 +1,6 @@
 import React from 'react';
 
 const JoinSquad = () => {
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     // Logic to send data to your backend/Google Sheets
@@ -14,13 +13,27 @@ const JoinSquad = () => {
         
         {/* Left Side: Content & Form */}
         <div className="join-content">
-          <span className="join-badge">Launching Soon on Kickstarter</span>
+          
+          {/* UPDATED: Kickstarter Badge */}
+          <div className="join-badge">
+            <span>LAUNCHING SOON ON KICKSTARTER</span>
+            <img 
+              src="/kickstarter-logo.png" 
+              alt="Kickstarter" 
+              className="kickstarter-logo" 
+            />
+          </div>
           
           <h2>Be Part of the Sniffle Squad</h2>
           
+          {/* UPDATED: Body Copy */}
           <p className="join-body-copy">
-            A simple idea. A comforting companion. A small solution that makes a big difference. 
-            Be the first to know when Sniffle Pets launches.
+            A simple idea. A comforting companion. Be the first to know when Sniffle Pets launches.
+          </p>
+
+          {/* NEW: Social Proof before form */}
+          <p className="squad-social-proof">
+            <strong>300+</strong> parents & teachers already signed up
           </p>
 
           <form className="rally-form" onSubmit={handleSubmit}>
@@ -46,14 +59,15 @@ const JoinSquad = () => {
             </button>
           </form>
 
-          <p className="spam-note">No spam, just cuddles and updates.</p>
+          {/* UPDATED: Punctuation updated as requested */}
+          <p className="spam-note">No spam. Just cuddles and updates.</p>
         </div>
 
         {/* Right Side: Warm Lifestyle Image */}
         <div className="join-image-wrapper">
           <div className="image-backdrop-glow"></div>
           <img 
-            src="/feature_image_03.jpg" 
+            src="/join_squad_image.jpg" 
             alt="Caregiver and child using Sniffle Pets" 
             className="join-lifestyle-img" 
           />
@@ -65,4 +79,3 @@ const JoinSquad = () => {
 };
 
 export default JoinSquad;
-
