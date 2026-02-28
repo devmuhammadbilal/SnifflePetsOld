@@ -115,7 +115,7 @@ select {
   transform: translateY(-1px);
 }
 /* =========================================
-   MODAL COMPONENT
+   MODAL COMPONENT (Vibrant & Playful)
    ========================================= */
 .modal-overlay {
   position: fixed;
@@ -123,147 +123,331 @@ select {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(14, 54, 94, 0.4);
+  background: rgba(14, 54, 94, 0.6); 
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
-
-  /* RESPONSIVE: Scroll/Padding fixes */
   padding: 20px;
   overflow-y: auto;
   animation: fadeIn 0.3s ease-out;
 }
 
-.modal-box {
-  background: white;
-  padding: 40px;
-  border-radius: 24px;
+.modal-box-vibrant {
+  background: linear-gradient(180deg, #e0f2fe 0%, #ffffff 35%, #ffffff 100%);
+  padding: 40px 30px 50px 30px;
+  border-radius: 30px;
   width: 100%;
-  max-width: 480px;
+  max-width: 450px;
   position: relative;
   text-align: center;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 6px solid white;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.8);
   animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin: auto;
+  overflow: hidden; 
+}
+
+/* Decorative Images */
+.decor-monkey {
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  width: 130px;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.decor-leaves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 2;
 }
 
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
-  background: #f1f3f5;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  background: white;
   border-radius: 50%;
-  border: none;
+  border: 2px solid #edf2f7;
   font-size: 1.5rem;
   color: #555;
   cursor: pointer;
-  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
   margin: 0;
-  line-height: 1;
-  padding-bottom: 2px;
+  line-height: 0; 
+  padding-bottom: 2px; 
+  z-index: 20;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
 }
 
 .close-btn:hover {
-  background: #e9ecef;
+  background: #f1f3f5;
   color: var(--primary);
-  transform: rotate(90deg);
+  transform: rotate(90deg) scale(1.1);
 }
 
-.modal-badge {
-  background: rgba(93, 117, 48, 0.1);
-  color: var(--green);
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 50px;
-  margin-bottom: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.modal-ks-badge {
+  background-color: white;
+  border: 2px solid #f0fdf4;
+  margin-bottom: 15px;
+  padding: 6px 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.modal-box h2 {
+.modal-headline {
+  margin-bottom: 15px;
+}
+
+.join-the-text {
+  font-size: 1.4rem;
   color: var(--secondary);
-  margin-bottom: 12px;
-  font-size: 2rem;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 
-.modal-subtext {
-  color: #636e72;
-  font-size: 1.05rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
+.modal-logo-img {
+  max-width: 220px;
+  margin: 5px auto 0 auto;
 }
 
+.modal-subtext {
+  color: var(--dark);
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+.sniffle-logo-text {
+  font-weight: 900; 
+  font-style: italic; 
+  font-size: 1.25em; 
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.05); 
+}
+
+/* Highlights */
+.hl-yellow { background-color: #fef08a; color: #0f172a; padding: 2px 8px; border-radius: 6px; font-weight: 800; display: inline-block; margin: 2px 0; }
+.hl-blue { background-color: #e0f2fe; color: #0f4a81; padding: 2px 8px; border-radius: 6px; font-weight: 800; display: inline-block; margin: 2px 0; }
+.hl-pink { background-color: #ffe4e6; color: #c1121f; padding: 2px 8px; border-radius: 6px; font-weight: 800; display: inline-block; margin: 2px 0; }
+
+/* Form Styling */
 .modal-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  margin-bottom: 15px;
 }
 
-.modal-input {
+.input-group-icon {
+  position: relative;
   width: 100%;
-  padding: 16px;
-  border: 2px solid #edf2f7;
-  border-radius: 12px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background-color: #f8faff;
-  color: var(--dark);
 }
 
-.modal-input:focus {
-  outline: none;
-  border-color: var(--secondary);
-  background-color: white;
-  box-shadow: 0 0 0 4px rgba(14, 54, 94, 0.05);
-}
-
-.modal-cta-btn {
-  width: 100%;
-  padding: 16px;
+/* .input-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 1.1rem;
-  margin-top: 10px;
-  box-shadow: 0 10px 20px rgba(217, 56, 70, 0.3);
+  opacity: 0.7;
+} */
+
+.modal-input-pill {
+  width: 100%;
+  padding: 14px 20px 14px 45px;
+  border: 2px solid #e2e8f0;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  background: white;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
 }
 
-.modal-cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(217, 56, 70, 0.4);
+.modal-input-pill::placeholder {
+  color: #a0aec0;
+  font-weight: 500;
+}
+
+.modal-input-pill:focus {
+  outline: none;
+  border-color: #90cdf4;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.03), 0 0 0 4px rgba(144, 205, 244, 0.2);
+}
+
+.modal-cta-btn-vibrant {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-top: 10px;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #ff4757 0%, var(--primary) 100%);
+  color: white;
+  border: 3px solid #ffda79;
+  box-shadow: 0 10px 20px rgba(217, 56, 70, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.modal-cta-btn-vibrant:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(217, 56, 70, 0.5);
+  background: linear-gradient(180deg, #ff6b81 0%, #ff4757 100%);
+}
+
+.btn-arrow {
+  background: white;
+  color: var(--primary);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  text-shadow: none;
 }
 
 .modal-footer-note {
   font-size: 0.85rem;
-  color: #999;
-  margin-top: 20px;
+  color: #718096;
   font-style: italic;
+  font-weight: 500;
+  margin-top: 20px;
 }
 
-/* Mobile Modal Adjustments */
+.lock-icon, .party-icon { font-style: normal; opacity: 0.8; }
+
+
+/* =========================================
+   TABLET & MOBILE RESPONSIVE TWEAKS 
+   ========================================= */
+
+/* Tablet Adjustments */
+@media (max-width: 1024px) {
+  /* The modal is max 450px wide, so it fits perfectly on tablets naturally.
+     We just ensure the padding around the overlay is comfortable. */
+  .modal-overlay {
+    padding: 30px; 
+  }
+}
+
+/* Large Mobile Adjustments */
+@media (max-width: 768px) {
+  .modal-box-vibrant {
+    padding: 35px 25px 45px 25px;
+    border-width: 4px; /* Slightly thinner border so it doesn't feel bulky */
+  }
+
+  .decor-monkey {
+    width: 110px;
+    top: -12px;
+    left: -5px; /* Pulls the monkey inward so it isn't cropped by phone screens */
+  }
+
+  .join-the-text {
+    font-size: 1.25rem;
+  }
+
+  .modal-logo-img {
+    max-width: 190px;
+  }
+
+  .modal-subtext {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .modal-input-pill {
+    padding: 13px 18px 13px 40px; 
+    font-size: 0.95rem;
+  }
+
+  .modal-cta-btn-vibrant {
+    padding: 14px;
+    font-size: 1.15rem;
+  }
+}
+
+/* Small Mobile Adjustments (Smartphones) */
 @media (max-width: 480px) {
-  .modal-box {
-    padding: 30px 20px;
-    width: 95%;
+  .modal-overlay {
+    padding: 15px; /* Maximizes available screen space */
   }
 
-  .modal-box h2 {
-    font-size: 1.6rem;
+  .modal-box-vibrant {
+    padding: 30px 15px 35px 15px;
+    border-radius: 24px; /* Softer radius on small screens */
+  }
+  
+  .decor-monkey {
+    width: 90px;
+    top: -10px;
+    left: 0px; /* Fully inside the box boundaries */
+  }
+  
+  .modal-logo-img {
+    max-width: 160px;
+  }
+  
+  .join-the-text {
+    font-size: 1.15rem;
+  }
+  
+  .modal-subtext {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  /* Shrink highlights slightly so they don't force weird single-word line breaks */
+  .hl-yellow, .hl-blue, .hl-pink {
+    font-size: 0.85rem; 
+    padding: 2px 6px;
+  }
+  
+  .modal-cta-btn-vibrant {
+    font-size: 1.05rem;
+    padding: 12px;
+  }
+
+  /* Make the close button slightly smaller but keep touch target comfortable */
+  .close-btn {
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 1.3rem;
+  }
+  
+  .modal-footer-note {
+    font-size: 0.75rem;
   }
 }
-
-
-
-
 /* =========================================
    HERO SECTION (Standard Size & Full Screen)
    ========================================= */
@@ -289,8 +473,8 @@ select {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* Text Left, Image Right */
+  /* Updated: Gives the image column (right) significantly more space than the text (left) */
+  grid-template-columns: 1fr 1.3fr;
   align-items: center;
   gap: 60px;
 }
@@ -304,17 +488,18 @@ select {
 /* Badge - Standard Size */
 .kickstarter-badge {
   background-color: #f0fdf4;
-  color: var(--green);
+  color: var(--green, #05ce78);
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
+  padding: 8px 16px;
   border-radius: 100px;
   font-weight: 600;
   font-size: 0.8rem;
   margin-bottom: 20px;
   border: 1px solid rgba(93, 117, 48, 0.15);
-
+  
+  /* Start Entrance Animation */
   opacity: 0;
   animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards;
 }
@@ -325,6 +510,12 @@ select {
   font-weight: 700;
 }
 
+.kickstarter-logo {
+  height: 16px; 
+  width: auto;
+  display: block;
+}
+
 /* Headline - Standard Professional Size */
 .hero-text h1 {
   font-size: 2.75rem;
@@ -333,7 +524,8 @@ select {
   color: var(--secondary);
   font-weight: 800;
   letter-spacing: -1px;
-
+  
+  /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
@@ -345,7 +537,8 @@ select {
   margin-bottom: 35px;
   line-height: 1.6;
   font-weight: 500;
-
+  
+  /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
@@ -355,6 +548,8 @@ select {
   display: flex;
   align-items: center;
   gap: 20px;
+  
+  /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.8s forwards;
 }
@@ -372,7 +567,7 @@ select {
 .hero-guarantee {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px; 
   font-size: 0.9rem;
   color: #636e72;
   font-weight: 500;
@@ -380,7 +575,7 @@ select {
 
 .avatars {
   display: flex;
-  margin-left: 10px;
+  flex-shrink: 0; 
 }
 
 .avatar {
@@ -388,10 +583,15 @@ select {
   height: 32px;
   border-radius: 50%;
   border: 2px solid white;
-  margin-left: -10px;
+  margin-left: -12px; 
   background-color: #ddd;
   background-size: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; 
+}
+
+.avatar:first-child {
+  margin-left: 0;
 }
 
 /* RIGHT COLUMN - IMAGE */
@@ -402,21 +602,20 @@ select {
   align-items: center;
   height: auto;
   width: 100%;
-
+  
+  /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInRight 1s ease-out 0.5s forwards;
 }
 
 .hero-img {
-  max-width: 570px;
+  max-width: 100%; 
   width: 100%;
-  /* Ensures it scales down on resize */
   height: auto;
   border-radius: 24px;
   position: relative;
   z-index: 2;
   box-shadow: 0 20px 40px rgba(14, 54, 94, 0.15);
-  animation: float 6s ease-in-out infinite;
 }
 
 .hero-blob {
@@ -430,22 +629,42 @@ select {
   right: -10%;
   filter: blur(50px);
   opacity: 0.6;
-  animation: pulseBlob 8s infinite alternate;
 }
 
 /* =========================================
-   MOBILE & TABLET OVERRIDES
+   TABLET & MOBILE OVERRIDES (HERO)
    ========================================= */
 
-/* Tablet & Smaller Laptops (968px and down) */
-@media (max-width: 968px) {
+/* Tablet & Smaller Laptops (1024px and down) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    /* Balance columns more evenly on tablets before stacking */
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+  
+  /* Keep social proof and button on one line, just slightly tighter */
+  .hero-cta-wrapper {
+    gap: 15px;
+  }
+  
+  .hero-btn {
+    padding: 14px 24px;
+  }
+}
+
+/* Large Mobile / iPad Portrait (768px and down) */
+@media (max-width: 768px) {
   .hero-section {
     min-height: auto;
     /* Disables 100vh to fix mobile browser scroll jumps */
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 130px; /* Extra room for mobile navbar */
+    padding-bottom: 70px;
     display: block;
-    /* Switches from Flex to Block for stacking */
   }
 
   .hero-grid {
@@ -465,67 +684,97 @@ select {
 
   .hero-text h1 {
     font-size: 2.2rem;
+    max-width: 600px;
   }
 
   .hero-text p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     max-width: 90%;
+    margin-bottom: 30px;
   }
 
-  /* Fix: Center the CTA area nicely */
+  /* Center the CTA area nicely */
   .hero-cta-wrapper {
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
     width: 100%;
     justify-content: center;
   }
 
   .hero-btn {
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
+    padding: 16px;
+    font-size: 1.1rem;
   }
 
-  /* Fix: Ensure avatars look balanced when centered */
+  /* Ensure avatars look balanced when centered under the button */
   .hero-guarantee {
     justify-content: center;
+    font-size: 0.95rem; /* Make text slightly more readable when stacked */
   }
 
   .hero-image-wrapper {
     margin-top: 10px;
+    padding: 0 10px; /* Slight padding so image doesn't touch screen edges on tablets */
   }
 
   .hero-img {
-    max-width: 80%;
-    /* Don't make image huge on tablet */
+    max-width: 100%; 
   }
 }
 
-/* Mobile Phones (480px and down) */
+/* Small Mobile Phones (480px and down) */
 @media (max-width: 480px) {
   .hero-section {
-    padding-top: 100px;
-    /* Less padding for small screens */
+    padding-top: 110px;
     padding-bottom: 50px;
   }
 
+  /* Shrink the badge so it fits neatly on one line */
+  .kickstarter-badge {
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    gap: 6px;
+    margin-bottom: 15px;
+  }
+
+  .kickstarter-logo {
+    height: 12px;
+  }
+
   .hero-text h1 {
-    font-size: 1.9rem;
-    /* Prevents word-wrapping issues */
+    font-size: 1.85rem;
+    line-height: 1.25;
+    letter-spacing: -0.5px; /* Loosen letter spacing slightly on small screens */
   }
 
   .hero-text p {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
   }
 
-  .hero-img {
-    max-width: 100%;
-    /* Use full width on small phones */
+  .hero-btn {
+    max-width: 100%; /* Allow full width of container on tiny screens */
+  }
+  
+  .hero-guarantee {
+    flex-direction: column; /* Stack avatars ON TOP of text on tiny phones */
+    gap: 8px;
+    text-align: center;
+    font-size: 0.85rem;
   }
 
   /* Reduce blob size to improve performance on low-end phones */
   .hero-blob {
     width: 100%;
     height: 100%;
+    filter: blur(35px); /* Less blur = better mobile rendering performance */
+  }
+  
+  .hero-image-wrapper {
+    padding: 0; /* Let image go edge-to-edge on very small phones if needed */
   }
 }
 
@@ -556,7 +805,6 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Removed max-height restriction to allow logo to breathe */
 }
 
 .logo {
@@ -568,21 +816,21 @@ select {
 /* LOGO SIZING */
 .nav-logo-img {
   height: 35px;
-  /* Bumped up from 35px for better visibility */
   width: auto;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled .nav-logo-img {
   height: 30px;
-  /* Shrinks slightly on scroll */
 }
 
-/* DESKTOP NAV LINKS */
+/* =========================================
+   DESKTOP NAV LINKS
+   ========================================= */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 25px; 
 }
 
 .nav-item-group {
@@ -608,7 +856,7 @@ select {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: var(--primary);
+  background: var(--primary);
   transition: width 0.3s ease;
 }
 
@@ -647,10 +895,74 @@ select {
 }
 
 /* =========================================
+   HEADER CTA & ICONS
+   ========================================= */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.desktop-nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-icon-link {
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+.nav-icon-link:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.navbar.scrolled .nav-icon-link {
+  color: var(--dark);
+}
+
+.navbar.scrolled .nav-icon-link:hover {
+  color: var(--primary);
+}
+/* Perfect Desktop Sizing for the Join Button */
+.header-cta .small-btn {
+  padding: 10px 28px;       /* Balanced padding: sleek but clickable */
+  font-size: 1rem;          /* Matches your nav links */
+  font-weight: 700;         /* Makes the CTA text pop */
+  white-space: nowrap;      /* Prevents the button text from stacking on smaller laptops */
+  border-radius: 50px;      /* Gives it a nice pill shape (change to 8px if you prefer square) */
+  height: fit-content;      /* Keeps the button aligned with your icons */
+  letter-spacing: 0.5px;    /* Slight tracking for premium feel */
+}
+
+/* =========================================
    MOBILE MENU & HAMBURGER
    ========================================= */
 .mobile-only-btn {
   display: none;
+}
+
+.mobile-nav-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.mobile-nav-icons .nav-icon-link {
+  color: var(--dark);
+}
+
+.mobile-nav-icons .nav-icon-link svg {
+  width: 28px;
+  height: 28px;
 }
 
 .hamburger {
@@ -658,6 +970,9 @@ select {
   cursor: pointer;
   z-index: 1001;
   user-select: none;
+  /* Ensure a comfortable touch target area */
+  padding: 5px;
+  margin-right: -5px; 
 }
 
 .bar {
@@ -674,7 +989,6 @@ select {
   background-color: var(--dark);
 }
 
-/* HAMBURGER "X" ANIMATION (Added this missing piece) */
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;
 }
@@ -687,10 +1001,36 @@ select {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* MOBILE BREAKPOINT */
+
+/* =========================================
+   TABLET & MOBILE RESPONSIVE TWEAKS 
+   ========================================= */
+
+/* Tablet / Small Laptop Adjustments */
+@media (max-width: 1024px) {
+  /* Shrink gap slightly to keep everything on one line */
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  .header-cta {
+    gap: 12px;
+  }
+}
+
+/* Mobile Breakpoint (Switches to Hamburger) */
 @media (max-width: 968px) {
   .navbar {
     padding: 15px 0;
+  }
+
+  /* Ensures navbar elements align perfectly on mobile */
+  .navbar-container {
+    padding: 0 20px;
   }
 
   .hamburger {
@@ -701,31 +1041,30 @@ select {
     display: none;
   }
 
-  /* Logo Adjustment */
   .nav-logo-img {
-    height: 33px;
+    height: 30px; /* Slightly smaller logo for mobile headers */
   }
 
-  /* Mobile Dropdown Menu */
+  /* Full Screen Mobile Dropdown */
   .nav-links {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background: white;
+    height: 100vh; /* Take up full screen to prevent background scrolling bleed */
+    background: rgba(255, 255, 255, 0.98); /* Slight transparency looks premium */
+    backdrop-filter: blur(15px);
     flex-direction: column;
     align-items: center;
-    padding: 40px 0;
-    gap: 30px;
-
-    /* Animation Logic */
-    transform: translateY(-150%);
-    /* Hides it above */
+    justify-content: flex-start; /* Align to top */
+    padding: 40px 20px;
+    gap: 35px; /* Comfortable spacing for fat fingers */
+    
+    transform: translateY(-120%);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: -1;
-    /* Keeps it behind the navbar bar itself */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     border-bottom: 4px solid var(--primary);
+    overflow-y: auto; /* Allow scrolling if screen is short */
   }
 
   .nav-links.active {
@@ -734,30 +1073,54 @@ select {
 
   /* Mobile Link Styles */
   .nav-links a {
-    font-size: 1.25rem;
-    /* Larger touch target */
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
+    font-size: 1.4rem; /* Larger font for easier reading and tapping */
+    font-weight: 700;
+    color: var(--dark); /* Force dark text for contrast on white bg */
+    display: inline-block;
+    padding: 10px 20px;
+  }
+
+  /* The underline hover effect looks messy on mobile, disable it */
+  .nav-links a::after {
+    display: none;
   }
 
   .nav-hover-text {
     display: none;
   }
 
+  /* Mobile Waitlist Button & Icons */
   .mobile-only-btn {
-    display: block;
-    width: 80%;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
   }
 
-  .mobile-only-btn button {
-    width: 100%;
+  .mobile-only-btn .btn {
+    width: 90%;
+    max-width: 300px; /* Prevent button from getting comically wide on tablets */
+    padding: 16px;
+    font-size: 1.15rem;
   }
 }
 
+/* Small Smartphone Adjustments */
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 25px; /* Tighten gap slightly on very small phones */
+    padding: 30px 20px;
+  }
 
+  .nav-links a {
+    font-size: 1.25rem;
+  }
+
+  .nav-logo-img {
+    height: 26px; /* Ensure logo doesn't dominate tight top bar */
+  }
+}
 /* =========================================
    FEATURES SECTION (Compact 4-Column Layout)
    ========================================= */
@@ -814,6 +1177,7 @@ select {
   color: #636e72;
   margin-top: 15px;
   font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 /* --- THE GRID (4 COLUMNS = SMALLER IMAGES) --- */
@@ -883,6 +1247,9 @@ select {
   text-align: center;
   flex-grow: 1;
   /* Ensures cards align evenly */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .feature-card h3 {
@@ -890,6 +1257,7 @@ select {
   margin-bottom: 10px;
   color: var(--secondary);
   font-weight: 700;
+  line-height: 1.3;
 }
 
 .feature-card p {
@@ -902,21 +1270,28 @@ select {
 /* --- CTA BUTTON --- */
 .features-cta {
   margin-top: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 .features-cta .btn {
-  padding: 15px 40px;
-  font-size: 1.05rem;
+  padding: 16px 45px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 50px; 
 }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* =========================================
+   TABLET & MOBILE RESPONSIVE TWEAKS 
+   ========================================= */
 
 /* Tablet Portrait (1024px and down) */
 @media (max-width: 1024px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
     /* Switch to 2x2 Grid */
-    max-width: 700px;
+    max-width: 800px;
     gap: 30px;
   }
 
@@ -925,46 +1300,87 @@ select {
   }
 }
 
-/* Mobile Devices (600px and down) */
-@media (max-width: 600px) {
+/* Mobile Devices (768px and down) */
+@media (max-width: 768px) {
   .features-section {
-    padding: 60px 20px;
-    /* Reduce vertical padding */
+    padding: 80px 20px;
   }
 
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.9rem;
     flex-direction: column;
-    /* Stack logo under text */
-    gap: 10px;
+    /* Stack logo under text on mobile */
+    gap: 12px;
   }
 
   .inline-title-logo {
-    height: 35px;
+    height: 40px;
     margin-top: 0;
+  }
+
+  .features-subtext {
+    font-size: 1rem;
+    padding: 0 10px;
+    line-height: 1.5;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
-    /* Stack 1x1 */
+    /* Stack 1x1 on phones */
     gap: 40px;
+    max-width: 450px; /* Constrain width so images don't get comically large */
   }
 
-  /* Ensure cards don't touch screen edges on very small phones */
   .feature-card {
     width: 100%;
-    max-width: 400px;
     margin: 0 auto;
+    border-radius: 24px; /* Slightly softer corners look better stacked */
   }
 
   .feature-content {
     padding: 30px 20px;
-    /* Better touch area */
+  }
+
+  .feature-card h3 {
+    font-size: 1.35rem; /* Slightly larger title for readability on phones */
+    margin-bottom: 12px;
+  }
+
+  .feature-card p {
+    font-size: 1.05rem; /* Larger body text for touch devices */
   }
 
   .features-cta .btn {
     width: 100%;
     max-width: 320px;
+    padding: 16px;
+  }
+}
+
+/* Small Smartphone Adjustments (480px and down) */
+@media (max-width: 480px) {
+  .features-section {
+    padding: 60px 15px; 
+  }
+
+  .section-header-wrapper {
+    margin-bottom: 40px; /* Tighter spacing on small screens */
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .inline-title-logo {
+    height: 35px;
+  }
+  
+  .features-subtext {
+    font-size: 0.9rem;
+  }
+
+  .features-grid {
+    gap: 30px;
   }
 }
 
@@ -996,7 +1412,7 @@ select {
 .meet-pets-container {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  /* Text Left, Grid Right */
+  /* Text Left, Carousel Right */
   align-items: center;
   gap: 80px;
   width: 100%;
@@ -1040,11 +1456,11 @@ select {
 }
 
 .inline-header-logo {
-  height: 50px;
+  height: 46px;
   width: auto;
-  margin-left: 6px;
-  margin-top: -6px;
-  display: inline-block;
+   margin-left: 6px; 
+  /* margin-top: -6px; */
+  /* display: inline-block; */
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
   vertical-align: middle;
 }
@@ -1077,106 +1493,196 @@ select {
   font-style: italic;
 }
 
-/* === RIGHT COLUMN: BENTO GRID (DESKTOP) === */
+/* === RIGHT COLUMN: 3D CAROUSEL (DESKTOP) === */
 .meet-pets-visual {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1.8fr 1fr;
-  /* Top row taller than bottom */
-  height: 520px;
-  gap: 16px;
-}
-
-.bento-item {
+.carousel-container {
   position: relative;
+  width: 100%;
+  height: 380px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  margin-bottom: 20px;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 55%; 
+  height: 100%;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(14, 54, 94, 0.12);
   background: white;
   border: 4px solid white;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  box-shadow: 0 20px 50px rgba(14, 54, 94, 0.15);
 }
 
-.bento-img {
+.carousel-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  transition: transform 0.5s ease;
 }
 
-.bento-item:hover {
-  transform: translateY(-5px);
+/* 3D Positioning Logic */
+.slide-active {
+  transform: translateX(0) scale(1);
+  z-index: 10;
+  opacity: 1;
+  box-shadow: 0 25px 60px rgba(14, 54, 94, 0.3);
+}
+
+.slide-prev {
+  transform: translateX(-55%) scale(0.85); 
   z-index: 5;
-  box-shadow: 0 25px 60px rgba(14, 54, 94, 0.2);
+  opacity: 0.6;
 }
 
-.bento-item:hover .bento-img {
-  transform: scale(1.08);
+.slide-next {
+  transform: translateX(55%) scale(0.85); 
+  z-index: 5;
+  opacity: 0.6;
 }
 
-/* Desktop Grid Logic */
-.item-main {
-  grid-column: 1 / -1;
-  grid-row: 1;
+.slide-hidden {
+  transform: translateX(0) scale(0.5);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* Spans all 3 cols */
-.item-sub-1 {
-  grid-column: 1;
-  grid-row: 2;
+/* Hover effect only for the active slide */
+.slide-active:hover .carousel-img {
+  transform: scale(1.05);
 }
 
-.item-sub-2 {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.item-sub-3 {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-/* Glass Badge */
+/* Badges & Icons */
 .glass-badge {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.856);
+  padding: 6px 12px;
   border-radius: 12px;
   color: var(--secondary);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+.gallery-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding-left: 4px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 3;
+}
+
+/* Controls */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.control-btn {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: var(--dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.control-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.active-dot {
+  background: var(--primary);
+  width: 20px;
+  border-radius: 10px;
 }
 
 /* =========================================
-   MOBILE & TABLET RESPONSIVENESS
+   TABLET & MOBILE RESPONSIVENESS
    ========================================= */
 
-/* Tablet (Portrait) & Small Laptops */
-@media (max-width: 968px) {
+/* Tablet Portrait & Small Laptops (1024px and down) */
+@media (max-width: 1024px) {
+  .meet-pets-container {
+    gap: 40px;
+  }
+  
+  .meet-pets-text h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Large Mobile / iPad Portrait (Stacking Point) (768px and down) */
+@media (max-width: 768px) {
   .meet-pets-section {
-    padding: 70px 20px;
+    padding: 80px 20px;
   }
 
-  /* Move bg curve to top so it frames the text nicely */
+  /* Redesign the background curve to frame the stacked text from the top */
   .section-curve-bg {
     width: 100%;
     height: 400px;
-    border-radius: 0 0 50px 50px;
+    border-radius: 0 0 60px 60px;
   }
 
   .meet-pets-container {
     display: flex;
     flex-direction: column;
-    /* Stack Text on Top, Grid Bottom */
     gap: 60px;
   }
 
@@ -1187,86 +1693,85 @@ select {
     margin: 0 auto;
   }
 
-  /* Center alignment for text elements */
   .meet-pets-text h2 {
     justify-content: center;
+    font-size: 2.2rem;
+  }
+
+  .section-subtext {
+    font-size: 1.15rem;
   }
 
   .pets-cta-wrapper {
-    align-items: center;
+    align-items: center; /* Center the button and note */
     width: 100%;
   }
 
-  /* Adjust Grid for Tablet */
-  .bento-grid {
-    height: auto;
-    /* Let content dictate height */
-    grid-template-columns: 1fr 1fr;
-    /* 2 Columns */
-    grid-template-rows: 250px 180px 180px;
-    /* Specific row heights */
+  .pets-cta-wrapper .btn {
+    width: 100%;
+    max-width: 340px;
+    padding: 16px;
+    font-size: 1.1rem;
   }
 
-  /* Tablet Grid Placement */
-  .item-main {
-    grid-column: 1 / -1;
-    grid-row: 1;
+  .cta-note {
+    margin-left: 0;
+    text-align: center;
   }
 
-  /* Full width top */
-  .item-sub-1 {
-    grid-column: 1;
-    grid-row: 2;
+  .carousel-container {
+    height: 340px; 
   }
-
-  .item-sub-2 {
-    grid-column: 2;
-    grid-row: 2;
+  
+  .carousel-slide {
+    width: 60%; /* Slightly wider on mobile so the main image is prominent */
   }
-
-  .item-sub-3 {
-    grid-column: 1 / -1;
-    grid-row: 3;
-  }
-
-  /* Full width bottom */
 }
 
-/* Mobile Phones (Small Screens) */
+/* Small Mobile Phones (480px and down) */
 @media (max-width: 480px) {
   .meet-pets-section {
-    padding: 50px 20px;
+    padding: 60px 15px;
   }
 
   .meet-pets-text h2 {
-    font-size: 1.8rem;
-    /* Scale down header */
+    font-size: 1.85rem;
+    gap: 10px;
   }
 
   .inline-header-logo {
     height: 35px;
+    margin-left: 0;
+  }
+  
+  .section-subtext {
+    font-size: 1.05rem;
   }
 
-  /* Mobile Grid: Stacked Logic */
-  .bento-grid {
-    gap: 12px;
-    grid-template-rows: 200px 140px 140px;
-    /* Tighter heights */
+  .carousel-container {
+    height: 280px; 
   }
 
-  /* Ensure images look good on small screens */
-  .bento-item {
-    border-width: 3px;
+  .carousel-slide {
+    width: 65%; /* Wider on tiny phones */
+    border-width: 3px; /* Slightly thinner border so image area stays large */
   }
 
-  .glass-badge {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    bottom: 12px;
-    left: 12px;
+  /* CRITICAL FIX: Pull the side images tighter inward so they don't break horizontal scroll */
+  .slide-prev {
+    transform: translateX(-45%) scale(0.85);
+  }
+
+  .slide-next {
+    transform: translateX(45%) scale(0.85);
+  }
+  
+  /* Make touch targets for carousel buttons slightly larger */
+  .control-btn {
+    width: 44px;
+    height: 44px;
   }
 }
-
 /* =========================================
    VIDEO SECTION (Mobile Responsive Fixed)
    ========================================= */
@@ -1303,7 +1808,6 @@ select {
   transform: translate(-50%, -50%);
   width: 600px;
   height: 600px;
-  /* RESPONSIVE FIX: Prevent glow from pushing width on small screens */
   max-width: 100%;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
@@ -1313,11 +1817,28 @@ select {
 .video-container {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  /* RESTORED: Back to the original wide 900px desktop size */
+  max-width: 900px; 
   margin: 0 auto;
 }
 
 /* --- TYPOGRAPHY --- */
+.video-header-content {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-header-content h2 {
+  font-size: 3rem;
+  color: white;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px; 
+}
 
 .section-tag-white {
   display: inline-block;
@@ -1329,33 +1850,25 @@ select {
   background: rgba(255, 255, 255, 0.15);
   padding: 8px 16px;
   border-radius: 50px;
-  margin-bottom: 25px;
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.video-header-content h2 {
-  font-size: 3rem;
-  color: white;
-  font-weight: 800;
-  letter-spacing: -1px;
-  line-height: 1.1;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  margin-bottom: 50px;
-}
-
 /* --- VIDEO PLAYER WRAPPER --- */
-
 .video-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* RESTORED: Back to the original 16:9 widescreen format for desktop */
+  aspect-ratio: 16 / 9; 
   background-color: #000;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 }
 
 .video-wrapper:hover {
@@ -1372,7 +1885,7 @@ select {
 .video-thumb-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; 
 }
 
 .video-overlay {
@@ -1389,8 +1902,19 @@ select {
   background: rgba(14, 54, 94, 0.1);
 }
 
-/* --- PLAY BUTTON --- */
+/* --- NATIVE VIDEO PLAYER ADDITIONS --- */
+.video-player-element {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  outline: none;
+  border: none;
+  /* 'contain' ensures the whole portrait video fits inside without cropping */
+  object-fit: contain; 
+  display: block;
+}
 
+/* --- PLAY BUTTON --- */
 .play-button {
   position: absolute;
   top: 50%;
@@ -1407,10 +1931,10 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 5px;
+  padding-left: 5px; /* Optically centers the triangle */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 0 0 0 rgba(217, 56, 70, 0.7);
-  animation: pulse-red 2s infinite;
+  animation: pulse-red 2.5s infinite;
 }
 
 .play-icon {
@@ -1420,12 +1944,11 @@ select {
 
 .play-button:hover {
   background: #ff4757;
-  transform: translate(-50%, -50%) scale(1.15);
+  transform: translate(-50%, -50%) scale(1.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* --- BOTTOM CTA --- */
-
 .video-cta-container {
   margin-top: 50px;
 }
@@ -1434,6 +1957,8 @@ select {
   background: white;
   color: var(--primary);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  border-radius: 50px;
 }
 
 .btn-white:hover {
@@ -1443,24 +1968,17 @@ select {
 }
 
 .spam-note-light {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
   margin-top: 15px;
+  font-style: italic;
 }
 
 /* Animation */
 @keyframes pulse-red {
-  0% {
-    box-shadow: 0 0 0 0 rgba(217, 56, 70, 0.7);
-  }
-
-  70% {
-    box-shadow: 0 0 0 20px rgba(217, 56, 70, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(217, 56, 70, 0);
-  }
+  0% { box-shadow: 0 0 0 0 rgba(217, 56, 70, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(217, 56, 70, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 56, 70, 0); }
 }
 
 /* =========================================
@@ -1469,51 +1987,88 @@ select {
 
 @media (max-width: 968px) {
   .video-section {
-    padding: 70px 20px;
+    padding: 80px 20px;
   }
 
   .video-header-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 40px;
+    font-size: 2.4rem;
+  }
+
+  .video-container {
+    max-width: 500px; /* Slim down for tablets */
   }
 
   .video-wrapper {
-    border-radius: 16px;
+    /* Taller ratio for tablets */
+    aspect-ratio: 3 / 4; 
+    border-radius: 20px;
   }
 
   .play-button {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
 
   .play-icon {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .video-section {
-    padding: 60px 20px;
+    padding: 60px 15px;
+  }
+
+  .video-header-content {
+    margin-bottom: 30px;
   }
 
   .video-header-content h2 {
-    font-size: 1.8rem;
-    /* Smaller font for small phones */
-    line-height: 1.2;
+    font-size: 1.9rem;
   }
 
-  /* Make button even smaller for very small screens so video is visible */
+  .section-tag-white {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+
+  .video-container {
+    max-width: 100%;
+  }
+
+  .video-wrapper {
+    /* Switch to native Reel/TikTok ratio for phones */
+    aspect-ratio: 9 / 16; 
+    border-radius: 16px;
+  }
+
   .play-button {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
   }
 
   .play-icon {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    padding-left: 3px; 
   }
 
   .video-cta-container {
-    margin-top: 35px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-cta-container .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+
+  .spam-note-light {
+    font-size: 0.85rem;
+    padding: 0 20px;
   }
 }
 
@@ -1526,24 +2081,53 @@ select {
   text-align: center;
 }
 
-.testimonials-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: var(--dark);
+/* --- NEW: Attractive Header Styling --- */
+.testimonial-header {
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-header h2 {
+  font-size: 3rem; /* Made larger for impact */
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--secondary); /* Deep Navy */
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+}
+
+.highlight-text {
+  color: var(--primary); /* Sniffle Red */
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+/* Playful Yellow Underline Swoosh behind the text */
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  width: 105%;
+  height: 12px;
+  bottom: 6px;
+  left: -2.5%;
+  background-color: var(--accent); /* Yellow */
+  z-index: -1;
+  border-radius: 10px;
+  opacity: 0.6;
 }
 
 .waitlist-subtext {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #636e72;
-  margin-bottom: 60px;
+  margin-bottom: 0; /* Margin moved to wrapper */
+  font-weight: 500;
 }
 
-.count-badge {
-  background-color: var(--accent);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-weight: bold;
-  color: var(--dark);
+.waitlist-subtext strong {
+  color: var(--secondary);
+  font-weight: 800;
 }
 
 .reviews-grid {
@@ -1595,18 +2179,19 @@ select {
   z-index: 1;
 }
 
+/* Updated to allow better vertical alignment with the uncropped photos */
 .review-footer {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   margin-top: 10px;
 }
 
+/* Removes circle cropping so the full photo is shown naturally */
 .review-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 100px; 
+  height: auto; 
+  border-radius: 12px; 
   border: 3px solid white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -1627,466 +2212,666 @@ select {
   margin-top: 2px;
 }
 
-/* TESTIMONIALS MOBILE OVERRIDES */
-@media (max-width: 768px) {
-  .testimonials-section {
-    padding: 60px 20px;
-  }
+/* =========================================
+   MOBILE & TABLET RESPONSIVENESS
+   ========================================= */
 
-  .testimonials-section h2 {
-    font-size: 2rem;
+/* Tablet & Smaller Laptops (1024px and down) */
+@media (max-width: 1024px) {
+  .testimonial-header h2 {
+    font-size: 2.6rem;
   }
 
   .reviews-grid {
-    grid-template-columns: 1fr;
+    /* Prevents the 3 cards from squeezing too tight, forces them to wrap beautifully */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Mobile Devices & iPads in Portrait (768px and down) */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 80px 20px;
   }
 
-  /* Force single column */
+  .hide-mobile {
+    display: none;
+  }
+
+  .testimonial-header {
+    margin-bottom: 45px;
+  }
+
+  .testimonial-header h2 {
+    font-size: 2.2rem;
+    line-height: 1.3; /* Slight increase so wrapped lines don't crash into the swoosh */
+    max-width: 500px;
+    margin: 0 auto 15px auto;
+  }
+  
+  .highlight-text::after {
+    height: 8px; /* Slightly thinner underline on mobile */
+    bottom: 4px;
+  }
+
+  .waitlist-subtext {
+    font-size: 1.1rem;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr; /* Force single column stack */
+    gap: 30px;
+    max-width: 500px; /* Constrain width so the cards aren't comically wide on tablets */
+  }
+
+  .review-card {
+    padding: 35px 25px;
+  }
+
+  .quote-icon {
+    font-size: 3.5rem; /* Slightly smaller quote mark */
+    top: 15px;
+    right: 15px;
+  }
+
+  .review-text {
+    font-size: 1.05rem; /* Optimal reading size for mobile */
+    line-height: 1.5;
+  }
+
+  /* Shrink the uncropped photo slightly so it doesn't dominate the card */
+  .review-avatar {
+    width: 80px; 
+    border-width: 2px;
+  }
+
+  .review-author strong {
+    font-size: 1.05rem;
+  }
+}
+
+/* Small Smartphones (480px and down) */
+@media (max-width: 480px) {
+  .testimonials-section {
+    padding: 60px 15px;
+  }
+
+  .testimonial-header h2 {
+    font-size: 1.9rem;
+  }
+
+  /* On tiny screens, pull the swoosh in slightly so it doesn't touch the screen edge */
+  .highlight-text::after {
+    width: 100%;
+    left: 0;
+  }
+
   .review-card {
     padding: 30px 20px;
+    border-radius: 16px; /* Softer radius on small screens */
+  }
+
+  .review-text {
+    font-size: 1rem;
+  }
+
+  .review-avatar {
+    width: 70px; /* Scale down photo further for small screens */
+  }
+  
+  /* Make CTA Button fat-thumb friendly */
+  .testimonials-section .btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 16px;
+    font-size: 1.1rem;
   }
 }
 
 
 /* =========================================
-
-   FOUNDER SECTION (Sticky Modern Layout)
-
+   FOUNDER SECTION (50/50 Sticky Modern Layout)
    ========================================= */
 
-
-
 .founder-section {
-
   padding: 100px 20px;
-
   background-color: #fdfbf7;
-
   position: relative;
-
+  /* OVERFLOW: HIDDEN REMOVED FROM HERE TO RESTORE DESKTOP STICKY */
 }
-
-
 
 .founder-container {
-
   display: grid;
-
-  /* Split: Text (55%) | Image (45%) */
-
-  grid-template-columns: 1.1fr 0.9fr;
-
+  /* PERFECT 50/50 SPLIT: Image Left (50%), Text Right (50%) */
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
-
   max-width: 1250px;
-
   margin: 0 auto;
 
-
-
-  /* CRITICAL: Aligns content to top so sticky works */
-
+  /* CRITICAL: Aligns content to top so the sticky image tracks down the text */
   align-items: start;
-
 }
-
-
-
-/* === LEFT COLUMN: TEXT === */
-
-.founder-text {
-
-  padding-top: 20px;
-
-  /* Add padding bottom to ensure image un-sticks cleanly at the end */
-
-  padding-bottom: 50px;
-
-}
-
-
-
-.story-badge {
-
-  display: inline-block;
-
-  font-size: 0.85rem;
-
-  font-weight: 700;
-
-  text-transform: uppercase;
-
-  letter-spacing: 2px;
-
-  color: var(--primary);
-
-  border-bottom: 2px solid var(--accent);
-
-  padding-bottom: 5px;
-
-  margin-bottom: 25px;
-
-}
-
-
-
-.founder-headline {
-
-  font-size: 3rem;
-
-  color: var(--secondary);
-
-  margin-bottom: 35px;
-
-  line-height: 1.1;
-
-  font-weight: 800;
-
-}
-
-
-
-/* Typography Refinement for Long Text */
-
-.founder-content p {
-
-  font-size: 1.05rem;
-  /* Slightly smaller for better density */
-
-  color: #4a5568;
-
-  margin-bottom: 22px;
-
-  line-height: 1.8;
-  /* Airy line height makes long text easier to read */
-
-  font-weight: 400;
-
-}
-
-
-
-/* The "Born" Moment - Visual Break */
-
-.emphasis-text {
-
-  font-size: 1.25rem !important;
-
-  color: var(--secondary) !important;
-
-  font-weight: 700 !important;
-
-  font-style: italic;
-
-  margin: 35px 0;
-
-  padding-left: 20px;
-
-  border-left: 4px solid var(--accent);
-  /* Yellow bar highlights this pivot point */
-
-}
-
-
-
-/* Signature Block */
-
-.signature-block {
-
-  margin-top: 50px;
-
-  padding: 30px;
-
-  background: white;
-
-  border-radius: 16px;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-
-  border-left: 5px solid var(--primary);
-
-}
-
-
-
-.founder-quote {
-
-  font-style: italic;
-
-  font-size: 1.25rem;
-
-  color: var(--secondary);
-
-  font-family: 'Georgia', serif;
-
-  margin-bottom: 10px;
-
-}
-
-
-
-.founder-name {
-
-  font-weight: bold;
-
-  color: var(--primary);
-
-  font-size: 0.95rem;
-
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
-
-}
-
-
 
 /* === RIGHT COLUMN: STICKY IMAGE === */
-
-/* This is the magic part */
-
 .founder-image-column {
-
-  position: -webkit-sticky;
-  /* Safari support */
-
-  position: sticky;
-
-  top: 120px;
-  /* offset from top of screen (leaves room for navbar) */
-
-  height: fit-content;
-
+  /* Allows the sticky container to travel all the way down the tall text column */
+  height: 100%; 
 }
 
-
+/* THE FIX: This container holds BOTH the image and the border, keeping them glued together */
+.sticky-image-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px; /* Offset from top of screen */
+  z-index: 5;
+}
 
 .founder-image-wrapper {
-
   width: 100%;
-
-  /* Dynamic Height: Takes up 75% of the user's viewport height */
-
-  height: 75vh;
-
-  max-height: 800px;
-  /* Cap it for massive screens */
-
-  min-height: 500px;
-  /* Minimum size */
-
-
-
+  height: auto; 
   border-radius: 24px;
-
   overflow: hidden;
-
   box-shadow: 0 30px 60px rgba(14, 54, 94, 0.15);
-
   position: relative;
-
+  background-color: white; 
   z-index: 2;
-
 }
-
-
 
 .founder-real-img {
-
   width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  /* Focus on top center (Face) */
-
-  object-position: center 20%;
-
+  height: auto; 
+  display: block; 
 }
 
-
-
-/* Decorative Border Behind */
-
+/* Decorative Border Behind Image */
 .image-offset-border {
-
   position: absolute;
-
   top: 25px;
-
   left: 25px;
-
   width: 100%;
-
   height: 100%;
-
   border: 3px solid var(--accent);
-
   border-radius: 24px;
-
-  z-index: 1;
-
+  z-index: 1; /* Sits behind the wrapper */
   opacity: 0.5;
+}
 
+/* === LEFT COLUMN: TEXT === */
+.founder-text {
+  padding-top: 10px;
+  /* Padding bottom ensures the image stops tracking gracefully at the end */
+  padding-bottom: 50px;
+}
+
+.story-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+
+.founder-headline {
+  font-size: 3rem;
+  color: var(--secondary);
+  margin-bottom: 35px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.founder-content p {
+  font-size: 1.05rem;
+  color: #4a5568;
+  margin-bottom: 22px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.emphasis-text {
+  font-size: 1.25rem !important;
+  color: var(--secondary) !important;
+  font-weight: 700 !important;
+  font-style: italic;
+  margin: 35px 0;
+  padding-left: 20px;
+  border-left: 4px solid var(--accent);
+}
+
+.signature-block {
+  margin-top: 50px;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid var(--primary);
+}
+
+.founder-quote {
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--secondary);
+  font-family: 'Georgia', serif;
+  margin-bottom: 10px;
+}
+
+.founder-name {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* =========================================
-   MOBILE RESPONSIVENESS
+   MOBILE RESPONSIVENESS (Founder Section)
    ========================================= */
 
+/* Tablet & Smaller Laptops (1024px and down) */
+@media (max-width: 1024px) {
+  .founder-container {
+    gap: 40px; 
+  }
+  
+  .founder-headline {
+    font-size: 2.6rem;
+  }
+}
+
+/* Mobile Devices & iPads in Portrait (968px and down) */
 @media (max-width: 968px) {
   .founder-section {
-    padding: 60px 20px;
+    padding: 80px 20px;
+    /* OVERFLOW HIDDEN MOVED HERE: Safely contains the mobile border without breaking desktop sticky */
+    overflow: hidden; 
   }
 
   .founder-container {
     display: flex;
     flex-direction: column-reverse;
-    /* Image Top, Text Bottom */
-    gap: 40px;
+    align-items: center; 
+    gap: 50px;
   }
 
-  /* Center the Text on Mobile */
+  .founder-image-column {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sticky-image-container {
+    position: relative;
+    top: 0;
+    width: calc(100% - 25px); 
+    max-width: 600px; 
+    margin: 0 auto;
+    transform: translateX(-12.5px);
+  }
+
   .founder-text {
     padding-bottom: 0;
-    text-align: center;
-  }
-
-  .founder-content p {
-    text-align: left;
-    /* Keep long text readable */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%; 
   }
 
   .founder-headline {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     text-align: center;
-  }
-
-  /* Disable sticky on mobile */
-  .founder-image-column {
-    position: relative;
-    top: 0;
     width: 100%;
-    max-width: 600px;
-    /* Prevent it getting too wide on tablets */
-    margin: 0 auto;
   }
 
-  /* Reduce image height so it doesn't dominate the screen */
-  .founder-image-wrapper {
-    height: 500px;
-    min-height: auto;
+  .founder-content {
+    width: 100%;
+  }
+
+  .founder-content p {
+    text-align: left; 
+    max-width: 100%; 
   }
 
   .emphasis-text {
     text-align: center;
     border-left: none;
     border-top: 4px solid var(--accent);
-    padding-top: 15px;
+    padding-top: 20px;
     padding-left: 0;
-    border-radius: 4px;
+    margin: 30px 0;
+    max-width: 100%;
+  }
+  
+  .signature-block {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 40px;
   }
 }
 
-/* Small Phones */
+/* Small Smartphones (480px and down) */
 @media (max-width: 480px) {
+  .founder-section {
+    padding: 60px 15px;
+  }
+
   .founder-headline {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+  
+  .founder-content p {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
-  .founder-image-wrapper {
-    height: 350px;
-    /* Even smaller for phones */
-  }
-
-  .signature-block {
-    padding: 20px;
+  .sticky-image-container {
+    width: calc(100% - 15px);
+    transform: translateX(-7.5px);
   }
 
   .image-offset-border {
     top: 15px;
     left: 15px;
-    /* Tighter border offset */
+  }
+
+  .signature-block {
+    padding: 20px;
+    border-left: 4px solid var(--primary);
+  }
+  
+  .founder-quote {
+    font-size: 1.15rem;
   }
 }
-
-
-
 /* =========================================
-   ROADMAP & RALLY SECTIONS
+   ROADMAP / WHAT'S NEXT SECTION (Energetic & Professional)
    ========================================= */
 .roadmap-section {
-  padding: 80px 20px;
-  background-color: var(--white);
+  padding: 100px 20px;
+  /* Dark, rich gradient creates a premium, professional backdrop */
+  background: linear-gradient(180deg, #2b1055 0%, #0E365E 100%);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.roadmap-section .big-btn {
-  padding: 15px 40px;
-  font-size: 1.1rem;
-  margin-top: 10px;
+/* Subtle background glow to add energy without clutter */
+.roadmap-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(217, 56, 70, 0.15) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+}
+
+.roadmap-section .section-title {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 70px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.steps-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* The energetic connecting line for the "Roadmap" feel */
+.connecting-line {
+  display: none; /* Hidden on mobile */
+}
+
+@media (min-width: 900px) {
+  .connecting-line {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+    transform: translateY(-50%);
+  }
 }
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
-  max-width: 1000px;
-  margin: 35px auto;
   position: relative;
+  z-index: 2;
 }
 
+/* Upgraded Sleek Cards */
 .step-card {
   background: white;
-  padding: 30px 20px;
-  border-radius: 20px;
+  padding: 50px 30px 35px 30px; 
+  border-radius: 24px;
   position: relative;
-  border: 2px dashed #e0e0e0;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: 3px solid transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .step-card:hover {
-  border-color: var(--secondary);
   transform: translateY(-10px);
+  border-color: var(--accent, #f4b630);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 25px rgba(244, 182, 48, 0.15);
 }
 
+/* Punchy, bright number badges */
 .step-number {
   position: absolute;
-  top: -20px;
+  top: -25px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: var(--secondary);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary, #d93846) 0%, #ff6b81 100%);
   color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-weight: 900;
+  font-size: 1.3rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 15px rgba(14, 54, 94, 0.4);
+  border: 4px solid #fff;
+  box-shadow: 0 8px 15px rgba(217, 56, 70, 0.3);
+  transition: transform 0.3s ease;
 }
 
+.step-card:hover .step-number {
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* Icon Container & Animations */
 .step-icon {
-  font-size: 3.5rem;
-  margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px; 
+}
+
+/* Target the Lucide icon specifically */
+.step-icon svg {
+  transition: filter 0.3s ease;
+}
+
+/* The Energetic Icon Pop on Card Hover */
+.step-card:hover .step-icon svg {
+  animation: icon-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  /* Adds a matching color glow to the icon */
+  filter: drop-shadow(0px 6px 8px rgba(217, 56, 70, 0.35)); 
+}
+
+@keyframes icon-pop {
+  0% { transform: scale(1) translateY(0); }
+  40% { transform: scale(1.25) translateY(-5px); }
+  70% { transform: scale(1.1) translateY(-2px); }
+  100% { transform: scale(1.15) translateY(-4px); }
 }
 
 .step-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: var(--dark);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: var(--secondary, #0E365E);
+  font-weight: 800;
+  text-align: center;
 }
 
 .step-card p {
-  color: #636e72;
-  font-size: 1rem;
-  line-height: 1.5;
+  color: #4a5568;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+  text-align: center;
 }
 
+/* Energetic CTA Area */
+.cta-wrapper {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.big-btn {
+  padding: 16px 45px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 50px; 
+  border: none;
+  cursor: pointer;
+  background: var(--primary, #d93846);
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.big-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Professional but lively pulse animation */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(217, 56, 70, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(217, 56, 70, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 56, 70, 0); }
+}
+
+.energetic-pulse {
+  animation: pulse-ring 2.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.cta-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   MOBILE & TABLET RESPONSIVENESS
+   ========================================= */
+
+/* Tablet Portrait & Small Laptops (1024px and down) */
+@media (max-width: 1024px) {
+  .roadmap-section .section-title {
+    font-size: 2.6rem;
+  }
+  
+  .steps-grid {
+    gap: 30px; 
+  }
+}
+
+/* Large Mobile / iPad Portrait (768px and down) */
+@media (max-width: 768px) {
+  .roadmap-section {
+    padding: 80px 20px;
+  }
+
+  .roadmap-section .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+
+  .steps-grid {
+    /* CRITICAL: Extra vertical gap provides room for the floating number badge 
+       so it doesn't overlap the card above it when stacked */
+    gap: 65px; 
+    max-width: 500px; /* Constrain card width on tablets so they don't look awkwardly wide */
+    margin: 0 auto;
+  }
+
+  .step-card {
+    padding: 45px 25px 30px 25px;
+  }
+}
+
+/* Small Smartphones (480px and down) */
+@media (max-width: 480px) {
+  .roadmap-section {
+    padding: 60px 15px;
+  }
+
+  .roadmap-section .section-title {
+    font-size: 1.9rem;
+  }
+
+  .step-card {
+    padding: 40px 20px 25px 20px;
+    border-radius: 20px;
+  }
+
+  .step-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .step-card p {
+    font-size: 1rem;
+  }
+
+  /* Shrink the number badge slightly for tiny screens */
+  .step-number {
+    width: 44px;
+    height: 44px;
+    font-size: 1.15rem;
+    top: -22px;
+  }
+
+  /* Make CTA Button fat-thumb friendly */
+  .cta-wrapper {
+    margin-top: 50px;
+  }
+
+  .big-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+}
 /* =========================================
    JOIN SQUAD SECTION (Mobile Responsive Fixed)
    ========================================= */
@@ -2123,15 +2908,27 @@ select {
   text-align: left;
 }
 
-/* Subheadline / Badge */
+/* Subheadline / Badge - UPDATED for Kickstarter Style */
 .join-badge {
-  display: inline-block;
-  font-size: 0.9rem;
+  background-color: #f0fdf4;
+  color: var(--green, #05ce78);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
   font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 25px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #F4B630; /* Brand Accent Yellow */
-  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.kickstarter-logo {
+  height: 16px;
+  width: auto;
+  display: block;
 }
 
 .join-content h2 { 
@@ -2146,9 +2943,21 @@ select {
   font-size: 1.15rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 40px;
+  margin-bottom: 30px; /* Adjusted to fit new social proof text */
   max-width: 90%;
   font-weight: 400;
+}
+
+/* NEW: Social Proof Styling */
+.squad-social-proof {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+
+.squad-social-proof strong {
+  color: white;
+  font-weight: 800;
 }
 
 /* --- FORM STYLING --- */
@@ -2244,69 +3053,125 @@ select {
 }
 
 /* =========================================
-   MOBILE RESPONSIVENESS (Join Squad)
+   MOBILE & TABLET RESPONSIVENESS (Join Squad)
    ========================================= */
 
+/* Tablets & Small Laptops (1024px and down) */
+@media (max-width: 1024px) {
+  .join-container {
+    gap: 40px;
+  }
+  .join-content h2 {
+    font-size: 2.6rem;
+  }
+}
+
+/* Large Mobile & iPads in Portrait (968px and down) */
 @media (max-width: 968px) {
-  .join-squad-section { padding: 60px 20px; }
+  .join-squad-section { 
+    padding: 80px 20px; 
+  }
   
   .join-container { 
     grid-template-columns: 1fr; /* Stack vertically */
-    gap: 40px;
+    gap: 60px;
   }
 
   .join-content { 
     text-align: center; 
-    order: 1; 
+    /* Use flexbox to easily center the badge and form blocks */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .join-image-wrapper {
-    order: 2;
-    height: 300px; 
-    transform: rotate(0deg); 
+  /* Reset inline-flex margin so badge centers perfectly */
+  .join-badge {
+    margin: 0 auto 25px auto;
   }
 
-  .join-content h2 { font-size: 2.4rem; }
+  .join-content h2 { 
+    font-size: 2.5rem; 
+    max-width: 600px;
+  }
   
   .join-body-copy { 
-    margin: 0 auto 30px auto; 
-    width: 100%;
+    margin: 0 auto 25px auto; 
+    max-width: 600px;
+  }
+
+  .squad-social-proof {
+    margin: 0 auto 20px auto;
   }
   
-  .rally-form { margin: 0 auto; width: 100%; }
+  /* Constrain form on tablets so it isn't ridiculously wide */
+  .rally-form { 
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 500px; 
+  }
 
   /* --- FIX: UNIFIED HEIGHTS FOR TABLET & MOBILE --- */
-  /* This ensures the input and button are mathematically identical in height */
   .rally-input, 
   .rally-btn {
     width: 100%;
-    font-size: 1rem;      /* Both set to 16px (standard text) */
+    font-size: 1rem;      /* 16px is required to prevent auto-zoom on iOS Safari */
     padding: 16px 20px;   /* Exact same vertical padding */
     line-height: 1.5;     /* Ensures text height is calculated the same */
-    box-sizing: border-box; /* Includes padding/border in height calculation */
-    height: auto;         /* Let the padding dictate the height */
+    box-sizing: border-box; 
+    height: auto;         
   }
 
-  /* Specific tweak for the button to ensure it doesn't have extra margin issues */
   .rally-btn {
-    margin-top: 15px;
+    margin-top: 10px;
+  }
+
+  .join-image-wrapper {
+    height: 400px; /* Give it more height on tablets since it's full width */
+    max-width: 700px; /* Prevent it from being too massive */
+    margin: 0 auto;
+    transform: rotate(0deg); /* Disable rotation on stacked view so it fits cleanly */
   }
 }
 
+/* Small Smartphones (480px and down) */
 @media (max-width: 480px) {
+  .join-squad-section { 
+    padding: 60px 15px; 
+  }
+
   .join-content h2 { 
     font-size: 2rem; 
   }
   
   .join-badge {
-    font-size: 0.8rem;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .kickstarter-logo {
+    height: 13px; /* Slightly smaller for tiny screens */
+  }
+
+  .join-body-copy {
+    font-size: 1.05rem;
+  }
+
+  .squad-social-proof {
+    font-size: 0.95rem;
   }
   
   .join-image-wrapper {
-    height: 250px; 
+    height: 280px; /* Scale down height for phones */
+    border-radius: 20px;
+  }
+
+  .join-lifestyle-img {
+    border-radius: 20px;
   }
 }
-
 /* =========================================
    SITE FOOTER SECTION
    ========================================= */
