@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 const VideoSection = ({ onOpenModal }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Cloudinary URL with q_auto and f_auto added for massive compression
-  const videoUrl = "https://res.cloudinary.com/dxenaq8ty/video/upload/q_auto,f_auto/v1772222510/How_to_use_Sniffle_Pets_Reel_1_dl9vmy.mp4";
 
+  // Cloudinary URL with q_auto and f_auto added for massive compression
+  const videoUrl = "https://res.cloudinary.com/dxenaq8ty/video/upload/q_auto,f_auto/v1772664985/0302_pwgh5y.mp4";
   return (
     <section className="video-section" id="how-it-works">
       {/* Decorative background glow */}
@@ -48,8 +48,8 @@ const VideoSection = ({ onOpenModal }) => {
             <>
               {/* Background Thumbnail */}
               <div className="video-thumbnail">
-                {/* <img
-                  src="https://res.cloudinary.com/dxenaq8ty/video/upload/q_auto,f_auto/v1772222510/How_to_use_Sniffle_Pets_Reel_1_dl9vmy.jpg"
+               {/* <img
+                  src="https://res.cloudinary.com/dxenaq8ty/video/upload/q_auto,f_auto/v1772664985/0302_pwgh5y.jpg"
                   alt="Sniffle Pets Video Preview"
                   className="video-thumb-img"
                 /> */}
