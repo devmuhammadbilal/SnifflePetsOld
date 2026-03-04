@@ -11,7 +11,7 @@ const Hero = ({ onOpenModal }) => {
             
             {/* Kickstarter Badge */}
             <div className="kickstarter-badge">
-              <span className="badge-text">Launching Soon On KickStarter</span>
+              <span className="badge-text">Launching Soon On</span>
               {/* Note: Make sure to save the official Kickstarter wordmark in your public folder */}
               <img 
                 src="/kickstarter-logo.png" 
@@ -53,7 +53,7 @@ const Hero = ({ onOpenModal }) => {
             <div className="hero-blob"></div>
             
             <img 
-              src="/final_hero_image.jpg" 
+              src="/final_hero_image.png" 
               alt="Group of children wearing Sniffle Pets" 
               className="hero-img"
             />
@@ -66,6 +66,3 @@ const Hero = ({ onOpenModal }) => {
 };
 
 export default Hero;
-
-
-
