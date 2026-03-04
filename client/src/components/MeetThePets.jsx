@@ -5,11 +5,11 @@ const MeetThePets = ({ onOpenModal }) => {
 
   // Your images array
   const galleryItems = [
-    { id: 0, src: "/meet_sniffle_main_image.png", alt: "Sniffle Pets Group" },
+    { id: 0, src: "/meet_sniffle_main_image.jpg", alt: "Sniffle Pets Group" },
     { id: 1, src: "/meet_sp_1.jpg", alt: "Design 1" },
     { id: 2, src: "/meet_sp_2.jpg", alt: "Design 2" },
-    { id: 3, src: "/meet_sp_3.png", alt: "Design 3" },
-    { id: 4, src: "/meet_sp_5.jpeg", alt: "Design 5" }
+    { id: 3, src: "/meet_sp_3.jpg", alt: "Design 3" },
+    { id: 4, src: "/meet_sp_5.jpg", alt: "Design 5" }
   ];
 
   // Handlers to rotate the carousel
@@ -107,3 +107,4 @@ const MeetThePets = ({ onOpenModal }) => {
 };
 
 export default MeetThePets;
+
