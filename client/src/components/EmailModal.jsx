@@ -11,7 +11,7 @@ const EmailModal = ({ onClose }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-box modal-box-vibrant" onClick={(e) => e.stopPropagation()}>
         
-        {/* Decorative Assets (Replace with your actual transparent PNGs) */}
+        {/* Decorative Assets */}
         <img src="/monkey-popup.png" alt="" className="decor-monkey" />
         <img src="/leaves-popup.png" alt="" className="decor-leaves" />
 
@@ -25,7 +25,8 @@ const EmailModal = ({ onClose }) => {
           
           {/* Kickstarter Badge */}
           <div className="join-badge modal-ks-badge">
-            <span>LAUNCHING SOON ON KICKSTARTER</span>
+            <span>LAUNCHING SOON ON</span>
+            {/* Note: Ensure /kickstarter-logo.png is the full green wordmark logo! */}
             <img 
               src="/kickstarter-logo.png" 
               alt="Kickstarter" 
@@ -33,31 +34,20 @@ const EmailModal = ({ onClose }) => {
             />
           </div>
 
-          {/* Headline (Using Actual Logo as requested) */}
+          {/* Headline (Updated per client request) */}
           <h2 className="modal-headline">
-            <span className="join-the-text">Join the</span><br />
-            <img src="/sniffle_pets_logo.png" alt="Sniffle Squad" className="modal-logo-img" />
+            <span className="join-the-text">Be First in Line for</span><br />
+            <img src="/sniffle_pets_logo.png" alt="Sniffle Pets" className="modal-logo-img" />
           </h2>
 
-          
-          {/* Subtext with Multi-colored "Sniffle" and Colorful Highlights */}
+          {/* Subtext (Removed redundant text) */}
           <p className="modal-subtext">
-            Be first in line for <span className="sniffle-logo-text">
-              <span style={{color: '#E31E24'}}>S</span>
-              <span style={{color: '#4C6F13'}}>n</span>
-              <span style={{color: '#F9A01B'}}>i</span>
-              <span style={{color: '#0B2351'}}>f</span>
-              <span style={{color: '#1A3668'}}>f</span>
-              <span style={{color: '#C1272D'}}>l</span>
-              <span style={{color: '#F15A24'}}>e</span>
-            </span> <strong>Pets!</strong><br/>
             Sign up now to grab <span className="hl-yellow">early-bird rewards,</span> <span className="hl-blue">classroom bundles,</span> and <span className="hl-pink">launch-day perks!</span>
           </p>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="modal-form">
             <div className="input-group-icon">
-              {/* <span className="input-icon">👤</span> */}
               <input 
                 type="text" 
                 placeholder="Your Name" 
@@ -66,7 +56,6 @@ const EmailModal = ({ onClose }) => {
               />
             </div>
             <div className="input-group-icon">
-              {/* <span className="input-icon">✉️</span> */}
               <input 
                 type="email" 
                 placeholder="Your Email Address" 
