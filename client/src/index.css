@@ -3,14 +3,20 @@
    ========================================= */
 :root {
   /* BRAND COLORS */
-  --primary: #D93846;   /* Sniffle Red */
-  --secondary: #0E365E; /* Deep Navy */
-  --accent: #F4B630;    /* Playful Yellow */
-  --green: #5D7530;     /* Nature Green */
+  --primary: #D93846;
+  /* Sniffle Red */
+  --secondary: #0E365E;
+  /* Deep Navy */
+  --accent: #F4B630;
+  /* Playful Yellow */
+  --green: #5D7530;
+  /* Nature Green */
 
   /* NEUTRALS */
-  --dark: #2d3436;      /* Main text */
-  --light: #f7f9fc;     /* Background */
+  --dark: #2d3436;
+  /* Main text */
+  --light: #f7f9fc;
+  /* Background */
   --white: #ffffff;
 }
 
@@ -18,19 +24,20 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 /* 2. BULLETPROOF NO-SCROLL LOGIC */
 html,
 body {
   width: 100%;
-  
+
   /* --- CRITICAL FIX START --- */
   /* WAS: overflow-x: hidden;  <-- This breaks sticky! */
-  overflow-x: clip;            /* <-- This is the modern fix */
+  overflow-x: clip;
+  /* <-- This is the modern fix */
   /* --- CRITICAL FIX END --- */
-  
+
   scroll-behavior: smooth;
 }
 
@@ -50,7 +57,7 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  display: block; 
+  display: block;
 }
 
 /* Ensure form elements inherit font settings */
@@ -66,7 +73,7 @@ select {
    ========================================= */
 .container {
   /* OPTIMIZATION: Ensure it doesn't touch edges on small screens if width isn't 100% */
-  width: 100%; 
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -91,7 +98,7 @@ select {
   position: relative;
   overflow: hidden;
   /* OPTIMIZATION: Fixes button alignment issues */
-  display: inline-block; 
+  display: inline-block;
 }
 
 .btn-primary {
@@ -114,6 +121,7 @@ select {
 .btn:active {
   transform: translateY(-1px);
 }
+
 /* =========================================
    MODAL COMPONENT (Vibrant & Playful)
    ========================================= */
@@ -123,7 +131,7 @@ select {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(14, 54, 94, 0.6); 
+  background: rgba(14, 54, 94, 0.6);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
@@ -146,7 +154,7 @@ select {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.8);
   animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin: auto;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 /* Decorative Images */
@@ -192,10 +200,10 @@ select {
   justify-content: center;
   padding: 0;
   margin: 0;
-  line-height: 0; 
-  padding-bottom: 2px; 
+  line-height: 0;
+  padding-bottom: 2px;
   z-index: 20;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
 }
 
@@ -210,15 +218,25 @@ select {
   border: 2px solid #f0fdf4;
   margin-bottom: 15px;
   padding: 6px 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* NEW: Ensures the full Kickstarter wordmark logo is sized correctly */
+.kickstarter-logo {
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .modal-headline {
   margin-bottom: 15px;
 }
 
+/* UPDATED: Adjusted font size to accommodate "Be First in Line for" */
 .join-the-text {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--secondary);
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -236,18 +254,36 @@ select {
   line-height: 1.7;
 }
 
-.sniffle-logo-text {
-  font-weight: 900; 
-  font-style: italic; 
-  font-size: 1.25em; 
-  letter-spacing: 0.5px;
-  text-shadow: 1px 1px 0px rgba(0,0,0,0.05); 
+/* Highlights */
+.hl-yellow {
+  background-color: #fef08a;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  display: inline-block;
+  margin: 2px 0;
 }
 
-/* Highlights */
-.hl-yellow { background-color: #fef08a; color: #0f172a; padding: 2px 8px; border-radius: 6px; font-weight: 800; display: inline-block; margin: 2px 0; }
-.hl-blue { background-color: #e0f2fe; color: #0f4a81; padding: 2px 8px; border-radius: 6px; font-weight: 800; display: inline-block; margin: 2px 0; }
-.hl-pink { background-color: #ffe4e6; color: #c1121f; padding: 2px 8px; border-radius: 6px; font-weight: 800; display: inline-block; margin: 2px 0; }
+.hl-blue {
+  background-color: #e0f2fe;
+  color: #0f4a81;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  display: inline-block;
+  margin: 2px 0;
+}
+
+.hl-pink {
+  background-color: #ffe4e6;
+  color: #c1121f;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  display: inline-block;
+  margin: 2px 0;
+}
 
 /* Form Styling */
 .modal-form {
@@ -262,15 +298,6 @@ select {
   width: 100%;
 }
 
-/* .input-icon {
-  position: absolute;
-  left: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.1rem;
-  opacity: 0.7;
-} */
-
 .modal-input-pill {
   width: 100%;
   padding: 14px 20px 14px 45px;
@@ -280,7 +307,7 @@ select {
   font-weight: 600;
   color: var(--dark);
   background: white;
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.03);
   transition: all 0.3s ease;
 }
 
@@ -292,7 +319,7 @@ select {
 .modal-input-pill:focus {
   outline: none;
   border-color: #90cdf4;
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.03), 0 0 0 4px rgba(144, 205, 244, 0.2);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.03), 0 0 0 4px rgba(144, 205, 244, 0.2);
 }
 
 .modal-cta-btn-vibrant {
@@ -310,7 +337,7 @@ select {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .modal-cta-btn-vibrant:hover {
@@ -340,7 +367,11 @@ select {
   margin-top: 20px;
 }
 
-.lock-icon, .party-icon { font-style: normal; opacity: 0.8; }
+.lock-icon,
+.party-icon {
+  font-style: normal;
+  opacity: 0.8;
+}
 
 
 /* =========================================
@@ -349,10 +380,8 @@ select {
 
 /* Tablet Adjustments */
 @media (max-width: 1024px) {
-  /* The modal is max 450px wide, so it fits perfectly on tablets naturally.
-     We just ensure the padding around the overlay is comfortable. */
   .modal-overlay {
-    padding: 30px; 
+    padding: 30px;
   }
 }
 
@@ -360,17 +389,18 @@ select {
 @media (max-width: 768px) {
   .modal-box-vibrant {
     padding: 35px 25px 45px 25px;
-    border-width: 4px; /* Slightly thinner border so it doesn't feel bulky */
+    border-width: 4px;
   }
 
   .decor-monkey {
     width: 110px;
     top: -12px;
-    left: -5px; /* Pulls the monkey inward so it isn't cropped by phone screens */
+    left: -5px;
   }
 
+  /* UPDATED: Scaled text for mobile */
   .join-the-text {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .modal-logo-img {
@@ -383,7 +413,7 @@ select {
   }
 
   .modal-input-pill {
-    padding: 13px 18px 13px 40px; 
+    padding: 13px 18px 13px 40px;
     font-size: 0.95rem;
   }
 
@@ -396,46 +426,47 @@ select {
 /* Small Mobile Adjustments (Smartphones) */
 @media (max-width: 480px) {
   .modal-overlay {
-    padding: 15px; /* Maximizes available screen space */
+    padding: 15px;
   }
 
   .modal-box-vibrant {
     padding: 30px 15px 35px 15px;
-    border-radius: 24px; /* Softer radius on small screens */
+    border-radius: 24px;
   }
-  
+
   .decor-monkey {
     width: 90px;
     top: -10px;
-    left: 0px; /* Fully inside the box boundaries */
+    left: 0px;
   }
-  
+
   .modal-logo-img {
     max-width: 160px;
   }
-  
+
+  /* UPDATED: Scaled text for small mobile */
   .join-the-text {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
-  
+
   .modal-subtext {
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 15px;
   }
-  
-  /* Shrink highlights slightly so they don't force weird single-word line breaks */
-  .hl-yellow, .hl-blue, .hl-pink {
-    font-size: 0.85rem; 
+
+  .hl-yellow,
+  .hl-blue,
+  .hl-pink {
+    font-size: 0.85rem;
     padding: 2px 6px;
   }
-  
+
   .modal-cta-btn-vibrant {
     font-size: 1.05rem;
     padding: 12px;
   }
 
-  /* Make the close button slightly smaller but keep touch target comfortable */
   .close-btn {
     top: 10px;
     right: 10px;
@@ -443,11 +474,12 @@ select {
     height: 28px;
     font-size: 1.3rem;
   }
-  
+
   .modal-footer-note {
     font-size: 0.75rem;
   }
 }
+
 /* =========================================
    HERO SECTION (Standard Size & Full Screen)
    ========================================= */
@@ -463,8 +495,9 @@ select {
   display: flex;
   align-items: center;
 
+  /* FIX: Pushes the hero down past your navbar. 
+     Adjust this number (e.g., to 120px) if your navbar is taller. */
   padding-top: 100px;
-  /* Accounts for fixed navbar */
   padding-bottom: 60px;
 
   /* CRITICAL: Prevents the animated blob from creating horizontal scrollbars */
@@ -473,8 +506,7 @@ select {
 
 .hero-grid {
   display: grid;
-  /* Updated: Gives the image column (right) significantly more space than the text (left) */
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr 1.65fr;
   align-items: center;
   gap: 60px;
 }
@@ -498,7 +530,7 @@ select {
   font-size: 0.8rem;
   margin-bottom: 20px;
   border: 1px solid rgba(93, 117, 48, 0.15);
-  
+
   /* Start Entrance Animation */
   opacity: 0;
   animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards;
@@ -511,7 +543,7 @@ select {
 }
 
 .kickstarter-logo {
-  height: 16px; 
+  height: 16px;
   width: auto;
   display: block;
 }
@@ -524,7 +556,7 @@ select {
   color: var(--secondary);
   font-weight: 800;
   letter-spacing: -1px;
-  
+
   /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.4s forwards;
@@ -537,7 +569,7 @@ select {
   margin-bottom: 35px;
   line-height: 1.6;
   font-weight: 500;
-  
+
   /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.6s forwards;
@@ -546,9 +578,10 @@ select {
 /* CTA Area */
 .hero-cta-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   gap: 20px;
-  
+
   /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.8s forwards;
@@ -559,7 +592,6 @@ select {
   padding: 14px 32px;
   font-size: 1rem;
   box-shadow: 0 8px 20px rgba(217, 56, 70, 0.25);
-  /* Fix: Prevents button from shrinking on small screens */
   flex-shrink: 0;
 }
 
@@ -567,7 +599,7 @@ select {
 .hero-guarantee {
   display: flex;
   align-items: center;
-  gap: 12px; 
+  gap: 12px;
   font-size: 0.9rem;
   color: #636e72;
   font-weight: 500;
@@ -575,7 +607,7 @@ select {
 
 .avatars {
   display: flex;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .avatar {
@@ -583,11 +615,11 @@ select {
   height: 32px;
   border-radius: 50%;
   border: 2px solid white;
-  margin-left: -12px; 
+  margin-left: -12px;
   background-color: #ddd;
   background-size: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative; 
+  position: relative;
 }
 
 .avatar:first-child {
@@ -602,14 +634,14 @@ select {
   align-items: center;
   height: auto;
   width: 100%;
-  
+
   /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInRight 1s ease-out 0.5s forwards;
 }
 
 .hero-img {
-  max-width: 100%; 
+  max-width: 100%;
   width: 100%;
   height: auto;
   border-radius: 24px;
@@ -638,20 +670,18 @@ select {
 /* Tablet & Smaller Laptops (1024px and down) */
 @media (max-width: 1024px) {
   .hero-grid {
-    /* Balance columns more evenly on tablets before stacking */
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
-  
+
   .hero-text h1 {
     font-size: 2.4rem;
   }
-  
-  /* Keep social proof and button on one line, just slightly tighter */
+
   .hero-cta-wrapper {
     gap: 15px;
   }
-  
+
   .hero-btn {
     padding: 14px 24px;
   }
@@ -661,8 +691,8 @@ select {
 @media (max-width: 768px) {
   .hero-section {
     min-height: auto;
-    /* Disables 100vh to fix mobile browser scroll jumps */
-    padding-top: 130px; /* Extra room for mobile navbar */
+    /* FIX: Make sure this clears your mobile navbar height */
+    padding-top: 130px; 
     padding-bottom: 70px;
     display: block;
   }
@@ -670,7 +700,6 @@ select {
   .hero-grid {
     display: flex;
     flex-direction: column;
-    /* Stack vertically */
     gap: 50px;
   }
 
@@ -693,12 +722,12 @@ select {
     margin-bottom: 30px;
   }
 
-  /* Center the CTA area nicely */
-  .hero-cta-wrapper {
+ .hero-cta-wrapper {
     flex-direction: column;
     gap: 20px;
     width: 100%;
     justify-content: center;
+    align-items: center; /* This forces the button and avatars to center horizontally */
   }
 
   .hero-btn {
@@ -708,30 +737,29 @@ select {
     font-size: 1.1rem;
   }
 
-  /* Ensure avatars look balanced when centered under the button */
   .hero-guarantee {
     justify-content: center;
-    font-size: 0.95rem; /* Make text slightly more readable when stacked */
+    font-size: 0.95rem;
   }
 
   .hero-image-wrapper {
     margin-top: 10px;
-    padding: 0 10px; /* Slight padding so image doesn't touch screen edges on tablets */
+    padding: 0 10px;
   }
 
   .hero-img {
-    max-width: 100%; 
+    max-width: 100%;
   }
 }
 
 /* Small Mobile Phones (480px and down) */
 @media (max-width: 480px) {
   .hero-section {
+    /* FIX: Make sure this clears your small mobile navbar height */
     padding-top: 110px;
     padding-bottom: 50px;
   }
 
-  /* Shrink the badge so it fits neatly on one line */
   .kickstarter-badge {
     padding: 6px 12px;
     font-size: 0.7rem;
@@ -746,7 +774,7 @@ select {
   .hero-text h1 {
     font-size: 1.85rem;
     line-height: 1.25;
-    letter-spacing: -0.5px; /* Loosen letter spacing slightly on small screens */
+    letter-spacing: -0.5px;
   }
 
   .hero-text p {
@@ -756,25 +784,27 @@ select {
   }
 
   .hero-btn {
-    max-width: 100%; /* Allow full width of container on tiny screens */
-  }
-  
-  .hero-guarantee {
-    flex-direction: column; /* Stack avatars ON TOP of text on tiny phones */
-    gap: 8px;
-    text-align: center;
-    font-size: 0.85rem;
+    max-width: 100%;
   }
 
-  /* Reduce blob size to improve performance on low-end phones */
+.hero-guarantee {
+    flex-direction: row; /* Forces avatars and text to stay on one line */
+    justify-content: center; /* Centers everything horizontally */
+    align-items: center; /* Keeps avatars and text vertically aligned */
+    width: 100%; /* Ensures it takes up the full container width to center properly */
+    gap: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap; /* Prevents the text from wrapping to a second line */
+  }
+
   .hero-blob {
     width: 100%;
     height: 100%;
-    filter: blur(35px); /* Less blur = better mobile rendering performance */
+    filter: blur(35px);
   }
-  
+
   .hero-image-wrapper {
-    padding: 0; /* Let image go edge-to-edge on very small phones if needed */
+    padding: 0;
   }
 }
 
@@ -787,18 +817,21 @@ select {
   left: 0;
   width: 100%;
   padding: 25px 0;
+  /* Original larger padding */
   z-index: 1000;
   transition: all 0.3s ease-in-out;
-  background: transparent;
-  color: var(--secondary);
-}
-
-.navbar.scrolled {
+  /* UPDATED: Background is now permanently white/frosted */
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
+  color: var(--dark);
+  /* UPDATED: Always dark text for white background */
+}
+
+/* UPDATED: Now only handles size reduction and adding a shadow */
+.navbar.scrolled {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   padding: 17px 0;
-  color: var(--dark);
+  /* Shrinks the navbar height */
 }
 
 .navbar-container {
@@ -815,13 +848,14 @@ select {
 
 /* LOGO SIZING */
 .nav-logo-img {
-  height: 35px;
+  height: 30px;
   width: auto;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled .nav-logo-img {
   height: 30px;
+  /* Shrinks the logo on scroll */
 }
 
 /* =========================================
@@ -830,7 +864,7 @@ select {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px; 
+  gap: 20px;
 }
 
 .nav-item-group {
@@ -844,7 +878,7 @@ select {
   text-decoration: none;
   color: inherit;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: color 0.2s;
   position: relative;
 }
@@ -874,7 +908,8 @@ select {
   width: 220px;
   text-align: center;
   font-size: 0.75rem;
-  color: var(--secondary);
+  color: var(--dark);
+  /* Updated for readability */
   opacity: 0;
   visibility: hidden;
   background: white;
@@ -900,17 +935,18 @@ select {
 .header-cta {
   display: flex;
   align-items: center;
-  gap: 20px; 
+  gap: 15px;
 }
 
 .desktop-nav-icons {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .nav-icon-link {
-  color: var(--secondary);
+  color: var(--dark);
+  /* UPDATED: Always dark */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -924,22 +960,15 @@ select {
   opacity: 1;
 }
 
-.navbar.scrolled .nav-icon-link {
-  color: var(--dark);
-}
-
-.navbar.scrolled .nav-icon-link:hover {
-  color: var(--primary);
-}
 /* Perfect Desktop Sizing for the Join Button */
 .header-cta .small-btn {
-  padding: 10px 28px;       /* Balanced padding: sleek but clickable */
-  font-size: 1rem;          /* Matches your nav links */
-  font-weight: 700;         /* Makes the CTA text pop */
-  white-space: nowrap;      /* Prevents the button text from stacking on smaller laptops */
-  border-radius: 50px;      /* Gives it a nice pill shape (change to 8px if you prefer square) */
-  height: fit-content;      /* Keeps the button aligned with your icons */
-  letter-spacing: 0.5px;    /* Slight tracking for premium feel */
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border-radius: 50px;
+  height: fit-content;
+  letter-spacing: 0.5px;
 }
 
 /* =========================================
@@ -970,9 +999,8 @@ select {
   cursor: pointer;
   z-index: 1001;
   user-select: none;
-  /* Ensure a comfortable touch target area */
   padding: 5px;
-  margin-right: -5px; 
+  margin-right: -5px;
 }
 
 .bar {
@@ -981,12 +1009,9 @@ select {
   height: 3px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
-  background-color: var(--secondary);
-  border-radius: 2px;
-}
-
-.navbar.scrolled .bar {
   background-color: var(--dark);
+  /* UPDATED: Always dark */
+  border-radius: 2px;
 }
 
 .hamburger.active .bar:nth-child(2) {
@@ -1008,17 +1033,20 @@ select {
 
 /* Tablet / Small Laptop Adjustments */
 @media (max-width: 1024px) {
-  /* Shrink gap slightly to keep everything on one line */
   .nav-links {
-    gap: 15px;
+    gap: 12px;
   }
-  
+
   .nav-links a {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .header-cta {
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .header-cta .small-btn {
+    padding: 8px 18px;
   }
 }
 
@@ -1028,7 +1056,6 @@ select {
     padding: 15px 0;
   }
 
-  /* Ensures navbar elements align perfectly on mobile */
   .navbar-container {
     padding: 0 20px;
   }
@@ -1041,9 +1068,19 @@ select {
     display: none;
   }
 
+  .navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 13px 0;
+  /* Shrinks the navbar height */
+}
   .nav-logo-img {
-    height: 30px; /* Slightly smaller logo for mobile headers */
+    height: 30px;
   }
+
+  .navbar.scrolled .nav-logo-img {
+  height: 30px;
+  /* Shrinks the logo on scroll */
+}
 
   /* Full Screen Mobile Dropdown */
   .nav-links {
@@ -1051,36 +1088,33 @@ select {
     top: 100%;
     left: 0;
     width: 100%;
-    height: 100vh; /* Take up full screen to prevent background scrolling bleed */
-    background: rgba(255, 255, 255, 0.98); /* Slight transparency looks premium */
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(15px);
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Align to top */
-    padding: 40px 20px;
-    gap: 35px; /* Comfortable spacing for fat fingers */
-    
+    justify-content: flex-start;
+    padding: 30px 20px;
+    gap: 25px;
     transform: translateY(-120%);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: -1;
     border-bottom: 4px solid var(--primary);
-    overflow-y: auto; /* Allow scrolling if screen is short */
+    overflow-y: auto;
   }
 
   .nav-links.active {
     transform: translateY(0);
   }
 
-  /* Mobile Link Styles */
   .nav-links a {
-    font-size: 1.4rem; /* Larger font for easier reading and tapping */
+    font-size: 1.3rem;
     font-weight: 700;
-    color: var(--dark); /* Force dark text for contrast on white bg */
+    color: var(--dark);
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 20px;
   }
 
-  /* The underline hover effect looks messy on mobile, disable it */
   .nav-links a::after {
     display: none;
   }
@@ -1095,32 +1129,43 @@ select {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .mobile-only-btn .btn {
     width: 90%;
-    max-width: 300px; /* Prevent button from getting comically wide on tablets */
-    padding: 16px;
-    font-size: 1.15rem;
+    max-width: 300px;
+    padding: 14px;
+    font-size: 1.1rem;
   }
 }
 
 /* Small Smartphone Adjustments */
 @media (max-width: 480px) {
   .nav-links {
-    gap: 25px; /* Tighten gap slightly on very small phones */
-    padding: 30px 20px;
+    gap: 20px;
+    padding: 25px 20px;
   }
 
   .nav-links a {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .nav-logo-img {
-    height: 26px; /* Ensure logo doesn't dominate tight top bar */
+    height: 27px;
   }
+
+    .navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 13px 0;
+  /* Shrinks the navbar height */
 }
+  .navbar.scrolled .nav-logo-img {
+  height: 25px;
+  /* Shrinks the logo on scroll */
+}
+}
+
 /* =========================================
    FEATURES SECTION (Compact 4-Column Layout)
    ========================================= */
@@ -1278,7 +1323,7 @@ select {
   padding: 16px 45px;
   font-size: 1.15rem;
   font-weight: 700;
-  border-radius: 50px; 
+  border-radius: 50px;
 }
 
 
@@ -1308,33 +1353,43 @@ select {
 
   .section-title {
     font-size: 1.9rem;
-    flex-direction: column;
-    /* Stack logo under text on mobile */
-    gap: 12px;
+    display: block; /* Changed: This allows the image to flow inline like text */
+    line-height: 1.4;
+    text-align: center;
   }
 
   .inline-title-logo {
     height: 40px;
-    margin-top: 0;
+    margin-top: -6px; /* Adjusted to physically align with the text line */
+    vertical-align: middle; /* Forces the image to sit on the same baseline as the text */
+    margin-left: 8px; /* Replaces the flexbox gap */
   }
 
   .features-subtext {
     font-size: 1rem;
     padding: 0 10px;
     line-height: 1.5;
+    margin-top: 15px; /* Added slight margin since flex gap is gone */
+  }
+
+  /* NEW: Forces the spans to break onto new lines on mobile */
+  .features-subtext span {
+    display: block;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
     /* Stack 1x1 on phones */
     gap: 40px;
-    max-width: 450px; /* Constrain width so images don't get comically large */
+    max-width: 450px;
+    /* Constrain width so images don't get comically large */
   }
 
   .feature-card {
     width: 100%;
     margin: 0 auto;
-    border-radius: 24px; /* Slightly softer corners look better stacked */
+    border-radius: 24px;
+    /* Slightly softer corners look better stacked */
   }
 
   .feature-content {
@@ -1342,12 +1397,14 @@ select {
   }
 
   .feature-card h3 {
-    font-size: 1.35rem; /* Slightly larger title for readability on phones */
+    font-size: 1.35rem;
+    /* Slightly larger title for readability on phones */
     margin-bottom: 12px;
   }
 
   .feature-card p {
-    font-size: 1.05rem; /* Larger body text for touch devices */
+    font-size: 1.05rem;
+    /* Larger body text for touch devices */
   }
 
   .features-cta .btn {
@@ -1360,21 +1417,24 @@ select {
 /* Small Smartphone Adjustments (480px and down) */
 @media (max-width: 480px) {
   .features-section {
-    padding: 60px 15px; 
+    padding: 60px 15px;
   }
 
   .section-header-wrapper {
-    margin-bottom: 40px; /* Tighter spacing on small screens */
+    margin-bottom: 40px;
+    /* Tighter spacing on small screens */
   }
 
   .section-title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .inline-title-logo {
-    height: 35px;
+    height: 34px;
+    margin-top: -4px; /* Tweak to keep alignment perfect on very small screens */
+    margin-left: 6px;
   }
-  
+
   .features-subtext {
     font-size: 0.9rem;
   }
@@ -1383,7 +1443,6 @@ select {
     gap: 30px;
   }
 }
-
 /* =========================================
    MEET THE PETS (Mobile Responsive Fixed)
    ========================================= */
@@ -1458,7 +1517,7 @@ select {
 .inline-header-logo {
   height: 46px;
   width: auto;
-   margin-left: 6px; 
+  margin-left: 6px;
   /* margin-top: -6px; */
   /* display: inline-block; */
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
@@ -1470,12 +1529,12 @@ select {
   color: #555;
   margin-bottom: 30px;
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .section-subtext strong {
   color: var(--secondary);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* CTA Wrapper */
@@ -1505,7 +1564,7 @@ select {
 .carousel-container {
   position: relative;
   width: 100%;
-  height: 380px; 
+  height: 380px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1515,7 +1574,7 @@ select {
 
 .carousel-slide {
   position: absolute;
-  width: 55%; 
+  width: 55%;
   height: 100%;
   border-radius: 24px;
   overflow: hidden;
@@ -1542,13 +1601,13 @@ select {
 }
 
 .slide-prev {
-  transform: translateX(-55%) scale(0.85); 
+  transform: translateX(-55%) scale(0.85);
   z-index: 5;
   opacity: 0.6;
 }
 
 .slide-next {
-  transform: translateX(55%) scale(0.85); 
+  transform: translateX(55%) scale(0.85);
   z-index: 5;
   opacity: 0.6;
 }
@@ -1596,7 +1655,7 @@ select {
   justify-content: center;
   font-size: 1.2rem;
   padding-left: 4px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   z-index: 3;
 }
 
@@ -1610,13 +1669,13 @@ select {
 
 .control-btn {
   background: white;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   color: var(--dark);
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: all 0.2s;
   font-size: 1.2rem;
   display: flex;
@@ -1661,7 +1720,7 @@ select {
   .meet-pets-container {
     gap: 40px;
   }
-  
+
   .meet-pets-text h2 {
     font-size: 2.4rem;
   }
@@ -1700,10 +1759,15 @@ select {
 
   .section-subtext {
     font-size: 1.15rem;
+    font-weight: 500;
+  }
+  .section-subtext strong{
+    font-weight: 800;
   }
 
   .pets-cta-wrapper {
-    align-items: center; /* Center the button and note */
+    align-items: center;
+    /* Center the button and note */
     width: 100%;
   }
 
@@ -1720,11 +1784,12 @@ select {
   }
 
   .carousel-container {
-    height: 340px; 
+    height: 340px;
   }
-  
+
   .carousel-slide {
-    width: 60%; /* Slightly wider on mobile so the main image is prominent */
+    width: 60%;
+    /* Slightly wider on mobile so the main image is prominent */
   }
 }
 
@@ -1743,18 +1808,24 @@ select {
     height: 35px;
     margin-left: 0;
   }
-  
+
   .section-subtext {
     font-size: 1.05rem;
+    font-weight: 500;
+  }
+  .section-subtext strong{
+    font-weight: 800;
   }
 
   .carousel-container {
-    height: 280px; 
+    height: 280px;
   }
 
   .carousel-slide {
-    width: 65%; /* Wider on tiny phones */
-    border-width: 3px; /* Slightly thinner border so image area stays large */
+    width: 65%;
+    /* Wider on tiny phones */
+    border-width: 3px;
+    /* Slightly thinner border so image area stays large */
   }
 
   /* CRITICAL FIX: Pull the side images tighter inward so they don't break horizontal scroll */
@@ -1765,7 +1836,7 @@ select {
   .slide-next {
     transform: translateX(45%) scale(0.85);
   }
-  
+
   /* Make touch targets for carousel buttons slightly larger */
   .control-btn {
     width: 44px;
@@ -1778,13 +1849,12 @@ select {
 
 .video-section {
   position: relative;
-  /* Client Request: Nice Blue Background with Spotlight Gradient */
-  background: radial-gradient(circle at center, #154a7e 0%, var(--secondary) 80%);
+  /* UPDATED: Client Request: White Background */
+  background-color: var(--white);
   padding: 100px 20px;
   text-align: center;
-  color: white;
+  color: var(--dark); /* Changed default text to dark */
   overflow: hidden;
-  /* Essential for containing the glow effect */
 }
 
 /* Texture Overlay */
@@ -1809,7 +1879,8 @@ select {
   width: 600px;
   height: 600px;
   max-width: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  /* Changed glow to a soft blue to work on a white background */
+  background: radial-gradient(circle, rgba(14, 54, 94, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
   z-index: 1;
 }
@@ -1817,8 +1888,7 @@ select {
 .video-container {
   position: relative;
   z-index: 2;
-  /* RESTORED: Back to the original wide 900px desktop size */
-  max-width: 900px; 
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -1830,50 +1900,56 @@ select {
   align-items: center;
 }
 
-.video-header-content h2 {
+/* NEW: Layout for the multi-colored title */
+.multi-color-title {
   font-size: 3rem;
-  color: white;
+  color: var(--dark); /* "From" and "to" will inherit this */
   font-weight: 800;
   letter-spacing: -1px;
-  line-height: 1.1;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  margin-bottom: 15px; 
+  line-height: 1.2;
+  margin-top: 15px;
 }
 
-.section-tag-white {
+/* Adds a playful italic tilt to the colored words, matching the logo style */
+.colorful-word {
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* NEW: Light theme section tag */
+.section-tag-light {
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(255, 255, 255, 0.15);
+  color: var(--primary);
+  background: white;
   padding: 8px 16px;
   border-radius: 50px;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* --- VIDEO PLAYER WRAPPER --- */
 .video-wrapper {
   position: relative;
   width: 100%;
-  /* RESTORED: Back to the original 16:9 widescreen format for desktop */
-  aspect-ratio: 16 / 9; 
+  aspect-ratio: 16 / 9;
   background-color: #000;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.2); /* Softened shadow for white bg */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Softened border */
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .video-wrapper:hover {
   transform: translateY(-5px);
-  box-shadow: 0 40px 80px -10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 40px 80px -10px rgba(0, 0, 0, 0.25);
 }
 
 .video-thumbnail {
@@ -1885,7 +1961,7 @@ select {
 .video-thumb-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; 
+  object-fit: contain;
 }
 
 .video-overlay {
@@ -1909,8 +1985,7 @@ select {
   background-color: #000;
   outline: none;
   border: none;
-  /* 'contain' ensures the whole portrait video fits inside without cropping */
-  object-fit: contain; 
+  object-fit: contain;
   display: block;
 }
 
@@ -1931,7 +2006,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 5px; /* Optically centers the triangle */
+  padding-left: 5px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 0 0 0 rgba(217, 56, 70, 0.7);
   animation: pulse-red 2.5s infinite;
@@ -1953,23 +2028,10 @@ select {
   margin-top: 50px;
 }
 
-.btn-white {
-  background: white;
-  color: var(--primary);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  font-weight: 700;
-  border-radius: 50px;
-}
-
-.btn-white:hover {
-  background: #f8f9fa;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-}
-
-.spam-note-light {
+/* UPDATED: Note text color to work on white background */
+.spam-note-dark {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #636e72;
   margin-top: 15px;
   font-style: italic;
 }
@@ -1990,17 +2052,16 @@ select {
     padding: 80px 20px;
   }
 
-  .video-header-content h2 {
+  .multi-color-title {
     font-size: 2.4rem;
   }
 
   .video-container {
-    max-width: 500px; /* Slim down for tablets */
+    max-width: 500px;
   }
 
   .video-wrapper {
-    /* Taller ratio for tablets */
-    aspect-ratio: 3 / 4; 
+    aspect-ratio: 3 / 4;
     border-radius: 20px;
   }
 
@@ -2023,11 +2084,11 @@ select {
     margin-bottom: 30px;
   }
 
-  .video-header-content h2 {
+  .multi-color-title {
     font-size: 1.9rem;
   }
 
-  .section-tag-white {
+  .section-tag-light {
     font-size: 0.8rem;
     padding: 6px 14px;
   }
@@ -2037,8 +2098,7 @@ select {
   }
 
   .video-wrapper {
-    /* Switch to native Reel/TikTok ratio for phones */
-    aspect-ratio: 9 / 16; 
+    aspect-ratio: 9 / 16;
     border-radius: 16px;
   }
 
@@ -2049,7 +2109,7 @@ select {
 
   .play-icon {
     font-size: 1.8rem;
-    padding-left: 3px; 
+    padding-left: 3px;
   }
 
   .video-cta-container {
@@ -2066,7 +2126,7 @@ select {
     font-size: 1.1rem;
   }
 
-  .spam-note-light {
+  .spam-note-dark {
     font-size: 0.85rem;
     padding: 0 20px;
   }
@@ -2081,24 +2141,27 @@ select {
   text-align: center;
 }
 
-/* --- NEW: Attractive Header Styling --- */
+/* --- UPDATED: Attractive Header Styling --- */
 .testimonial-header {
   margin-bottom: 60px;
   position: relative;
   z-index: 2;
+  padding: 0 15px; /* Adds a tiny buffer so text never touches screen edges on mobile */
 }
 
 .testimonial-header h2 {
-  font-size: 3rem; /* Made larger for impact */
+  /* clamp(min-size, ideal-scaling, max-size) */
+  font-size: clamp(1.9rem, 4vw + 1rem, 3rem); 
   line-height: 1.2;
   font-weight: 800;
-  color: var(--secondary); /* Deep Navy */
+  color: var(--secondary);
   letter-spacing: -1px;
-  margin-bottom: 15px;
+  margin: 0 auto 15px auto;
+  text-wrap: balance; /* Keeps wrapped lines perfectly symmetrical and professional */
 }
 
 .highlight-text {
-  color: var(--primary); /* Sniffle Red */
+  color: var(--primary);
   position: relative;
   display: inline-block;
   z-index: 1;
@@ -2109,27 +2172,27 @@ select {
   content: '';
   position: absolute;
   width: 105%;
-  height: 12px;
-  bottom: 6px;
+  height: clamp(8px, 1.5vw, 12px); /* Scales the swoosh thickness slightly */
+  bottom: clamp(4px, 1vw, 6px);
   left: -2.5%;
-  background-color: var(--accent); /* Yellow */
+  background-color: var(--accent);
   z-index: -1;
   border-radius: 10px;
   opacity: 0.6;
 }
 
 .waitlist-subtext {
-  font-size: 1.25rem;
+  font-size: clamp(1.05rem, 2vw + 0.5rem, 1.25rem);
   color: #636e72;
-  margin-bottom: 0; /* Margin moved to wrapper */
+  margin-bottom: 0;
   font-weight: 500;
+  text-wrap: balance;
 }
 
 .waitlist-subtext strong {
   color: var(--secondary);
   font-weight: 800;
 }
-
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -2179,7 +2242,6 @@ select {
   z-index: 1;
 }
 
-/* Updated to allow better vertical alignment with the uncropped photos */
 .review-footer {
   display: flex;
   align-items: center;
@@ -2187,13 +2249,29 @@ select {
   margin-top: 10px;
 }
 
-/* Removes circle cropping so the full photo is shown naturally */
+/* UPDATED: Wrapper for the zoom effect to prevent the image from spilling out */
+.review-avatar-wrapper {
+  /* Significantly increased size per client request */
+  width: 130px; 
+  height: 130px;
+  border-radius: 16px;
+  border: 4px solid white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Contains the zoom */
+  flex-shrink: 0;
+}
+
+/* UPDATED: Allows the image to fill the new large wrapper and zoom on hover */
 .review-avatar {
-  width: 100px; 
-  height: auto; 
-  border-radius: 12px; 
-  border: 3px solid white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Trigger the zoom effect on the image when the whole card is hovered */
+.review-card:hover .review-avatar {
+  transform: scale(1.15);
 }
 
 .review-author {
@@ -2216,20 +2294,17 @@ select {
    MOBILE & TABLET RESPONSIVENESS
    ========================================= */
 
-/* Tablet & Smaller Laptops (1024px and down) */
 @media (max-width: 1024px) {
-  .testimonial-header h2 {
+  /* .testimonial-header h2 {
     font-size: 2.6rem;
-  }
+  } */
 
   .reviews-grid {
-    /* Prevents the 3 cards from squeezing too tight, forces them to wrap beautifully */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
   }
 }
 
-/* Mobile Devices & iPads in Portrait (768px and down) */
 @media (max-width: 768px) {
   .testimonials-section {
     padding: 80px 20px;
@@ -2243,26 +2318,26 @@ select {
     margin-bottom: 45px;
   }
 
-  .testimonial-header h2 {
+  /* .testimonial-header h2 {
     font-size: 2.2rem;
-    line-height: 1.3; /* Slight increase so wrapped lines don't crash into the swoosh */
+    line-height: 1.3;
     max-width: 500px;
     margin: 0 auto 15px auto;
-  }
-  
-  .highlight-text::after {
-    height: 8px; /* Slightly thinner underline on mobile */
+  } */
+
+  /* .highlight-text::after {
+    height: 8px;
     bottom: 4px;
   }
 
   .waitlist-subtext {
     font-size: 1.1rem;
-  }
+  } */
 
   .reviews-grid {
-    grid-template-columns: 1fr; /* Force single column stack */
+    grid-template-columns: 1fr;
     gap: 30px;
-    max-width: 500px; /* Constrain width so the cards aren't comically wide on tablets */
+    max-width: 500px;
   }
 
   .review-card {
@@ -2270,20 +2345,21 @@ select {
   }
 
   .quote-icon {
-    font-size: 3.5rem; /* Slightly smaller quote mark */
+    font-size: 3.5rem;
     top: 15px;
     right: 15px;
   }
 
   .review-text {
-    font-size: 1.05rem; /* Optimal reading size for mobile */
+    font-size: 1.05rem;
     line-height: 1.5;
   }
 
-  /* Shrink the uncropped photo slightly so it doesn't dominate the card */
-  .review-avatar {
-    width: 80px; 
-    border-width: 2px;
+  /* UPDATED: Keep it prominent but not overpowering on mobile */
+  .review-avatar-wrapper {
+    width: 110px;
+    height: 110px;
+    border-width: 3px;
   }
 
   .review-author strong {
@@ -2291,36 +2367,35 @@ select {
   }
 }
 
-/* Small Smartphones (480px and down) */
 @media (max-width: 480px) {
   .testimonials-section {
     padding: 60px 15px;
   }
 
-  .testimonial-header h2 {
+  /* .testimonial-header h2 {
     font-size: 1.9rem;
   }
 
-  /* On tiny screens, pull the swoosh in slightly so it doesn't touch the screen edge */
   .highlight-text::after {
     width: 100%;
     left: 0;
-  }
+  } */
 
   .review-card {
     padding: 30px 20px;
-    border-radius: 16px; /* Softer radius on small screens */
+    border-radius: 16px;
   }
 
   .review-text {
     font-size: 1rem;
   }
 
-  .review-avatar {
-    width: 70px; /* Scale down photo further for small screens */
+  /* UPDATED: Scaled down slightly for tiny screens but still much larger than before */
+  .review-avatar-wrapper {
+    width: 90px;
+    height: 90px;
   }
-  
-  /* Make CTA Button fat-thumb friendly */
+
   .testimonials-section .btn {
     width: 100%;
     max-width: 300px;
@@ -2338,69 +2413,58 @@ select {
   padding: 100px 20px;
   background-color: #fdfbf7;
   position: relative;
-  /* OVERFLOW: HIDDEN REMOVED FROM HERE TO RESTORE DESKTOP STICKY */
 }
 
 .founder-container {
   display: grid;
-  /* PERFECT 50/50 SPLIT: Image Left (50%), Text Right (50%) */
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   max-width: 1250px;
   margin: 0 auto;
-
-  /* CRITICAL: Aligns content to top so the sticky image tracks down the text */
   align-items: start;
 }
 
 /* === RIGHT COLUMN: STICKY IMAGE === */
 .founder-image-column {
-  /* Allows the sticky container to travel all the way down the tall text column */
-  height: 100%; 
+  height: 100%;
 }
 
-/* THE FIX: This container holds BOTH the image and the border, keeping them glued together */
 .sticky-image-container {
   position: -webkit-sticky;
   position: sticky;
-  top: 120px; /* Offset from top of screen */
+  top: 120px;
   z-index: 5;
 }
 
+/* UPDATED: Clean, professional "matted frame" border */
 .founder-image-wrapper {
   width: 100%;
-  height: auto; 
+  height: auto;
   border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(14, 54, 94, 0.15);
+  box-shadow: 0 25px 50px rgba(14, 54, 94, 0.12);
   position: relative;
-  background-color: white; 
+  background-color: white;
   z-index: 2;
+  border: 1px solid rgba(0, 0, 0, 0.08); /* Crisp outer outline */
+  padding: 14px; /* Acts as a clean white matting inside the frame */
 }
 
+/* UPDATED: Given a slight radius so it fits perfectly inside the new frame padding */
 .founder-real-img {
   width: 100%;
-  height: auto; 
-  display: block; 
+  height: auto;
+  display: block;
+  border-radius: 12px; 
 }
 
-/* Decorative Border Behind Image */
+/* UPDATED: Hidden. This was causing the "doesn't sit in the frame" issue */
 .image-offset-border {
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  width: 100%;
-  height: 100%;
-  border: 3px solid var(--accent);
-  border-radius: 24px;
-  z-index: 1; /* Sits behind the wrapper */
-  opacity: 0.5;
+  display: none;
 }
 
 /* === LEFT COLUMN: TEXT === */
 .founder-text {
   padding-top: 10px;
-  /* Padding bottom ensures the image stops tracking gracefully at the end */
   padding-bottom: 50px;
 }
 
@@ -2471,29 +2535,25 @@ select {
    MOBILE RESPONSIVENESS (Founder Section)
    ========================================= */
 
-/* Tablet & Smaller Laptops (1024px and down) */
 @media (max-width: 1024px) {
   .founder-container {
-    gap: 40px; 
+    gap: 40px;
   }
-  
   .founder-headline {
     font-size: 2.6rem;
   }
 }
 
-/* Mobile Devices & iPads in Portrait (968px and down) */
 @media (max-width: 968px) {
   .founder-section {
     padding: 80px 20px;
-    /* OVERFLOW HIDDEN MOVED HERE: Safely contains the mobile border without breaking desktop sticky */
-    overflow: hidden; 
+    overflow: hidden;
   }
 
   .founder-container {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center; 
+    align-items: center;
     gap: 50px;
   }
 
@@ -2503,21 +2563,21 @@ select {
     justify-content: center;
   }
 
+  /* UPDATED: Cleaned up messy math since the offset border is gone */
   .sticky-image-container {
     position: relative;
     top: 0;
-    width: calc(100% - 25px); 
-    max-width: 600px; 
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
-    transform: translateX(-12.5px);
   }
 
   .founder-text {
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    width: 100%; 
+    align-items: center;
+    width: 100%;
   }
 
   .founder-headline {
@@ -2531,8 +2591,8 @@ select {
   }
 
   .founder-content p {
-    text-align: left; 
-    max-width: 100%; 
+    text-align: left;
+    max-width: 100%;
   }
 
   .emphasis-text {
@@ -2544,7 +2604,7 @@ select {
     margin: 30px 0;
     max-width: 100%;
   }
-  
+
   .signature-block {
     width: 100%;
     max-width: 100%;
@@ -2552,7 +2612,6 @@ select {
   }
 }
 
-/* Small Smartphones (480px and down) */
 @media (max-width: 480px) {
   .founder-section {
     padding: 60px 15px;
@@ -2561,27 +2620,22 @@ select {
   .founder-headline {
     font-size: 2rem;
   }
-  
+
   .founder-content p {
     font-size: 1rem;
     line-height: 1.6;
   }
 
+  /* UPDATED: Cleaned up messy math */
   .sticky-image-container {
-    width: calc(100% - 15px);
-    transform: translateX(-7.5px);
-  }
-
-  .image-offset-border {
-    top: 15px;
-    left: 15px;
+    width: 100%;
   }
 
   .signature-block {
     padding: 20px;
     border-left: 4px solid var(--primary);
   }
-  
+
   .founder-quote {
     font-size: 1.15rem;
   }
@@ -2607,7 +2661,7 @@ select {
   transform: translateX(-50%);
   width: 80%;
   height: 60%;
-  background: radial-gradient(circle, rgba(217, 56, 70, 0.15) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(217, 56, 70, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
 }
 
@@ -2629,7 +2683,8 @@ select {
 
 /* The energetic connecting line for the "Roadmap" feel */
 .connecting-line {
-  display: none; /* Hidden on mobile */
+  display: none;
+  /* Hidden on mobile */
 }
 
 @media (min-width: 900px) {
@@ -2640,7 +2695,7 @@ select {
     left: 5%;
     right: 5%;
     height: 4px;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.2) 80%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
     transform: translateY(-50%);
   }
@@ -2657,7 +2712,7 @@ select {
 /* Upgraded Sleek Cards */
 .step-card {
   background: white;
-  padding: 50px 30px 35px 30px; 
+  padding: 50px 30px 35px 30px;
   border-radius: 24px;
   position: relative;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -2705,7 +2760,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px; 
+  height: 60px;
 }
 
 /* Target the Lucide icon specifically */
@@ -2717,14 +2772,25 @@ select {
 .step-card:hover .step-icon svg {
   animation: icon-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   /* Adds a matching color glow to the icon */
-  filter: drop-shadow(0px 6px 8px rgba(217, 56, 70, 0.35)); 
+  filter: drop-shadow(0px 6px 8px rgba(217, 56, 70, 0.35));
 }
 
 @keyframes icon-pop {
-  0% { transform: scale(1) translateY(0); }
-  40% { transform: scale(1.25) translateY(-5px); }
-  70% { transform: scale(1.1) translateY(-2px); }
-  100% { transform: scale(1.15) translateY(-4px); }
+  0% {
+    transform: scale(1) translateY(0);
+  }
+
+  40% {
+    transform: scale(1.25) translateY(-5px);
+  }
+
+  70% {
+    transform: scale(1.1) translateY(-2px);
+  }
+
+  100% {
+    transform: scale(1.15) translateY(-4px);
+  }
 }
 
 .step-card h3 {
@@ -2759,7 +2825,7 @@ select {
   padding: 16px 45px;
   font-size: 1.15rem;
   font-weight: 700;
-  border-radius: 50px; 
+  border-radius: 50px;
   border: none;
   cursor: pointer;
   background: var(--primary, #d93846);
@@ -2773,9 +2839,17 @@ select {
 
 /* Professional but lively pulse animation */
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(217, 56, 70, 0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(217, 56, 70, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(217, 56, 70, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(217, 56, 70, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(217, 56, 70, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(217, 56, 70, 0);
+  }
 }
 
 .energetic-pulse {
@@ -2799,9 +2873,9 @@ select {
   .roadmap-section .section-title {
     font-size: 2.6rem;
   }
-  
+
   .steps-grid {
-    gap: 30px; 
+    gap: 30px;
   }
 }
 
@@ -2819,8 +2893,9 @@ select {
   .steps-grid {
     /* CRITICAL: Extra vertical gap provides room for the floating number badge 
        so it doesn't overlap the card above it when stacked */
-    gap: 65px; 
-    max-width: 500px; /* Constrain card width on tablets so they don't look awkwardly wide */
+    gap: 65px;
+    max-width: 500px;
+    /* Constrain card width on tablets so they don't look awkwardly wide */
     margin: 0 auto;
   }
 
@@ -2872,29 +2947,35 @@ select {
     font-size: 1.1rem;
   }
 }
+
 /* =========================================
    JOIN SQUAD SECTION (Mobile Responsive Fixed)
    ========================================= */
 
-.join-squad-section { 
+.join-squad-section {
   position: relative;
-  padding: 100px 20px; 
-  /* Deep Navy Brand Background */
-  background: linear-gradient(135deg, #0E365E 0%, #154a7e 100%); 
-  color: white; 
+  padding: 100px 20px;
+  /* UPDATED: Solid white background */
+  background-color: var(--white);
+  color: var(--dark);
   overflow: hidden;
 }
 
 /* Texture Overlay */
 .join-squad-section::before {
-  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
 }
 
 .join-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Split Layout */
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 60px;
   position: relative;
@@ -2908,7 +2989,7 @@ select {
   text-align: left;
 }
 
-/* Subheadline / Badge - UPDATED for Kickstarter Style */
+/* Subheadline / Badge */
 .join-badge {
   background-color: #f0fdf4;
   color: var(--green, #05ce78);
@@ -2922,7 +3003,8 @@ select {
   margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Softened for white bg */
+  border: 1px solid rgba(93, 117, 48, 0.15); /* Grounded for white bg */
 }
 
 .kickstarter-logo {
@@ -2931,32 +3013,39 @@ select {
   display: block;
 }
 
-.join-content h2 { 
-  font-size: 3rem; 
-  margin-bottom: 25px; 
-  color: white; 
+.join-content h2 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  color: var(--dark); /* UPDATED: Dark text */
   line-height: 1.1;
   font-weight: 800;
+}
+
+/* Multi-color styling class */
+.colorful-word {
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .join-body-copy {
   font-size: 1.15rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 30px; /* Adjusted to fit new social proof text */
+  color: #4a5568; /* UPDATED: Dark gray */
+  margin-bottom: 30px;
   max-width: 90%;
   font-weight: 400;
 }
 
-/* NEW: Social Proof Styling */
+/* Social Proof Styling */
 .squad-social-proof {
-  color: rgba(255, 255, 255, 0.9);
+  color: #636e72; /* UPDATED: Dark gray */
   font-size: 1.05rem;
   margin-bottom: 15px;
 }
 
 .squad-social-proof strong {
-  color: white;
+  color: var(--dark); /* UPDATED: Dark emphasis */
   font-weight: 800;
 }
 
@@ -2965,40 +3054,41 @@ select {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-width: 400px; 
+  max-width: 400px;
 }
 
+/* UPDATED: Input styled for a light background */
 .rally-input {
   width: 100%;
   padding: 16px 24px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  /* Glassmorphism Input */
-  background: rgba(255, 255, 255, 0.08); 
-  color: white;
-  font-size: 1rem; /* Prevents zoom on iOS */
+  border: 2px solid #e2e8f0; 
+  background: white;
+  color: var(--dark);
+  font-size: 1rem;
   outline: none;
   transition: all 0.3s ease;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
 }
 
 .rally-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: #a0aec0;
 }
 
 .rally-input:focus {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+  background: white;
+  border-color: #90cdf4;
+  box-shadow: 0 0 0 4px rgba(144, 205, 244, 0.2);
 }
 
 .rally-btn {
-  background-color: var(--primary); 
-  color: white; 
-  padding: 18px 30px; 
+  background-color: var(--primary);
+  color: white;
+  padding: 18px 30px;
   font-size: 1.1rem;
   margin-top: 10px;
-  width: 100%; 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Softened */
   cursor: pointer;
   border: none;
   border-radius: 50px;
@@ -3006,15 +3096,15 @@ select {
 }
 
 .rally-btn:hover {
-  background-color: #ff4757; 
+  background-color: #ff4757;
   transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Softened */
 }
 
-.spam-note { 
-  margin-top: 20px; 
-  font-size: 0.85rem; 
-  opacity: 0.6; 
+.spam-note {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #888; /* UPDATED: For light background */
   font-style: italic;
 }
 
@@ -3024,7 +3114,6 @@ select {
   height: 500px;
   width: 100%;
   border-radius: 24px;
-  /* Rotate slightly for a playful feel */
   transform: rotate(2deg);
   transition: transform 0.4s ease;
 }
@@ -3033,13 +3122,15 @@ select {
   transform: rotate(0deg) scale(1.02);
 }
 
-/* Glow behind the image */
+/* UPDATED: Glow for white background */
 .image-backdrop-glow {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 110%; height: 110%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, rgba(14, 54, 94, 0.05) 0%, transparent 70%);
   z-index: -1;
 }
 
@@ -3048,130 +3139,53 @@ select {
   height: 100%;
   object-fit: cover;
   border-radius: 24px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(14, 54, 94, 0.15); /* Updated shadow */
+  border: 4px solid white;
 }
 
 /* =========================================
    MOBILE & TABLET RESPONSIVENESS (Join Squad)
    ========================================= */
 
-/* Tablets & Small Laptops (1024px and down) */
 @media (max-width: 1024px) {
-  .join-container {
-    gap: 40px;
-  }
-  .join-content h2 {
-    font-size: 2.6rem;
-  }
+  .join-container { gap: 40px; }
+  .join-content h2 { font-size: 2.6rem; }
 }
 
-/* Large Mobile & iPads in Portrait (968px and down) */
 @media (max-width: 968px) {
-  .join-squad-section { 
-    padding: 80px 20px; 
-  }
+  .join-squad-section { padding: 80px 20px; }
+  .join-container { grid-template-columns: 1fr; gap: 60px; }
+  .join-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .join-badge { margin: 0 auto 25px auto; }
+  .join-content h2 { font-size: 2.5rem; max-width: 600px; }
+  .join-body-copy { margin: 0 auto 25px auto; max-width: 600px; }
+  .squad-social-proof { margin: 0 auto 20px auto; }
+  .rally-form { margin: 0 auto; width: 100%; max-width: 500px; }
   
-  .join-container { 
-    grid-template-columns: 1fr; /* Stack vertically */
-    gap: 60px;
-  }
-
-  .join-content { 
-    text-align: center; 
-    /* Use flexbox to easily center the badge and form blocks */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Reset inline-flex margin so badge centers perfectly */
-  .join-badge {
-    margin: 0 auto 25px auto;
-  }
-
-  .join-content h2 { 
-    font-size: 2.5rem; 
-    max-width: 600px;
-  }
-  
-  .join-body-copy { 
-    margin: 0 auto 25px auto; 
-    max-width: 600px;
-  }
-
-  .squad-social-proof {
-    margin: 0 auto 20px auto;
-  }
-  
-  /* Constrain form on tablets so it isn't ridiculously wide */
-  .rally-form { 
-    margin: 0 auto; 
-    width: 100%; 
-    max-width: 500px; 
-  }
-
-  /* --- FIX: UNIFIED HEIGHTS FOR TABLET & MOBILE --- */
-  .rally-input, 
+  .rally-input,
   .rally-btn {
     width: 100%;
-    font-size: 1rem;      /* 16px is required to prevent auto-zoom on iOS Safari */
-    padding: 16px 20px;   /* Exact same vertical padding */
-    line-height: 1.5;     /* Ensures text height is calculated the same */
-    box-sizing: border-box; 
-    height: auto;         
+    font-size: 1rem;
+    padding: 16px 20px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    height: auto;
   }
-
-  .rally-btn {
-    margin-top: 10px;
-  }
-
-  .join-image-wrapper {
-    height: 400px; /* Give it more height on tablets since it's full width */
-    max-width: 700px; /* Prevent it from being too massive */
-    margin: 0 auto;
-    transform: rotate(0deg); /* Disable rotation on stacked view so it fits cleanly */
-  }
+  .rally-btn { margin-top: 10px; }
+  .join-image-wrapper { height: 400px; max-width: 700px; margin: 0 auto; transform: rotate(0deg); }
 }
 
-/* Small Smartphones (480px and down) */
 @media (max-width: 480px) {
-  .join-squad-section { 
-    padding: 60px 15px; 
-  }
-
-  .join-content h2 { 
-    font-size: 2rem; 
-  }
-  
-  .join-badge {
-    padding: 6px 12px;
-    font-size: 0.75rem;
-    gap: 6px;
-    margin-bottom: 20px;
-  }
-
-  .kickstarter-logo {
-    height: 13px; /* Slightly smaller for tiny screens */
-  }
-
-  .join-body-copy {
-    font-size: 1.05rem;
-  }
-
-  .squad-social-proof {
-    font-size: 0.95rem;
-  }
-  
-  .join-image-wrapper {
-    height: 280px; /* Scale down height for phones */
-    border-radius: 20px;
-  }
-
-  .join-lifestyle-img {
-    border-radius: 20px;
-  }
+  .join-squad-section { padding: 60px 15px; }
+  .join-content h2 { font-size: 2rem; }
+  .join-badge { padding: 6px 12px; font-size: 0.75rem; gap: 6px; margin-bottom: 20px; }
+  .kickstarter-logo { height: 13px; }
+  .join-body-copy { font-size: 1.05rem; }
+  .squad-social-proof { font-size: 0.95rem; }
+  .join-image-wrapper { height: 280px; border-radius: 20px; }
+  .join-lifestyle-img { border-radius: 20px; }
 }
+
 /* =========================================
    SITE FOOTER SECTION
    ========================================= */
@@ -3190,24 +3204,165 @@ select {
   opacity: 0.6;
 }
 
-/* FOOTER MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-  .site-footer {
-    padding: 30px 15px;
-  }
+  .site-footer { padding: 30px 15px; }
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-links span { display: none; }
+}
 
-  .footer-links {
-    display: flex;
-    flex-direction: column; /* Stacks links vertically */
-    gap: 10px;
-  }
+/* =========================================
+   ADOPTION CERTIFICATE SECTION
+   ========================================= */
 
-  /* Hide the bullet points (•) on mobile since we are stacking */
-  .footer-links span {
-    display: none;
+.adoption-section {
+  padding: 100px 20px;
+  /* Very subtle gradient from white to a soft blue to match the watercolor vibe */
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f8fc 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.adoption-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- TEXT CONTENT --- */
+.adoption-text-content {
+  margin-bottom: 40px;
+  z-index: 2;
+  position: relative;
+  /* Added padding for extra safety on mobile */
+  padding: 0 10px; 
+}
+
+.adoption-title {
+  font-size: 4.5rem; /* Massive, playful font size */
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  /* Soft, playful text shadow mirroring the mockup */
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.05), 0px 4px 12px rgba(0,0,0,0.08);
+  /* Optional: If you have a rounded font loaded, it applies here */
+  font-family: 'Fredoka One', 'Varela Round', 'Comic Sans MS', sans-serif; 
+}
+
+/* Added word-wrapper to ensure letters stay together nicely on tiny screens */
+.word-wrapper {
+  display: inline-block;
+  white-space: nowrap; 
+}
+
+.adoption-title span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Fun hover interaction for the colorful letters */
+.adoption-title span:hover {
+  transform: translateY(-8px) scale(1.1) rotate(5deg);
+}
+
+.adoption-subtext {
+  font-size: 1.6rem;
+  color: #3b4252;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.adoption-subtext strong {
+  color: #1A3668; /* Deep Navy matched to the mockup */
+  font-weight: 800;
+}
+
+/* --- IMAGE WRAPPER --- */
+.adoption-image-wrapper {
+  width: 80%;
+  max-width: 1000px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  /* Added margin auto to ensure it stays centered if layout shifts */
+  margin: 0 auto; 
+}
+
+.adoption-graphic {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* A very slow, subtle floating animation to make the scene feel magical */
+  animation: float 6s ease-in-out infinite;
+
+  /* --- PROFESSIONAL ROUNDED CORNER TWEAKS --- */
+  border-radius: 16px; /* A clean, modern roundness (adjust as needed) */
+  box-shadow: 0px 8px 30px rgba(0,0,0,0.12); /* Soft shadow adds depth and dimension */
+  border: 2px solid rgba(255,255,255,0.7); /* Subtle white border makes it look polished */
+}
+
+/* =========================================
+   TABLET & MOBILE RESPONSIVE TWEAKS 
+   ========================================= */
+
+@media (max-width: 968px) {
+  .adoption-section {
+    padding: 80px 20px;
+  }
+  .adoption-title {
+    font-size: 3.5rem;
+  }
+  .adoption-subtext {
+    font-size: 1.35rem;
+  }
+  /* Added: Expand image wrapper slightly on tablet so it isn't too small */
+  .adoption-image-wrapper {
+    width: 90%;
   }
 }
 
+@media (max-width: 768px) {
+  .adoption-title {
+    font-size: 2.8rem;
+    /* Added slight line-height increase for readability when wrapping */
+    line-height: 1.2; 
+  }
+  .adoption-subtext {
+    font-size: 1.15rem;
+    padding: 0 10px;
+  }
+  /* Remove forced line breaks on mobile so text wraps naturally to fit the screen */
+  .desktop-break {
+    display: none; 
+  }
+  /* Added: Make image take full container width on mobile */
+  .adoption-image-wrapper {
+    width: 100%;
+  }
+  .adoption-graphic {
+    /* Disable float on mobile to prevent accidental screen jumps */
+    animation: none; 
+    border-radius: 12px; /* Slightly reduce corner radius for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .adoption-section {
+    padding: 60px 15px;
+  }
+  .adoption-title {
+    font-size: 2.2rem;
+  }
+  .adoption-subtext {
+    font-size: 1.05rem;
+  }
+}
 /* =========================================
    ANIMATIONS SECTION (KEYFRAMES)
    ========================================= */
