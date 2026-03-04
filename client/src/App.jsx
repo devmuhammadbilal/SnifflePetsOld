@@ -4,6 +4,7 @@ import EmailModal from './components/EmailModal';
 import Navbar from './components/Navbar';
 import Features from './components/Features';
 import MeetThePets from './components/MeetThePets';
+import AdoptionSection from './components/AdoptionSection'; // <-- NEW COMPONENT IMPORTED
 import VideoSection from './components/VideoSection';
 import Testimonials from './components/Testimonials';
 import FounderStory from './components/FounderStory';
@@ -28,7 +29,8 @@ function App() {
 
   // 2. SCROLL ANIMATION LOGIC (The "Professional" Touch)
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.feature-card, .review-card, .step-card, .section-title, .meet-pets-text, .founder-text, .video-wrapper');
+    // Added adoption section elements to the reveal query
+    const revealElements = document.querySelectorAll('.feature-card, .review-card, .step-card, .section-title, .meet-pets-text, .founder-text, .video-wrapper, .adoption-text-content, .adoption-image-wrapper');
 
     const revealOnScroll = () => {
       const windowHeight = window.innerHeight;
@@ -58,10 +60,13 @@ function App() {
       <Hero onOpenModal={() => setModalOpen(true)} />
       <Features onOpenModal={() => setModalOpen(true)} />
       <MeetThePets onOpenModal={() => setModalOpen(true)} />
+      
+      {/* NEW: Adoption Certificate Section inserted right after Meet the Pets */}
+      <AdoptionSection /> 
+      
       <VideoSection onOpenModal={() => setModalOpen(true)} />
-     
       <FounderStory />
-       <Testimonials onOpenModal={() => setModalOpen(true)} />
+      <Testimonials onOpenModal={() => setModalOpen(true)} />
       <WhatsNext onOpenModal={() => setModalOpen(true)} />
       <JoinSquad />
       <Footer />
