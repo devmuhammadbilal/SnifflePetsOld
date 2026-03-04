@@ -35,8 +35,8 @@ const Navbar = ({ onOpenModal }) => {
     { label: 'Home', link: '#top', sub: 'Welcome to Sniffle Pets' },
     { label: 'Why Sniffle Pets', link: '#features', sub: 'Thoughtfully designed' },
     { label: 'Collection', link: '#collection', sub: 'Meet the Sniffle Pets' },
+     { label: 'Adopt a Sniffle Pet', link: '#adopt', sub: 'Welcome Them Home Officially' }, // NEW ITEM
     { label: 'How it Works', link: '#how-it-works', sub: 'See Sniffle Pets in Action' },
-    { label: 'Adopt a Sniffle Pet', link: '#adopt', sub: 'Welcome Them Home Officially' }, // NEW ITEM
     { label: 'Our Story', link: '#story', sub: 'The Heart Behind Sniffle Pets' }
   ];
 
@@ -116,3 +116,4 @@ const Navbar = ({ onOpenModal }) => {
 };
 
 export default Navbar;
+
