@@ -2061,7 +2061,7 @@ select {
   }
 
   .video-wrapper {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 16 / 9; /* <-- UPDATED to keep landscape */
     border-radius: 20px;
   }
 
@@ -2098,7 +2098,7 @@ select {
   }
 
   .video-wrapper {
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 16 / 9; /* <-- UPDATED to keep landscape */
     border-radius: 16px;
   }
 
@@ -2131,7 +2131,6 @@ select {
     padding: 0 20px;
   }
 }
-
 /* =========================================
    TESTIMONIALS SECTION
    ========================================= */
