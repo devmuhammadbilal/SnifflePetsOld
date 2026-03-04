@@ -14,9 +14,9 @@ const JoinSquad = () => {
         {/* Left Side: Content & Form */}
         <div className="join-content">
           
-          {/* UPDATED: Kickstarter Badge */}
+          {/* Kickstarter Badge */}
           <div className="join-badge">
-            <span>LAUNCHING SOON ON KICKSTARTER</span>
+            <span>LAUNCHING SOON ON</span>
             <img 
               src="/kickstarter-logo.png" 
               alt="Kickstarter" 
@@ -24,14 +24,25 @@ const JoinSquad = () => {
             />
           </div>
           
-          <h2>Be Part of the Sniffle Squad</h2>
+          {/* UPDATED: Multi-color styling applied to "Sniffle" */}
+          <h2>
+            Be Part of the <span className="colorful-word">
+              <span style={{color: '#E31E24'}}>S</span>
+              <span style={{color: '#4C6F13'}}>n</span>
+              <span style={{color: '#F9A01B'}}>i</span>
+              <span style={{color: '#0B2351'}}>f</span>
+              <span style={{color: '#1A3668'}}>f</span>
+              <span style={{color: '#C1272D'}}>l</span>
+              <span style={{color: '#F15A24'}}>e</span>
+            </span> Squad
+          </h2>
           
-          {/* UPDATED: Body Copy */}
+          {/* UPDATED: Body Copy (color handled in CSS) */}
           <p className="join-body-copy">
             A simple idea. A comforting companion. Be the first to know when Sniffle Pets launches.
           </p>
 
-          {/* NEW: Social Proof before form */}
+          {/* Social Proof before form */}
           <p className="squad-social-proof">
             <strong>300+</strong> parents & teachers already signed up
           </p>
@@ -59,7 +70,6 @@ const JoinSquad = () => {
             </button>
           </form>
 
-          {/* UPDATED: Punctuation updated as requested */}
           <p className="spam-note">No spam. Just cuddles and updates.</p>
         </div>
 
