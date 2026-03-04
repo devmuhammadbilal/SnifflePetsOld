@@ -5,13 +5,11 @@ const MeetThePets = ({ onOpenModal }) => {
 
   // Your images array
   const galleryItems = [
-    // Removed badge property from the first image
-    { id: 0, src: "/meet_sniffle_main_image.jpg", alt: "Sniffle Pets Group" },
+    { id: 0, src: "/meet_sniffle_main_image.png", alt: "Sniffle Pets Group" },
     { id: 1, src: "/meet_sp_1.jpg", alt: "Design 1" },
     { id: 2, src: "/meet_sp_2.jpg", alt: "Design 2" },
-    { id: 3, src: "/meet_sp_3.jpg", alt: "Design 3" },
-     { id: 3, src: "/meet_sp_4.jpg", alt: "Design 4" },
-    { id: 3, src: "/meet_sp_5.jpg", alt: "Design 5" }
+    { id: 3, src: "/meet_sp_3.png", alt: "Design 3" },
+    { id: 4, src: "/meet_sp_5.jpeg", alt: "Design 5" }
   ];
 
   // Handlers to rotate the carousel
@@ -49,8 +47,10 @@ const MeetThePets = ({ onOpenModal }) => {
               </h2>
             </div>
             
+            {/* UPDATED: Forced onto two lines AND restored the strong tag for styling */}
             <p className="section-subtext">
-              Six lovable characters. <strong>One simple solution</strong> for sniffles and tears. 
+              <span style={{ display: 'block' }}>Six Lovable Characters</span>
+              <span style={{ display: 'block' }}><strong>One Simple Solution</strong> for Sniffles and Tears</span> 
             </p>
 
             <div className="pets-cta-wrapper">
@@ -81,7 +81,6 @@ const MeetThePets = ({ onOpenModal }) => {
                     {item.badge}
                   </div>
                 )}
-                {/* Optional Play Button Overlay condition removed from here */}
               </div>
             ))}
           </div>
@@ -108,4 +107,3 @@ const MeetThePets = ({ onOpenModal }) => {
 };
 
 export default MeetThePets;
-
