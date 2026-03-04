@@ -5,22 +5,22 @@ const Features = ({ onOpenModal }) => {
     {
       title: 'Universal Wristband Fit',
       text: 'Adjustable, soft, and comfy for kids of all ages.',
-      image: '/universal_wristband_fit.jpg' 
+      image: '/universal_wristband_fit.png' 
     },
     {
       title: 'Cute & Comforting',
       text: 'Turns little sniffles into big smiles with cuddly plush pets.',
-      image: '/cute_comforting.jpg' 
+      image: '/cute_comforting.png' 
     },
     {
       title: 'Always Prepared',
       text: 'Keeps tissues close when kids need them most.',
-      image: '/always_prepared.jpg' 
+      image: '/always_prepared.png' 
     },
     {
       title: 'Simple & Convenient',
       text: 'Easy to refill, machine-washable, ready for daily adventures.',
-      image: '/simple_convieneint.jpg' 
+      image: '/simple_convieneint.png' 
     }
   ];
 
@@ -39,7 +39,9 @@ const Features = ({ onOpenModal }) => {
             />
           </h2>
           <p className="features-subtext">
-           DESIGNED BY PARENTS, TRUSTED BY TEACHERS, LOVED BY KIDS.
+            <span>DESIGNED BY PARENTS,</span>{' '}
+            <span>TRUSTED BY TEACHERS,</span>{' '}
+            <span>LOVED BY KIDS.</span>
           </p>
         </div>
         
@@ -78,4 +80,3 @@ const Features = ({ onOpenModal }) => {
 };
 
 export default Features;
-
