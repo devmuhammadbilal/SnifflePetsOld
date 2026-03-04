@@ -5,37 +5,35 @@ const Testimonials = ({ onOpenModal }) => {
     {
       text: "Sniffle Pets has been a total game changer for us. My son actually wants to wear it, and I can grab a tissue in seconds when he needs one. It turns sniffly moments into something simple instead of stressful. Total mom win.",
       author: "Katie",
-      role: "mom of one",
-      image: "/Testimonial_02.jpeg" // REPLACE WITH YOUR IMAGE FILE
+      role: "Mom", // UPDATED PER CLIENT
+      image: "/Testimonial_02.jpeg" 
     },
      {
       text: "As a nanny, Sniffle Pets has been an absolute lifesaver — no more digging for tissues, no more mess.",
       author: "Sandra",
-      role: "Mom of 2",
-      image: "/Testimonial_01.jpeg" // REPLACE WITH YOUR IMAGE FILE
+      role: "Nanny", // UPDATED PER CLIENT
+      image: "/Testimonial_01.jpg" 
     },
     {
       text: "We love Sniffle Pets! Having tissues right there when my child needs them makes sniffles and tears feel more manageable and a lot more comforting.",
       author: "Leah",
       role: "Mom",
-      image: "/Testimonial_03.jpeg" // REPLACE WITH YOUR IMAGE FILE
+      image: "/Testimonial_03.jpg" 
     }
-    
   ];
 
   return (
     <section className="testimonials-section">
       <div className="container">
         
-        {/* --- UPDATED: Attractive Header Area --- */}
+        {/* --- UPDATED: Header Area --- */}
         <div className="testimonial-header">
-          <span className="section-tag" style={{ marginBottom: '20px' }}>Community Love</span>
+          <span className="section-tag" style={{ marginBottom: '20px' }}>The Buzz Is Growing</span>
           <h2>
-            ALREADY WINNING OVER <br className="hide-mobile" />
-            <span className="highlight-text">PARENTS, TEACHERS, & KIDS</span>
+            <span className="highlight-text">WINNING HEARTS EVERYWHERE</span>
           </h2>
           <p className="waitlist-subtext">
-            <strong>300+</strong> have already joined the waitlist
+            <strong>300+</strong> have already joined the waitlist — and counting.
           </p>
         </div>
         {/* --------------------------------------- */}
@@ -53,11 +51,14 @@ const Testimonials = ({ onOpenModal }) => {
               
               {/* Author Section (Image + Text) */}
               <div className="review-footer">
-                <img 
-                  src={review.image} 
-                  alt={review.author} 
-                  className="review-avatar" 
-                />
+                {/* NEW: Wrapper added to handle the hover zoom effect cleanly */}
+                <div className="review-avatar-wrapper">
+                  <img 
+                    src={review.image} 
+                    alt={review.author} 
+                    className="review-avatar" 
+                  />
+                </div>
                 <div className="review-author">
                   <strong>{review.author}</strong>
                   <span>{review.role}</span>
