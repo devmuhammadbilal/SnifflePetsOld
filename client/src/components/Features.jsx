@@ -5,7 +5,7 @@ const Features = ({ onOpenModal }) => {
     {
       title: 'Universal Wristband Fit',
       text: 'Adjustable, soft, and comfy for kids of all ages.',
-      image: '/universal_wristband_fit.jpg' 
+      image: '/universal_wristband_fit.png' 
     },
     {
       title: 'Cute & Comforting',
@@ -15,7 +15,7 @@ const Features = ({ onOpenModal }) => {
     {
       title: 'Always Prepared',
       text: 'Keeps tissues close when kids need them most.',
-      image: '/always_prepared.jpg' 
+      image: '/always_prepared.png' 
     },
     {
       title: 'Simple & Convenient',
@@ -80,4 +80,3 @@ const Features = ({ onOpenModal }) => {
 };
 
 export default Features;
-
