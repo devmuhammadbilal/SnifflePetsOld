@@ -16,7 +16,7 @@ const FounderStory = () => {
           
           <div className="founder-content">
             <p>
-              <strong>Sniffle Pets</strong> began with a conversation between two creative moms, swapping ideas the way parents often do. Talking about kids, everyday life, and all the little moments that somehow turn into bigger challenges when you least expect them.
+              <img src="sniffle_pets_logo.png" alt="Sniffle Pets" className="inline-logo" /> began with a conversation between two creative moms, swapping ideas the way parents often do. Talking about kids, everyday life, and all the little moments that somehow turn into bigger challenges when you least expect them.
             </p>
             
             <p>
