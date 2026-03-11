@@ -60,7 +60,7 @@ const AdoptionSection = () => {
         {/* --- THE GRAPHIC --- */}
         <div className="adoption-image-wrapper">
           <img 
-            src="/adoption_certificate_graphic.png" 
+            src="/adoption_certificate_graphic.jpg" 
             alt="Sniffle Pets Adoption Certificate with boy and bear" 
             className="adoption-graphic"
           />
