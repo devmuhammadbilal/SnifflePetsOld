@@ -8,7 +8,6 @@ const AdoptionSection = () => {
         {/* --- HTML RECREATION OF THE TEXT HEADER --- */}
         <div className="adoption-text-content">
           <h2 className="adoption-title">
-            {/* Added .word-wrapper to prevent letters from breaking on new lines on mobile */}
             {/* "Make" */}
             <span className="word-wrapper">
               <span style={{ color: '#E31E24' }}>M</span>
@@ -16,14 +15,12 @@ const AdoptionSection = () => {
               <span style={{ color: '#F9A01B' }}>k</span>
               <span style={{ color: '#0B2351' }}>e</span>
             </span>
-            <span> </span>
             
             {/* "It" */}
             <span className="word-wrapper">
               <span style={{ color: '#1A3668' }}>I</span>
               <span style={{ color: '#C1272D' }}>t</span>
             </span>
-            <span> </span>
             
             {/* "Official" */}
             <span className="word-wrapper">
@@ -39,7 +36,22 @@ const AdoptionSection = () => {
           </h2>
 
           <p className="adoption-subtext">
-            Every Sniffle Pet comes with a personalized <br className="desktop-break" />
+            Every{' '}
+            {/* --- INLINE LOGO STYLING --- */}
+            <span className="sniffle-logo-inline">
+              <span style={{ color: '#CD2027' }}>S</span>
+              <span style={{ color: '#467A29' }}>n</span>
+              <span style={{ color: '#FDBA12' }}>i</span>
+              <span style={{ color: '#10316B' }}>f</span>
+              <span style={{ color: '#CD2027' }}>f</span>
+              <span style={{ color: '#F36A22' }}>l</span>
+              <span style={{ color: '#467A29' }}>e</span>
+              <span>&nbsp;</span>
+              <span style={{ color: '#467A29' }}>P</span>
+              <span style={{ color: '#A85426' }}>e</span>
+              <span style={{ color: '#FDBA12' }}>t</span>
+            </span>{' '}
+            comes with a printable <br className="desktop-break" />
             <strong>Adoption Certificate</strong> so your child can officially <br className="desktop-break" />
             welcome their new best friend home.
           </p>
@@ -48,8 +60,7 @@ const AdoptionSection = () => {
         {/* --- THE GRAPHIC --- */}
         <div className="adoption-image-wrapper">
           <img 
-            /* Replace this with the cropped version of the image you just uploaded */
-            src="/adoption_certificate_graphic.jpg" 
+            src="/adoption_certificate_graphic.png" 
             alt="Sniffle Pets Adoption Certificate with boy and bear" 
             className="adoption-graphic"
           />
