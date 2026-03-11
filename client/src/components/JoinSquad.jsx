@@ -24,9 +24,9 @@ const JoinSquad = () => {
             />
           </div>
           
-          {/* UPDATED: Multi-color styling applied to "Sniffle" */}
+          {/* UPDATED: Headline changed to "Join the Sniffle Squad." */}
           <h2>
-            Be Part of the <span className="colorful-word">
+            Join the <span className="colorful-word">
               <span style={{color: '#E31E24'}}>S</span>
               <span style={{color: '#4C6F13'}}>n</span>
               <span style={{color: '#F9A01B'}}>i</span>
@@ -34,17 +34,17 @@ const JoinSquad = () => {
               <span style={{color: '#1A3668'}}>f</span>
               <span style={{color: '#C1272D'}}>l</span>
               <span style={{color: '#F15A24'}}>e</span>
-            </span> Squad
+            </span> Squad.
           </h2>
           
-          {/* UPDATED: Body Copy (color handled in CSS) */}
+          {/* UPDATED: Subheader Text */}
           <p className="join-body-copy">
-            A simple idea. A comforting companion. Be the first to know when Sniffle Pets launches.
+            A comforting companion for sniffles, colds, and allergies. Be the first to know when Sniffle Pets launches.
           </p>
 
-          {/* Social Proof before form */}
+          {/* UPDATED: Social Proof before form */}
           <p className="squad-social-proof">
-            <strong>300+</strong> parents & teachers already signed up
+            Over <strong>300+</strong> parents & teachers are already on the waitlist
           </p>
 
           <form className="rally-form" onSubmit={handleSubmit}>
@@ -70,7 +70,8 @@ const JoinSquad = () => {
             </button>
           </form>
 
-          <p className="spam-note">No spam. Just cuddles and updates.</p>
+          {/* UPDATED: Text Under Email Signup */}
+          <p className="spam-note">No spam. Just cuddles, updates, and early access.</p>
         </div>
 
         {/* Right Side: Warm Lifestyle Image */}
