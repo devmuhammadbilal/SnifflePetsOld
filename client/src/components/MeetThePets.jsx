@@ -5,7 +5,7 @@ const MeetThePets = ({ onOpenModal }) => {
 
   // Extracted the main classroom image
   const mainFeaturedImage = { 
-    src: "/meet_sniffle_main_image.png", 
+    src: "/meet_sniffle_main_image.jpg", 
     alt: "Sniffle Pets Group in Classroom" 
   };
 
@@ -128,4 +128,5 @@ const MeetThePets = ({ onOpenModal }) => {
 };
 
 export default MeetThePets;
+
 
