@@ -577,13 +577,12 @@ select {
 }
 
 .hero-text p.hero-tagline {
-  font-size: 1.15rem;
+  font-size: 1.7rem; /* Dramatically increased from 1.15rem */
   color: #4a5568;
   padding-top: 10px;
-  margin-bottom: 28px;
-  line-height: 1.6;
-  font-weight: 700; /* Bolder to stand out nicely */
-
+  margin-bottom: 30px;
+  line-height: 1.4;
+  font-weight: 600;
   /* Start Entrance Animation */
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.7s forwards;
@@ -616,16 +615,18 @@ select {
   gap: 16px;
   font-size: 1rem; /* Increased base size for readability */
   color: #4a5568;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.4;
 }
 
 /* Highlight for the 300+ text */
 .highlight-300 {
   color: #05CE78; /* Exact Kickstarter Green */
-  font-size: 1rem; 
+  font-size: 1.4rem; /* Noticeably larger than the rest of the text */
   font-weight: 700;
-  margin-right: 1px; 
+  vertical-align: text-top; /* Helps align the larger text with the smaller text */
+  /* margin-right: 4px;  */
+  line-height: 0.8; /* Prevents it from breaking the line spacing */
 }
 
 .avatars {
@@ -702,9 +703,12 @@ select {
     font-size: 2.3rem;
   }
 
-  .hero-text p.hero-subtext,
-  .hero-text p.hero-tagline {
+  .hero-text p.hero-subtext {
     font-size: 1.1rem;
+  }
+
+  .hero-text p.hero-tagline {
+    font-size: 1.5rem;
   }
 
   .hero-cta-wrapper {
@@ -745,14 +749,19 @@ select {
     line-height: 1.25;
   }
 
-  .hero-text p.hero-subtext,
-  .hero-text p.hero-tagline {
+  .hero-text p.hero-subtext {
     font-size: 1.05rem;
     max-width: 95%;
   }
 
   .hero-text p.hero-tagline {
+    font-size: 1.4rem;
+    max-width: 95%;
     margin-bottom: 25px;
+  }
+
+  .highlight-300 {
+    font-size: 1.4rem;
   }
 
   .hero-cta-wrapper {
@@ -812,15 +821,23 @@ select {
     max-width: 100%;
   }
 
-  .hero-text p.hero-subtext,
-  .hero-text p.hero-tagline {
+  .hero-text p.hero-subtext {
     font-size: 1rem;
     line-height: 1.45;
     max-width: 100%;
   }
 
   .hero-text p.hero-tagline {
+    font-size: 1.25rem;
+    line-height: 1.45;
+    max-width: 100%;
     margin-bottom: 25px;
+  }
+
+  .highlight-300 {
+    font-size: 1.3rem;
+    vertical-align: top;
+    padding-left: 3px;
   }
 
   .hero-btn {
@@ -850,6 +867,7 @@ select {
     padding: 0 15px; /* Adds breathing room so the image doesn't touch the glass edges */
   }
 }
+
 /* Animated Word Container */
 .animated-word-container {
   display: inline-block;
@@ -925,13 +943,13 @@ select {
 
 /* LOGO SIZING */
 .nav-logo-img {
-  height: 30px;
+  height: 32px;
   width: auto;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled .nav-logo-img {
-  height: 30px;
+  height: 32px;
   /* Shrinks the logo on scroll */
 }
 
@@ -1151,11 +1169,11 @@ select {
   /* Shrinks the navbar height */
 }
   .nav-logo-img {
-    height: 30px;
+    height: 31px;
   }
 
   .navbar.scrolled .nav-logo-img {
-  height: 30px;
+  height: 31px;
   /* Shrinks the logo on scroll */
 }
 
@@ -1229,7 +1247,7 @@ select {
   }
 
   .nav-logo-img {
-    height: 27px;
+    height: 28px;
   }
 
     .navbar.scrolled {
@@ -1238,7 +1256,7 @@ select {
   /* Shrinks the navbar height */
 }
   .navbar.scrolled .nav-logo-img {
-  height: 25px;
+  height: 26px;
   /* Shrinks the logo on scroll */
 }
 }
@@ -1307,7 +1325,7 @@ select {
   display: grid;
   /* This places all 4 cards in one row on desktop */
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 10px;
   max-width: 1200px;
   margin: 0 auto 50px auto;
   position: relative;
@@ -1625,20 +1643,6 @@ select {
   font-weight: 800;
 }
 
-.pets-cta-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.cta-note {
-  font-size: 0.85rem;
-  color: #888;
-  margin-left: 5px;
-  font-style: italic;
-}
-
 /* === TOP RIGHT: FEATURED IMAGE === */
 .meet-pets-featured {
   grid-area: image;
@@ -1703,7 +1707,7 @@ select {
   object-fit: cover;
 }
 
-/* 3D Positioning Logic */
+/* 3D Positioning Logic & Zoom Effect */
 .slide-active {
   transform: translateX(0) scale(1);
   z-index: 10;
@@ -1712,8 +1716,9 @@ select {
 }
 
 .slide-active:hover {
-  transform: translateX(0) scale(1.04);
-  box-shadow: 0 35px 70px rgba(14, 54, 94, 0.4);
+  transform: translateX(0) scale(1.15); /* Significantly zooms in the image */
+  z-index: 20; /* Ensures it pops over adjacent slides and controls */
+  box-shadow: 0 40px 80px rgba(14, 54, 94, 0.5);
 }
 
 .slide-prev {
@@ -1802,6 +1807,24 @@ select {
   border-radius: 10px;
 }
 
+/* NEW CTA WRAPPER AT BOTTOM */
+.carousel-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 35px;
+  gap: 12px;
+  text-align: center;
+}
+
+.carousel-cta-wrapper .cta-note {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  margin-left: 0; 
+}
+
+
 /* =========================================
    TABLET & MOBILE RESPONSIVENESS
    ========================================= */
@@ -1877,25 +1900,6 @@ select {
     margin-bottom: 25px;
   }
 
-  .pets-cta-wrapper {
-    align-items: center;
-    width: 100%;
-    gap: 15px;
-  }
-
-  .pets-cta-wrapper .btn {
-    width: 100%;
-    max-width: 320px; /* Snug fit matching the hero section */
-    padding: 15px;
-    font-size: 1.05rem;
-  }
-
-  .cta-note {
-    margin-left: 0;
-    font-size: 0.8rem;
-    text-align: center;
-  }
-
   .meet-pets-featured {
     justify-content: center;
   }
@@ -1906,6 +1910,24 @@ select {
 
   .carousel-slide {
     width: 60%;
+  }
+
+  /* Updated relocated CTA wrapper for tablet/mobile */
+  .carousel-cta-wrapper {
+    width: 100%;
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .carousel-cta-wrapper .btn {
+    width: 100%;
+    max-width: 320px; /* Snug fit matching the hero section */
+    padding: 15px;
+    font-size: 1.05rem;
+  }
+
+  .carousel-cta-wrapper .cta-note {
+    font-size: 0.8rem;
   }
 }
 
@@ -1936,11 +1958,6 @@ select {
     line-height: 1.5;
   }
 
-  .pets-cta-wrapper .btn {
-    padding: 14px;
-    font-size: 1rem;
-  }
-
   .carousel-container {
     height: 240px; 
   }
@@ -1957,10 +1974,13 @@ select {
   .slide-next {
     transform: translateX(45%) scale(0.85);
   }
-}
-/* Import a playful, bubbly font to match the Sniffle Pets logo */
-@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
+  /* Adjusted relocated CTA button padding */
+  .carousel-cta-wrapper .btn {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
 /* =========================================
    VIDEO SECTION (Mobile Responsive Fixed)
    ========================================= */
@@ -2420,8 +2440,8 @@ select {
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 .review-avatar-wrapper {
   /* Significantly increased size per client request (keeping previous change) */
-  width: 110px; 
-  height: 110px;
+  width: 145px; 
+  height: 145px;
   border-radius: 16px;
   border: 4px solid white;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -2571,7 +2591,7 @@ select {
 
   .heading-logo {
     margin-right: 6px; 
-    height: 1.1em !important; 
+    height: 1.3em !important; 
   }
 
   .review-card {
@@ -2589,8 +2609,8 @@ select {
   }
 
   .review-avatar-wrapper {
-    width: 75px;
-    height: 75px;
+    width: 95px;
+    height: 95px;
   }
 
   .testimonials-section button.btn-primary {
@@ -2631,7 +2651,7 @@ select {
   z-index: 5;
 }
 
-/* UPDATED: Clean, professional "matted frame" border */
+/* Clean, professional "matted frame" border */
 .founder-image-wrapper {
   width: 100%;
   height: auto;
@@ -2644,7 +2664,7 @@ select {
   padding: 14px; /* Acts as a clean white matting inside the frame */
 }
 
-/* UPDATED: Given a slight radius so it fits perfectly inside the new frame padding */
+/* Given a slight radius so it fits perfectly inside the frame padding */
 .founder-real-img {
   width: 100%;
   height: auto;
@@ -2652,7 +2672,7 @@ select {
   border-radius: 12px; 
 }
 
-/* UPDATED: Hidden. This was causing the "doesn't sit in the frame" issue */
+/* Hidden offset border */
 .image-offset-border {
   display: none;
 }
@@ -2691,13 +2711,23 @@ select {
   font-weight: 400;
 }
 
-/* NEW: Inline Logo Styling */
+/* Standard Inline Logo Styling */
 .inline-logo {
-  height: 1.2em;
-  width: auto;
+  height: 1.5em;
+  /* width: auto; */
+  /* margin-bottom:1px ; */
   vertical-align: text-bottom;
   display: inline-block;
-  /* margin: 0 0.15em; */
+}
+
+/* Enlarged logo acting as a lead-in for the story */
+.large-inline-logo {
+  height: 2em; 
+  /* width: auto; */
+  vertical-align: middle; /* Aligns the image nicely with the text */
+  /* margin-right: 8px; Gives the text a little breathing room */
+  margin-bottom: 8px;
+  display: inline-block;
 }
 
 .emphasis-text {
@@ -2767,7 +2797,6 @@ select {
     justify-content: center;
   }
 
-  /* UPDATED: Cleaned up messy math since the offset border is gone */
   .sticky-image-container {
     position: relative;
     top: 0;
@@ -2830,7 +2859,6 @@ select {
     line-height: 1.6;
   }
 
-  /* UPDATED: Cleaned up messy math */
   .sticky-image-container {
     width: 100%;
   }
@@ -2842,6 +2870,15 @@ select {
 
   .founder-quote {
     font-size: 1.15rem;
+  }
+  
+  /* Make the large inline logo slightly smaller on mobile to prevent layout breakage */
+  .large-inline-logo {
+    height: 1.7em; 
+  }
+  .inline-logo {
+  height: 1.2em;
+  margin-bottom: 1px;
   }
 }
 /* =========================================
@@ -3252,7 +3289,7 @@ select {
 /* UPDATED: Make "300+" larger, bold, and in red font */
 .squad-social-proof strong {
   color: red; 
-  font-size: 1.1em;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
