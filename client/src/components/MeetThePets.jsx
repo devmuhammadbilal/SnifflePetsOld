@@ -3,24 +3,23 @@ import React, { useState } from 'react';
 const MeetThePets = ({ onOpenModal }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Extracted the main classroom image
+  // 1. REPLACED THE MAIN IMAGE: Point this src to your new, clearer photo of the boys
   const mainFeaturedImage = { 
-    src: "/meet_sniffle_main_image.jpg", 
+    src: "/meet_sniffle_main_image.png", 
     alt: "Sniffle Pets Group in Classroom" 
   };
 
-  // The remaining images for the carousel
+  // 2. REORDERED CAROUSEL: First 3 images updated to tell the story
   const galleryItems = [
-    { id: 1, src: "/meet_sp_1.jpg", alt: "Design 1" },
-    { id: 2, src: "/meet_sp_2.jpg", alt: "Design 2" },
-    { id: 3, src: "/meet_sp_3.jpg", alt: "Design 3" },
-      { id: 4, src: "/meet_sp_4.jpg", alt: "Design 4" },
+    { id: 1, src: "/meet_sp_1.jpg", alt: "All six Sniffle Pets together" },
+    { id: 2, src: "/meet_sp_2.jpg", alt: "Boy using the monkey Sniffle Pet" },
+    { id: 3, src: "/meet_sp_3.jpg", alt: "Girl using the ladybug Sniffle Pet" },
+    { id: 4, src: "/meet_sp_4.jpg", alt: "Design 4" },
     { id: 5, src: "/meet_sp_5.jpg", alt: "Design 5" },
-     { id: 6, src: "/meet_sp_6.jpg", alt: "Design 6" },
+    { id: 6, src: "/meet_sp_6.jpg", alt: "Design 6" },
     { id: 7, src: "/meet_sp_7.jpg", alt: "Design 7" },
     { id: 8, src: "/meet_sp_8.jpg", alt: "Design 8" },
-    { id: 9, src: "/meet_sp_9.jpg", alt: "Design 9" },
-     { id: 10, src: "/meet_sp_10.jpg", alt: "Design 10" }
+    { id: 9, src: "/meet_sp_9.jpg", alt: "Design 9" }
   ];
 
   // Handlers to rotate the carousel
@@ -62,13 +61,7 @@ const MeetThePets = ({ onOpenModal }) => {
               <span style={{ display: 'block' }}>Six Lovable Characters</span>
               <span style={{ display: 'block' }}><strong>One Simple Solution</strong> for Sniffles and Tears</span> 
             </p>
-
-            <div className="pets-cta-wrapper">
-              <button className="btn btn-primary big-btn" onClick={onOpenModal}>
-                Join the Waitlist
-              </button>
-              <span className="cta-note">Exclusive Early Bird pricing available at launch</span>
-            </div>
+            {/* CTA was removed from here and placed at the bottom */}
           </div>
         </div>
 
@@ -120,6 +113,15 @@ const MeetThePets = ({ onOpenModal }) => {
             </div>
             <button className="control-btn" onClick={nextSlide}>→</button>
           </div>
+
+          {/* 3. RELOCATED CTA: Moved to the bottom of the carousel */}
+          <div className="carousel-cta-wrapper">
+            <button className="btn btn-primary big-btn" onClick={onOpenModal}>
+              Join the Waitlist
+            </button>
+            <span className="cta-note">Exclusive Early Bird pricing available at launch</span>
+          </div>
+
         </div>
 
       </div>
@@ -128,5 +130,3 @@ const MeetThePets = ({ onOpenModal }) => {
 };
 
 export default MeetThePets;
-
-
