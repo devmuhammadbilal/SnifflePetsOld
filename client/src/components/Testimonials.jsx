@@ -3,21 +3,21 @@ import React from 'react';
 const Testimonials = ({ onOpenModal }) => {
   const reviews = [
     {
-      header: "Game Changer for Busy Parents.", // NEW PER CLIENT
+      header: "Game changer for busy parents", // NEW PER CLIENT
       text: "Sniffle Pets has been a total game changer for us. My son actually wants to wear it, and I can grab a tissue in seconds when he needs one. It turns sniffly moments into something simple instead of stressful. Total mom win.",
       author: "Katie",
       role: "Mom", 
       image: "/Testimonial_02.jpeg" 
     },
      {
-      header: "No More Digging for Tissues.", // NEW PER CLIENT
+      header: "No more digging for tissues", // NEW PER CLIENT
       text: "As a nanny, Sniffle Pets has been an absolute lifesaver — no more digging for tissues, no more mess.",
       author: "Sandra",
       role: "Nanny", 
       image: "/Testimonial_01.jpg" 
     },
     {
-      header: "Comfort When Kids Need It Most.", // NEW PER CLIENT
+      header: "Comfort when kids need it most", // NEW PER CLIENT
       text: "We love Sniffle Pets! Having tissues right there when my child needs them makes sniffles and tears feel more manageable and a lot more comforting.",
       author: "Leah",
       role: "Mom",
@@ -35,7 +35,7 @@ const Testimonials = ({ onOpenModal }) => {
         <h2>
   <span className="highlight-text">
     <img src="/sniffle_pets_logo.png" alt="Sniffle Pets" className="heading-logo" />
-    <span>are winning hearts everywhere</span>
+    <span>ARE WINNING HEARTS EVERYWHERE</span>
   </span>
 </h2>
           {/* NEW PER CLIENT: Removed the 300+ waitlist text */}
