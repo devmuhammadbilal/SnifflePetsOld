@@ -5,7 +5,7 @@ const MeetThePets = ({ onOpenModal }) => {
 
   // 1. REPLACED THE MAIN IMAGE: Point this src to your new, clearer photo of the boys
   const mainFeaturedImage = { 
-    src: "/meet_sniffle_main_image.png", 
+    src: "/meet_sniffle_main_image.jpg", 
     alt: "Sniffle Pets Group in Classroom" 
   };
 
