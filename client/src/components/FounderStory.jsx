@@ -16,7 +16,8 @@ const FounderStory = () => {
           
           <div className="founder-content">
             <p>
-              <img src="sniffle_pets_logo.png" alt="Sniffle Pets" className="inline-logo" /> began with a conversation between two creative moms, swapping ideas the way parents often do. Talking about kids, everyday life, and all the little moments that somehow turn into bigger challenges when you least expect them.
+              {/* FIRST LOGO: Scaled up nicely as a lead-in */}
+              <img src="/sniffle_pets_logo.png" alt="Sniffle Pets" className="large-inline-logo" /> began with a conversation between two creative moms, swapping ideas the way parents often do. Talking about kids, everyday life, and all the little moments that somehow turn into bigger challenges when you least expect them.
             </p>
             
             <p>
@@ -40,7 +41,8 @@ const FounderStory = () => {
             </p>
 
             <p className="emphasis-text">
-              That’s when Sniffle Pets were born.
+              {/* SECOND LOGO: The specific official brand logo file */}
+              That’s when <img src="/Logo_TM.png" alt="Sniffle Pets Brand Logo" className="inline-logo" /> were born.
             </p>
 
             <p>
@@ -60,7 +62,6 @@ const FounderStory = () => {
 
        {/* === RIGHT SIDE: THE STICKY PHOTO === */}
         <div className="founder-image-column">
-          {/* NEW: We wrap both the image and border in this sticky container so they travel together! */}
           <div className="sticky-image-container">
             
             <div className="founder-image-wrapper">
@@ -71,7 +72,6 @@ const FounderStory = () => {
               />
             </div>
             
-            {/* Decorative offset border for premium feel */}
             <div className="image-offset-border"></div>
             
           </div>
