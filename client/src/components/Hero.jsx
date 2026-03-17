@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 const Hero = ({ onOpenModal }) => {
-  // Array of words, gradients, and distinct fonts
+  // Array of words, using explicit color arrays for the logo or gradients for the rest
   const dynamicWords = [
     { 
       text: 'Sniffles', 
-      gradient: 'linear-gradient(135deg, #D92332, #F15A24)', // Red to Orange
-      font: '"Comic Sans MS", "Chalkboard SE", cursive' 
+      // Exact colors from the Sniffle Pets logo, including the final 's'
+      colors: ['#E31E24', '#4C6F13', '#F9A01B', '#193365', '#193365', '#C1272D', '#F15A24', '#F9A01B'], 
+      font: "'Chewy', cursive" 
     },
     { 
       text: 'Colds', 
-      gradient: 'linear-gradient(135deg, #1A3673, #4361EE)', // Deep Navy to Bright Blue
+      gradient: 'linear-gradient(135deg, #1A3673, #4361EE)', 
       font: '"Arial Rounded MT Bold", "Nunito", sans-serif' 
     },
     { 
       text: 'Allergies', 
-      gradient: 'linear-gradient(135deg, #4C7D2D, #05CE78)', // Forest Green to Kickstarter Green
+      gradient: 'linear-gradient(135deg, #4C7D2D, #05CE78)', 
       font: '"Trebuchet MS", "Quicksand", sans-serif' 
     }
   ];
@@ -59,9 +60,16 @@ const Hero = ({ onOpenModal }) => {
                     key={index}
                     className="animated-letter"
                     style={{
-                      backgroundImage: currentWord.gradient,
+                      // If 'colors' array is provided, use exact letter colors. Otherwise, use the gradient.
+                      ...(currentWord.colors 
+                        ? { 
+                            color: currentWord.colors[index], 
+                            WebkitTextFillColor: currentWord.colors[index], 
+                            backgroundImage: 'none' 
+                          } 
+                        : { backgroundImage: currentWord.gradient }),
                       fontFamily: currentWord.font,
-                      animationDelay: `${index * 0.05}s` // Staggers each letter by 0.05 seconds
+                      animationDelay: `${index * 0.05}s` // Staggers each letter
                     }}
                   >
                     {char}
@@ -74,23 +82,29 @@ const Hero = ({ onOpenModal }) => {
             <p className="hero-subtext">
               A cuddly plush wristband that keeps tissues within reach for school, travel, and everyday sniffles.
             </p>
+            
+            {/* Tagline - Increased size, bolded 'Turning', Chewy font applied */}
             <p className="hero-tagline">
-              Turning{' '}
-              <span style={{ color: '#D92332' }}>S</span>
-              <span style={{ color: '#4C7D2D' }}>n</span>
-              <span style={{ color: '#F4B333' }}>i</span>
-              <span style={{ color: '#1A3673' }}>f</span>
-              <span style={{ color: '#D92332' }}>f</span>
-              <span style={{ color: '#F15A24' }}>l</span>
-              <span style={{ color: '#4C7D2D' }}>e</span>
-              <span style={{ color: '#1A3673' }}>s</span>
+              <strong>Turning</strong>{' '}
+              <span style={{ fontFamily: "'Chewy', cursive" }}>
+                <span style={{ color: '#E31E24' }}>S</span>
+                <span style={{ color: '#4C6F13' }}>n</span>
+                <span style={{ color: '#F9A01B' }}>i</span>
+                <span style={{ color: '#193365' }}>f</span>
+                <span style={{ color: '#193365' }}>f</span>
+                <span style={{ color: '#C1272D' }}>l</span>
+                <span style={{ color: '#F15A24' }}>e</span>
+                <span style={{ color: '#F9A01B' }}>s</span>
+              </span>
               {' '}Into{' '}
-              <span style={{ color: '#D92332' }}>S</span>
-              <span style={{ color: '#4C7D2D' }}>m</span>
-              <span style={{ color: '#F4B333' }}>i</span>
-              <span style={{ color: '#1A3673' }}>l</span>
-              <span style={{ color: '#F15A24' }}>e</span>
-              <span style={{ color: '#D92332' }}>s</span>
+              <span style={{ fontFamily: "'Chewy', cursive" }}>
+                <span style={{ color: '#E31E24' }}>S</span>
+                <span style={{ color: '#4C6F13' }}>m</span>
+                <span style={{ color: '#F9A01B' }}>i</span>
+                <span style={{ color: '#193365' }}>l</span>
+                <span style={{ color: '#F15A24' }}>e</span>
+                <span style={{ color: '#F9A01B' }}>s</span>
+              </span>
             </p>
 
             {/* CTA Button Wrapper */}
