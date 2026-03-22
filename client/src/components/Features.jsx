@@ -13,7 +13,7 @@ const Features = ({ onOpenModal }) => {
     {
       title: 'Cute & Comforting',
       text: 'Turns little sniffles into big smiles with cuddly plush pets.',
-      image: '/cute_comforting.png' // Kept from original code
+      image: '/cute_comforting.jpg' // Kept from original code
     },
     {
       title: 'Always Prepared',
@@ -23,7 +23,7 @@ const Features = ({ onOpenModal }) => {
     {
       title: 'Simple & Convenient',
       text: 'Easy to refill, machine-washable, ready for daily adventures.',
-      image: '/simple_convieneint.png' // Kept from original code
+      image: '/simple_convieneint.jpg' // Kept from original code
     }
   ];
 
