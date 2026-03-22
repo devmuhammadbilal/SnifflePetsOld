@@ -97,7 +97,7 @@ const Hero = ({ onOpenModal }) => {
                 <span style={{ color: '#F9A01B' }}>s</span>
               </span>
               {' '}Into{' '}
-              <span style={{ fontFamily: "'Chewy', cursive" }}>
+              <span style={{ fontFamily: "'Fredoka One', 'Varela Round', 'Comic Sans MS', sans-serif" }}>
                 <span style={{ color: '#E31E24' }}>S</span>
                 <span style={{ color: '#4C6F13' }}>m</span>
                 <span style={{ color: '#F9A01B' }}>i</span>
