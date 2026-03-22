@@ -38,7 +38,7 @@ const AdoptionSection = () => {
           <p className="adoption-subtext">
             Every{' '}
             {/* --- INLINE LOGO STYLING --- */}
-            <span className="sniffle-logo-inline" style={{ fontFamily: "'Fredoka One', 'Varela Round', 'Comic Sans MS', sans-serif" }}>
+            <span className="sniffle-logo-inline" style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
               <span style={{ color: '#E31E24' }}>S</span>
               <span style={{ color: '#4C6F13' }}>n</span>
               <span style={{ color: '#F9A01B' }}>i</span>
