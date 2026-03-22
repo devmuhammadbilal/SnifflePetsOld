@@ -42,7 +42,7 @@ const FounderStory = () => {
 
             <p className="emphasis-text">
               {/* SECOND LOGO: The specific official brand logo file */}
-              That’s when <img src="/Logo_TM.png" alt="Sniffle Pets Brand Logo" className="inline-logo" /> were born.
+              That’s when <img src="/sniffle_pets_logo.png" alt="Sniffle Pets Brand Logo" className="inline-logo" /> were born.
             </p>
 
             <p>
