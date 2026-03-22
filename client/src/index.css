@@ -3447,7 +3447,7 @@ select {
 
 /* Multi-color styling class */
 .colorful-word {
-  font: "'Comic Sans MS', sans-serif";
+  font: 'Comic Sans MS', sans-serif;
   font-style: italic;
   font-weight: 900;
   letter-spacing: 1px;
@@ -3676,7 +3676,7 @@ select {
   /* Soft, playful text shadow mirroring the mockup */
   text-shadow: 2px 2px 0px rgba(0,0,0,0.05), 0px 4px 12px rgba(0,0,0,0.08);
   /* Optional: If you have a rounded font loaded, it applies here */
-  font-family: 'Fredoka One', 'Varela Round', 'Comic Sans MS', sans-serif; 
+  font-family:'Comic Sans MS', sans-serif; 
 }
 
 /* --- UPDATED WORD WRAPPER FOR PROPER SPACING --- */
