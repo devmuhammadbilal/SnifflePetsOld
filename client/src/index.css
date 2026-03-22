@@ -1287,7 +1287,7 @@ select {
 
 /* --- HEADER --- */
 .section-header-wrapper {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   position: relative;
   z-index: 2;
 }
@@ -1342,25 +1342,22 @@ select {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  
   position: relative;
   will-change: transform;
-  
-  /* MODIFIED: Smoother, more professional speed (0.3s) without the bouncy spring */
+  /* Smoother, more professional speed (0.3s) without the bouncy spring */
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 /* --- THE HOVER POP --- */
 .feature-card:hover {
-  /* MODIFIED: A much softer, subtle zoom (1.05) and a gentle lift (-6px) */
+  /* A much softer, subtle zoom (1.05) and a gentle lift (-6px) */
   transform: translateY(-6px) scale(1.05) !important;
-  
   /* Keeps it neatly on top of the other cards */
   z-index: 999 !important;
-  
-  /* MODIFIED: A softer shadow to match the elegant lift */
+  /* A softer shadow to match the elegant lift */
   box-shadow: 0 20px 40px rgba(14, 54, 94, 0.12) !important;
 }
+
 /* Image Wrapper */
 .feature-img-wrapper {
   width: 100%;
@@ -1374,10 +1371,7 @@ select {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Note: The old inner zoom transition was completely removed from here */
 }
-
-/* REMOVED: .feature-card:hover .feature-img { transform: scale(1.08); } */
 
 .img-overlay {
   position: absolute;
@@ -1388,6 +1382,7 @@ select {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, transparent 30%);
   pointer-events: none;
 }
+
 /* Content */
 .feature-content {
   padding: 25px 20px;
@@ -1430,6 +1425,125 @@ select {
 
 
 /* =========================================
+   NEW: IMAGE PREVIEW FEATURE STYLES
+   ========================================= */
+
+/* --- The Eye Icon on Hover --- */
+.preview-eye-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+}
+
+.feature-img-wrapper:hover .preview-eye-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.preview-eye-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.preview-eye-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(0) scale(1.1);
+}
+
+/* --- Full Screen Modal Overlay --- */
+.image-preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- Modal Content & Image --- */
+.image-preview-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: zoomIn 0.3s ease forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.preview-large-img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+  object-fit: contain;
+  background-color: white; /* In case images have transparency */
+}
+
+/* --- The Cut / Close Button --- */
+.close-preview-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: white;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+  z-index: 100000;
+}
+
+.close-preview-btn:hover {
+  background: #f8f9fa;
+  transform: scale(1.1);
+}
+
+.close-preview-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.5;
+}
+
+
+/* =========================================
    TABLET & MOBILE RESPONSIVE TWEAKS 
    ========================================= */
 
@@ -1455,26 +1569,25 @@ select {
 
   .section-title {
     font-size: 1.9rem;
-    display: block; /* Changed: This allows the image to flow inline like text */
+    display: block; 
     line-height: 1.4;
     text-align: center;
   }
 
   .inline-title-logo {
     height: 40px;
-    margin-top: -6px; /* Adjusted to physically align with the text line */
-    vertical-align: middle; /* Forces the image to sit on the same baseline as the text */
-    margin-left: 8px; /* Replaces the flexbox gap */
+    margin-top: -6px; 
+    vertical-align: middle; 
+    margin-left: 8px; 
   }
 
   .features-subtext {
     font-size: 1rem;
     padding: 0 10px;
     line-height: 1.5;
-    margin-top: 15px; /* Added slight margin since flex gap is gone */
+    margin-top: 15px; 
   }
 
-  /* NEW: Forces the spans to break onto new lines on mobile */
   .features-subtext span {
     display: block;
   }
@@ -1484,14 +1597,12 @@ select {
     /* Stack 1x1 on phones */
     gap: 40px;
     max-width: 450px;
-    /* Constrain width so images don't get comically large */
   }
 
   .feature-card {
     width: 100%;
     margin: 0 auto;
     border-radius: 24px;
-    /* Slightly softer corners look better stacked */
   }
 
   .feature-content {
@@ -1500,19 +1611,23 @@ select {
 
   .feature-card h3 {
     font-size: 1.35rem;
-    /* Slightly larger title for readability on phones */
     margin-bottom: 12px;
   }
 
   .feature-card p {
     font-size: 1.05rem;
-    /* Larger body text for touch devices */
   }
 
   .features-cta .btn {
     width: 100%;
     max-width: 320px;
     padding: 16px;
+  }
+
+  /* Adjust Modal Close Button for Mobile */
+  .close-preview-btn {
+    top: -15px;
+    right: 10px; /* Bring it inside slightly so it isn't clipped by the screen edge */
   }
 }
 
@@ -1524,7 +1639,6 @@ select {
 
   .section-header-wrapper {
     margin-bottom: 40px;
-    /* Tighter spacing on small screens */
   }
 
   .section-title {
@@ -1533,7 +1647,7 @@ select {
 
   .inline-title-logo {
     height: 34px;
-    margin-top: -4px; /* Tweak to keep alignment perfect on very small screens */
+    margin-top: -4px; 
     margin-left: 6px;
   }
 
