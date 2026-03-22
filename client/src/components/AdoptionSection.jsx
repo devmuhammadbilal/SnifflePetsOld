@@ -38,18 +38,18 @@ const AdoptionSection = () => {
           <p className="adoption-subtext">
             Every{' '}
             {/* --- INLINE LOGO STYLING --- */}
-            <span className="sniffle-logo-inline">
-              <span style={{ color: '#CD2027' }}>S</span>
-              <span style={{ color: '#467A29' }}>n</span>
-              <span style={{ color: '#FDBA12' }}>i</span>
-              <span style={{ color: '#10316B' }}>f</span>
-              <span style={{ color: '#CD2027' }}>f</span>
-              <span style={{ color: '#F36A22' }}>l</span>
-              <span style={{ color: '#467A29' }}>e</span>
+            <span className="sniffle-logo-inline" style={{ fontFamily: "'Fredoka One', 'Varela Round', 'Comic Sans MS', sans-serif" }}>
+              <span style={{ color: '#E31E24' }}>S</span>
+              <span style={{ color: '#4C6F13' }}>n</span>
+              <span style={{ color: '#F9A01B' }}>i</span>
+              <span style={{ color: '#193365' }}>f</span>
+              <span style={{ color: '#193365' }}>f</span>
+              <span style={{ color: '#C1272D' }}>l</span>
+              <span style={{ color: '#F15A24' }}>e</span>
               <span>&nbsp;</span>
-              <span style={{ color: '#467A29' }}>P</span>
+              <span style={{ color: '#4C6F13' }}>P</span>
               <span style={{ color: '#A85426' }}>e</span>
-              <span style={{ color: '#FDBA12' }}>t</span>
+              <span style={{ color: '#E31E24' }}>t</span>
             </span>{' '}
             comes with a printable <br className="desktop-break" />
             <strong>Adoption Certificate</strong> so your child can officially <br className="desktop-break" />
