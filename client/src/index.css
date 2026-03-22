@@ -2166,7 +2166,7 @@ select {
 
 /* Adds a playful bubbly font matching the logo style */
 .colorful-word {
-  font-family: "'Comic Sans MS', sans-serif";
+  font-family: 'Comic Sans MS', sans-serif;
   font-style: normal !important; /* Forces italics off */
   font-weight: 900 !important; 
   letter-spacing: 1px !important; /* Pulls the letters closer together */
