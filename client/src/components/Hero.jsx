@@ -7,7 +7,7 @@ const Hero = ({ onOpenModal }) => {
       text: 'Sniffles', 
       // Exact colors from the Sniffle Pets logo, including the final 's'
       colors: ['#E31E24', '#4C6F13', '#F9A01B', '#193365', '#193365', '#C1272D', '#F15A24', '#F9A01B'], 
-      font: "'Fredoka One', 'Varela Round', 'Comic Sans MS', sans-serif" 
+      font: "'Comic Sans MS', sans-serif"
     },
     { 
       text: 'Colds', 
@@ -86,7 +86,7 @@ const Hero = ({ onOpenModal }) => {
             {/* Tagline - Increased size, bolded 'Turning', updated fonts applied */}
             <p className="hero-tagline">
               <strong>Turning</strong>{' '}
-              <span style={{ fontFamily: "'Fredoka One', 'Varela Round', 'Comic Sans MS', sans-serif" }}>
+              <span style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
                 <span style={{ color: '#E31E24' }}>S</span>
                 <span style={{ color: '#4C6F13' }}>n</span>
                 <span style={{ color: '#F9A01B' }}>i</span>
@@ -97,7 +97,7 @@ const Hero = ({ onOpenModal }) => {
                 <span style={{ color: '#F9A01B' }}>s</span>
               </span>
               {' '}Into{' '}
-              <span style={{ fontFamily: "'Fredoka One', 'Varela Round', 'Comic Sans MS', sans-serif" }}>
+              <span style={{ fontFamily: "'Comic Sans MS', sans-serif"}}>
                 <span style={{ color: '#E31E24' }}>S</span>
                 <span style={{ color: '#4C6F13' }}>m</span>
                 <span style={{ color: '#F9A01B' }}>i</span>
