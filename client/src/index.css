@@ -1,3 +1,5 @@
+
+
 /* =========================================
    GLOBAL VARIABLES 
    ========================================= */
@@ -1663,7 +1665,7 @@ select {
    MEET THE PETS (Text Left, Image Right, Carousel Bottom)
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
 
 .meet-pets-section {
   position: relative;
@@ -1745,7 +1747,7 @@ select {
 }
 
 .section-subtext {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #555;
   margin-bottom: 40px;
   line-height: 1.6;
@@ -2164,7 +2166,7 @@ select {
 
 /* Adds a playful bubbly font matching the logo style */
 .colorful-word {
-  font-family: 'Chewy', 'Comic Sans MS', cursive !important;
+  font-family: "'Comic Sans MS', sans-serif";
   font-style: normal !important; /* Forces italics off */
   font-weight: 900 !important; 
   letter-spacing: 1px !important; /* Pulls the letters closer together */
@@ -2549,39 +2551,61 @@ select {
   margin-top: auto;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
-/* UPDATED: We now apply the transition and new rules to the WRAPPER to handle the entire "frame" zoom effect cleanly. */
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------- */
+/* UPDATED: Avatar Wrapper & Hover State                                     */
+/* ------------------------------------------------------------------------- */
 .review-avatar-wrapper {
-  /* Significantly increased size per client request (keeping previous change) */
-  width: 145px; 
-  height: 145px;
+  width: 175px; 
+  height: 175px;
   border-radius: 16px;
   border: 4px solid white;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  
-  /* REMOVED 'overflow: hidden;'. This allows the frame to scale up without being clipped. */
-  
   flex-shrink: 0;
-
-  /* NEW: The transition is moved from the image to the WRAPPER. This handles the zoom timing for the frame. */
+  position: relative; 
+  cursor: pointer; 
+  overflow: hidden; 
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  
-  /* NEW: Added a higher z-index so the frame zooms over text if they overlap slightly. */
   z-index: 1;
 }
 
-/* UPDATED: Keeps it clean, no more specific transitions on the image content. */
 .review-avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Specific transition removed and moved to the wrapper. */
+  display: block; 
 }
 
-/* UPDATED: Triggers the zoom effect on the ENTIRE WRAPPER when the whole card is hovered. */
+.zoom-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zoom-icon {
+  font-size: 2rem;
+  color: white;
+  transform: scale(0.5);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
 .review-card:hover .review-avatar-wrapper {
-  transform: scale(1.15); /* The whole frame, with its border and shadow, gets 15% larger. */
+  transform: scale(1.05); 
+}
+
+.review-avatar-wrapper:hover .zoom-overlay {
+  opacity: 1;
+}
+
+.review-avatar-wrapper:hover .zoom-icon {
+  transform: scale(1); 
 }
 
 .review-author {
@@ -2598,6 +2622,49 @@ select {
   font-size: 0.85rem;
   color: #888;
   margin-top: 2px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* NEW: Lightbox Modal Styles                                                */
+/* ------------------------------------------------------------------------- */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; 
+  cursor: zoom-out; 
+  padding: 20px;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: var(--primary, #f1c40f); 
 }
 
 /* =========================================
@@ -2675,9 +2742,10 @@ select {
     font-size: 1rem;
   }
 
+  /* UPDATED for larger preview */
   .review-avatar-wrapper {
-    width: 90px;
-    height: 90px;
+    width: 120px; 
+    height: 120px;
     border-width: 3px;
   }
 
@@ -2722,9 +2790,10 @@ select {
     margin-bottom: 20px;
   }
 
+  /* UPDATED for larger preview */
   .review-avatar-wrapper {
-    width: 95px;
-    height: 95px;
+    width: 105px; 
+    height: 105px;
   }
 
   .testimonials-section button.btn-primary {
@@ -2827,10 +2896,10 @@ select {
 
 /* Standard Inline Logo Styling */
 .inline-logo {
-  height: 1.5em;
+  height: 1.26em;
   /* width: auto; */
   /* margin-bottom:1px ; */
-  vertical-align: text-bottom;
+  vertical-align: text-top;
   display: inline-block;
 }
 
@@ -3378,6 +3447,7 @@ select {
 
 /* Multi-color styling class */
 .colorful-word {
+  font: "'Comic Sans MS', sans-serif";
   font-style: italic;
   font-weight: 900;
   letter-spacing: 1px;
