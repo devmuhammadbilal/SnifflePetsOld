@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const Hero = ({ onOpenModal }) => {
-  // Array of words, using explicit color arrays for the logo or gradients for the rest
   const dynamicWords = [
     { 
       text: 'Sniffles', 
-      // Exact colors from the Sniffle Pets logo, including the final 's'
       colors: ['#E31E24', '#4C6F13', '#F9A01B', '#193365', '#193365', '#C1272D', '#F15A24', '#F9A01B'], 
       font: "'Comic Sans MS', sans-serif"
     },
@@ -23,19 +21,24 @@ const Hero = ({ onOpenModal }) => {
 
   const [wordIndex, setWordIndex] = useState(0);
 
-  // Cycle through the words every 3 seconds to allow the letter animation to finish
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prevIndex) => (prevIndex + 1) % dynamicWords.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [dynamicWords.length]);
+  }, []);
 
   const currentWord = dynamicWords[wordIndex];
 
   return (
     <section className="hero-section">
-      <div className="container">
+      {/* Background image is now handled completely by CSS to allow mobile swapping */}
+      <div className="hero-image-layer"></div>
+
+      {/* White smoke gradient overlay for text readability */}
+      <div className="hero-smoke-overlay"></div>
+
+      <div className="container relative-container">
         <div className="hero-grid">
           
           {/* LEFT COLUMN: Text Content */}
@@ -60,7 +63,6 @@ const Hero = ({ onOpenModal }) => {
                     key={index}
                     className="animated-letter"
                     style={{
-                      // If 'colors' array is provided, use exact letter colors. Otherwise, use the gradient.
                       ...(currentWord.colors 
                         ? { 
                             color: currentWord.colors[index], 
@@ -69,7 +71,7 @@ const Hero = ({ onOpenModal }) => {
                           } 
                         : { backgroundImage: currentWord.gradient }),
                       fontFamily: currentWord.font,
-                      animationDelay: `${index * 0.05}s` // Staggers each letter
+                      animationDelay: `${index * 0.05}s`
                     }}
                   >
                     {char}
@@ -83,7 +85,7 @@ const Hero = ({ onOpenModal }) => {
               A cuddly plush wristband that keeps tissues within reach for school, travel, and everyday sniffles.
             </p>
             
-            {/* Tagline - Increased size, bolded 'Turning', updated fonts applied */}
+            {/* Tagline */}
             <p className="hero-tagline">
               <strong>Turning</strong>{' '}
               <span style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
@@ -97,7 +99,7 @@ const Hero = ({ onOpenModal }) => {
                 <span style={{ color: '#F9A01B' }}>s</span>
               </span>
               {' '}Into{' '}
-              <span style={{ fontFamily: "'Comic Sans MS', sans-serif"}}>
+              <span style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
                 <span style={{ color: '#E31E24' }}>S</span>
                 <span style={{ color: '#4C6F13' }}>m</span>
                 <span style={{ color: '#F9A01B' }}>i</span>
@@ -126,18 +128,6 @@ const Hero = ({ onOpenModal }) => {
               </div>
             </div>
           </div>
-
-          {/* RIGHT COLUMN: Image */}
-          <div className="hero-image-wrapper">
-            <div className="hero-blob"></div>
-            
-            <img 
-              src="/final_hero_image.png" 
-              alt="Group of children wearing Sniffle Pets" 
-              className="hero-img"
-            />
-          </div>
-
         </div>
       </div>
     </section>
