@@ -720,6 +720,7 @@ select {
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 50px;
+    min-height: auto;
   }
  
   .hero-text h1 { color: #0f172a; font-size: 2.4rem; }
@@ -1549,7 +1550,7 @@ select {
 /* Mobile Devices (768px and down) */
 @media (max-width: 768px) {
   .features-section {
-    padding: 80px 20px;
+    padding: 50px 20px 80px 20px;
   }
 
   .section-title {
