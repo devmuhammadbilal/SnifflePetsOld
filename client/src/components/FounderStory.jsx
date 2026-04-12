@@ -21,7 +21,7 @@ const FounderStory = () => {
             </p>
             
             <p>
-              Myla was part of that early spark. She created the very first prototype, a sweet crocheted idea inspired by the comfort kids find in something soft and familiar. That original concept planted the seed.
+              Myla was part of that early spark. She created the first prototype, a sweet crocheted idea inspired by the comfort kids find in something soft and familiar. That original concept planted the seed.
             </p>
             
             <p>
