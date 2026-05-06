@@ -37,20 +37,12 @@ const AdoptionSection = () => {
 
           <p className="adoption-subtext">
             Every{' '}
-            {/* --- INLINE LOGO STYLING --- */}
-            <span className="sniffle-logo-inline" style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
-              <span style={{ color: '#E31E24' }}>S</span>
-              <span style={{ color: '#4C6F13' }}>n</span>
-              <span style={{ color: '#F9A01B' }}>i</span>
-              <span style={{ color: '#193365' }}>f</span>
-              <span style={{ color: '#193365' }}>f</span>
-              <span style={{ color: '#C1272D' }}>l</span>
-              <span style={{ color: '#F15A24' }}>e</span>
-              <span>&nbsp;</span>
-              <span style={{ color: '#4C6F13' }}>P</span>
-              <span style={{ color: '#A85426' }}>e</span>
-              <span style={{ color: '#E31E24' }}>t</span>
-            </span>{' '}
+            {/* --- REPLACED SPANS WITH INLINE IMAGE --- */}
+            <img 
+              src="/make_it_official_logo_image.png" 
+              alt="Sniffle Pet" 
+              className="inline-sniffle-logo" 
+            />{' '}
             comes with a printable <br className="desktop-break" />
             <strong>Adoption Certificate</strong> so your child can officially <br className="desktop-break" />
             welcome their new best friend home.
@@ -60,7 +52,7 @@ const AdoptionSection = () => {
         {/* --- THE GRAPHIC --- */}
         <div className="adoption-image-wrapper">
           <img 
-            src="/adoption_certificate_graphic.jpg" 
+            src="/adoption_certificate_graphic.png" 
             alt="Sniffle Pets Adoption Certificate with boy and bear" 
             className="adoption-graphic"
           />
