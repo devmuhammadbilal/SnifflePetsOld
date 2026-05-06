@@ -88,25 +88,17 @@ const Hero = ({ onOpenModal }) => {
             {/* Tagline */}
             <p className="hero-tagline">
               <strong>Turning</strong>{' '}
-              <span style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
-                <span style={{ color: '#E31E24' }}>S</span>
-                <span style={{ color: '#4C6F13' }}>n</span>
-                <span style={{ color: '#F9A01B' }}>i</span>
-                <span style={{ color: '#193365' }}>f</span>
-                <span style={{ color: '#193365' }}>f</span>
-                <span style={{ color: '#C1272D' }}>l</span>
-                <span style={{ color: '#F15A24' }}>e</span>
-                <span style={{ color: '#F9A01B' }}>s</span>
-              </span>
-              {' '}Into{' '}
-              <span style={{ fontFamily: "'Comic Sans MS', sans-serif" }}>
-                <span style={{ color: '#E31E24' }}>S</span>
-                <span style={{ color: '#4C6F13' }}>m</span>
-                <span style={{ color: '#F9A01B' }}>i</span>
-                <span style={{ color: '#193365' }}>l</span>
-                <span style={{ color: '#F15A24' }}>e</span>
-                <span style={{ color: '#F9A01B' }}>s</span>
-              </span>
+              <img 
+                src="/sniffles_text.png" 
+                alt="Sniffles" 
+                className="tagline-image" 
+              />
+              {' '} <strong>Into</strong> {' '}
+              <img 
+                src="/smiles_text.png" 
+                alt="Smiles" 
+                className="tagline-image" 
+              />
             </p>
 
             {/* CTA Button Wrapper */}
