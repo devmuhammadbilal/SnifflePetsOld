@@ -30,13 +30,13 @@ const Navbar = ({ onOpenModal }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen]);
 
-  // UPDATED: Added "Adopt a Sniffle Pet" per client request
+  // UPDATED: Reordered menu items
   const menuItems = [
     { label: 'Home', link: '#top', sub: 'Welcome to Sniffle Pets' },
     { label: 'Why Sniffle Pets', link: '#features', sub: 'Thoughtfully designed' },
     { label: 'Collection', link: '#collection', sub: 'Meet the Sniffle Pets' },
-    { label: 'Adopt a Sniffle Pet', link: '#adopt', sub: 'Welcome Them Home Officially' }, // NEW ITEM
-     { label: 'How it Works', link: '#how-it-works', sub: 'See Sniffle Pets in Action' },
+    { label: 'How it Works', link: '#how-it-works', sub: 'See Sniffle Pets in Action' },
+    { label: 'Adopt a Sniffle Pet', link: '#adopt', sub: 'Welcome Them Home Officially' },
     { label: 'Our Story', link: '#story', sub: 'The Heart Behind Sniffle Pets' }
   ];
 
