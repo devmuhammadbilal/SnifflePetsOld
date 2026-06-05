@@ -46,7 +46,7 @@ const Hero = ({ onOpenModal }) => {
             
             {/* Kickstarter Badge */}
             <div className="kickstarter-badge">
-              <span className="badge-text">Launching Soon On</span>
+              <span className="badge-text">SUPPORT US ON</span>
               <img 
                 src="/kickstarter-logo.png" 
                 alt="Kickstarter" 
