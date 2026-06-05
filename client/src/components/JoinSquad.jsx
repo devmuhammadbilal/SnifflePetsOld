@@ -16,7 +16,7 @@ const JoinSquad = () => {
           
           {/* Kickstarter Badge */}
           <div className="join-badge">
-            <span>LAUNCHING SOON ON</span>
+            <span>SUPPORT US ON</span>
             <img 
               src="/kickstarter-logo.png" 
               alt="Kickstarter" 
