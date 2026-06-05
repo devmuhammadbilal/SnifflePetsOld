@@ -25,7 +25,7 @@ const EmailModal = ({ onClose }) => {
           
           {/* Kickstarter Badge */}
           <div className="join-badge modal-ks-badge">
-            <span>LAUNCHING SOON ON</span>
+            <span>SUPPORT US ON</span>
             {/* Note: Ensure /kickstarter-logo.png is the full green wordmark logo! */}
             <img 
               src="/kickstarter-logo.png" 
