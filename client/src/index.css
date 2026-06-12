@@ -139,14 +139,15 @@ select {
   justify-content: center;
   align-items: center;
   z-index: 2000;
-  padding: 20px;
+  padding: 30px; /* Increased slightly to protect the overflowing monkey */
   overflow-y: auto;
   animation: fadeIn 0.3s ease-out;
 }
 
 .modal-box-vibrant {
   background: linear-gradient(180deg, #e0f2fe 0%, #ffffff 35%, #ffffff 100%);
-  padding: 40px 30px 50px 30px;
+  /* UPDATED: Increased bottom padding from 50px to 85px to make room for the bottom leaves/wave */
+  padding: 40px 30px 85px 30px;
   border-radius: 30px;
   width: 100%;
   max-width: 450px;
@@ -156,17 +157,18 @@ select {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.8);
   animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin: auto;
-  overflow: hidden;
+  /* UPDATED: Removed 'overflow: hidden;' so the monkey can pop out of the box */
 }
 
 /* Decorative Images */
 .decor-monkey {
   position: absolute;
-  top: -10px;
-  left: -15px;
-  width: 130px;
+  /* UPDATED: Adjusted positioning and size to pop out of the top-left */
+  top: -45px;
+  left: -45px;
+  width: 170px;
   height: auto;
-  z-index: 10;
+  /* z-index: 10; */
   pointer-events: none;
 }
 
@@ -178,6 +180,9 @@ select {
   height: auto;
   z-index: 1;
   pointer-events: none;
+  /* UPDATED: Matches the inner border-radius of the modal so it doesn't spill out */
+  border-bottom-left-radius: 24px; 
+  border-bottom-right-radius: 24px;
 }
 
 .modal-content {
@@ -223,7 +228,6 @@ select {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* NEW: Ensures the full Kickstarter wordmark logo is sized correctly */
 .kickstarter-logo {
   max-width: 140px;
   height: auto;
@@ -236,7 +240,6 @@ select {
   margin-bottom: 15px;
 }
 
-/* UPDATED: Adjusted font size to accommodate "Be First in Line for" */
 .join-the-text {
   font-size: 1.3rem;
   color: var(--secondary);
@@ -252,7 +255,7 @@ select {
 .modal-subtext {
   color: var(--dark);
   font-size: 1.05rem;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   line-height: 1.7;
 }
 
@@ -375,12 +378,10 @@ select {
   opacity: 0.8;
 }
 
-
 /* =========================================
    TABLET & MOBILE RESPONSIVE TWEAKS 
    ========================================= */
 
-/* Tablet Adjustments */
 @media (max-width: 1024px) {
   .modal-overlay {
     padding: 30px;
@@ -390,17 +391,21 @@ select {
 /* Large Mobile Adjustments */
 @media (max-width: 768px) {
   .modal-box-vibrant {
-    padding: 35px 25px 45px 25px;
+    padding: 35px 25px 75px 25px; /* Updated bottom padding */
     border-width: 4px;
   }
 
   .decor-monkey {
-    width: 110px;
-    top: -12px;
-    left: -5px;
+    width: 130px;
+    top: -35px;
+    left: -25px;
   }
 
-  /* UPDATED: Scaled text for mobile */
+  .decor-leaves {
+    border-bottom-left-radius: 26px; /* 30px radius - 4px border */
+    border-bottom-right-radius: 26px;
+  }
+
   .join-the-text {
     font-size: 1.15rem;
   }
@@ -428,25 +433,29 @@ select {
 /* Small Mobile Adjustments (Smartphones) */
 @media (max-width: 480px) {
   .modal-overlay {
-    padding: 15px;
+    padding: 20px;
   }
 
   .modal-box-vibrant {
-    padding: 30px 15px 35px 15px;
+    padding: 30px 15px 65px 15px; /* Updated bottom padding */
     border-radius: 24px;
   }
 
   .decor-monkey {
-    width: 90px;
-    top: -10px;
-    left: 0px;
+    width: 130px;
+    top: -40px;
+    left: -30px;
+  }
+
+  .decor-leaves {
+    border-bottom-left-radius: 20px; /* 24px radius - 4px border */
+    border-bottom-right-radius: 20px;
   }
 
   .modal-logo-img {
     max-width: 160px;
   }
 
-  /* UPDATED: Scaled text for small mobile */
   .join-the-text {
     font-size: 1.05rem;
   }
@@ -1264,6 +1273,161 @@ select {
   height: 26px;
   /* Shrinks the logo on scroll */
 }
+}
+
+/* 
+------------------
+Contact Us Modal 
+------------------
+*/
+/* --- Overlay & Blur Effect --- */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Using a slightly deeper opacity (0.6) like your other modal to ensure the blur pops */
+  background: rgba(25, 51, 101, 0.6); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Extra 9s to ensure it beats every other element on the page */
+  padding: 20px;
+  overflow-y: auto;
+  animation: cuFadeIn 0.3s ease-out;
+}
+
+/* --- Modal Box --- */
+.contact-modal-content {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); /* Upgraded shadow to match your old modal's depth */
+  animation: cuSlideUp 0.3s ease-out;
+  margin: auto;
+  border: none;
+  text-align: left;
+}
+
+/* --- Close Button --- */
+.contact-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #193365; 
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  box-shadow: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-modal-close-btn:hover {
+  background: none;
+  color: #E31E24; 
+  transform: scale(1.1);
+}
+
+/* --- Typography --- */
+.contact-modal-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #193365; 
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.contact-modal-subtitle {
+  color: #555;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+/* --- Form Layout --- */
+.contact-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-modal-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-modal-form-group label {
+  font-size: 0.9rem;
+  color: #193365;
+  font-weight: 600;
+}
+
+.contact-modal-form-group input,
+.contact-modal-form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-modal-form-group input:focus,
+.contact-modal-form-group textarea:focus {
+  outline: none;
+  border-color: #193365;
+  box-shadow: 0 0 0 3px rgba(25, 51, 101, 0.15);
+}
+
+/* --- Submit Button --- */
+.contact-modal-submit-btn {
+  background: #193365; 
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 8px;
+  width: 100%;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.contact-modal-submit-btn:hover {
+  background-color: #F15A24; 
+  transform: translateY(0); 
+}
+
+.contact-modal-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* --- Unique Animations --- */
+@keyframes cuFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cuSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================
@@ -2576,39 +2740,16 @@ select {
   height: 100%;
   object-fit: cover;
   display: block; 
-}
-
-.zoom-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.zoom-icon {
-  font-size: 2rem;
-  color: white;
-  transform: scale(0.5);
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .review-card:hover .review-avatar-wrapper {
   transform: scale(1.05); 
 }
 
-.review-avatar-wrapper:hover .zoom-overlay {
-  opacity: 1;
-}
-
-.review-avatar-wrapper:hover .zoom-icon {
-  transform: scale(1); 
+/* Adds an extra subtle zoom directly to the image when you hover specifically over it */
+.review-avatar-wrapper:hover .review-avatar {
+  transform: scale(1.05);
 }
 
 .review-author {
@@ -2660,14 +2801,17 @@ select {
   background: none;
   border: none;
   color: white;
-  font-size: 3rem;
-  line-height: 1;
   cursor: pointer;
-  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .lightbox-close:hover {
   color: var(--primary, #f1c40f); 
+  transform: scale(1.15);
 }
 
 /* =========================================
@@ -2713,7 +2857,6 @@ select {
     margin-bottom: 4px; 
   }
 
-  /* CRITICAL FIX: Forces the yellow line to stay perfectly centered behind the wrapped text */
   .highlight-text::after {
     height: 10px; 
     bottom: 2px;
@@ -2745,7 +2888,6 @@ select {
     font-size: 1rem;
   }
 
-  /* UPDATED for larger preview */
   .review-avatar-wrapper {
     width: 120px; 
     height: 120px;
@@ -2793,7 +2935,6 @@ select {
     margin-bottom: 20px;
   }
 
-  /* UPDATED for larger preview */
   .review-avatar-wrapper {
     width: 105px; 
     height: 105px;
@@ -3430,8 +3571,8 @@ select {
   margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Softened for white bg */
-  border: 1px solid rgba(93, 117, 48, 0.15); /* Grounded for white bg */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softened for white bg */
+  border: 1px solid rgba(93, 117, 48, 0.203); /* Grounded for white bg */
 }
 
 .kickstarter-logo {
