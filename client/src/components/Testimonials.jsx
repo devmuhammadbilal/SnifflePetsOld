@@ -64,11 +64,6 @@ const Testimonials = ({ onOpenModal }) => {
                     alt={review.author} 
                     className="review-avatar" 
                   />
-                  {/* NEW PER REQUEST: Eye Icon Wrapper in the top-right */}
-                  <div className="zoom-overlay">
-                    {/* Unicode Eye Symbol */}
-                    <span className="zoom-icon">👁</span>
-                  </div>
                 </div>
                 
                 <div className="review-author">
@@ -95,15 +90,17 @@ const Testimonials = ({ onOpenModal }) => {
       {/* --- Image Preview Modal (Lightbox) --- */}
       {previewImage && (
         <div className="lightbox-overlay" onClick={() => setPreviewImage(null)}>
-          {/* NEW PER REQUEST: Cut (X) Icon */}
           <button className="lightbox-close" onClick={() => setPreviewImage(null)}>
-            &times;
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
           </button>
           <img 
             src={previewImage} 
             alt="Enlarged review" 
             className="lightbox-image" 
-            onClick={(e) => e.stopPropagation()} // Prevents clicking the image from closing the modal
+            onClick={(e) => e.stopPropagation()} 
           />
         </div>
       )}
