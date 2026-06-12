@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import ContactUsModal from './ContactUsModal';
 
 const Navbar = ({ onOpenModal }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   // 1. Handle Scroll (Sticky Header + Close Menu on Scroll)
   useEffect(() => {
@@ -30,12 +32,12 @@ const Navbar = ({ onOpenModal }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [menuOpen]);
 
-  // UPDATED: Reordered menu items
+  // UPDATED: Added "Adopt a Sniffle Pet" per client request
   const menuItems = [
     { label: 'Home', link: '#top', sub: 'Welcome to Sniffle Pets' },
     { label: 'Why Sniffle Pets', link: '#features', sub: 'Thoughtfully designed' },
     { label: 'Collection', link: '#collection', sub: 'Meet the Sniffle Pets' },
-     { label: 'Adopt a Sniffle Pet', link: '#adopt', sub: 'Welcome Them Home Officially' },
+     { label: 'Adopt a Sniffle Pet', link: '#adopt', sub: 'Welcome Them Home Officially' }, // NEW ITEM
     { label: 'How it Works', link: '#how-it-works', sub: 'See Sniffle Pets in Action' },
     { label: 'Our Story', link: '#story', sub: 'The Heart Behind Sniffle Pets' }
   ];
@@ -73,12 +75,17 @@ const Navbar = ({ onOpenModal }) => {
               Join the Waitlist
             </button>
             <div className="mobile-nav-icons">
-              <a href="#account" className="nav-icon-link" aria-label="Account">
+              {/* <a href="#account" className="nav-icon-link" aria-label="Account">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-              </a>
-              <a href="mailto:hello@snifflepets.com" className="nav-icon-link" aria-label="Contact Us">
+              </a> */}
+              <button 
+                onClick={() => { setIsContactModalOpen(true); setMenuOpen(false); }} 
+                className="nav-icon-link" 
+                aria-label="Contact Us"
+                style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              </a>
+              </button>
             </div>
           </li>
         </ul>
@@ -91,12 +98,17 @@ const Navbar = ({ onOpenModal }) => {
           
           {/* Account & Email Icons */}
           <div className="desktop-nav-icons">
-            <a href="#account" className="nav-icon-link" aria-label="Account">
+            {/* <a href="#account" className="nav-icon-link" aria-label="Account">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            </a>
-            <a href="mailto:hello@snifflepets.com" className="nav-icon-link" aria-label="Contact Us">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            </a>
+            </a> */}
+            <button 
+              onClick={() => setIsContactModalOpen(true)} 
+              className="nav-icon-link" 
+              aria-label="Contact Us"
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </button>
           </div>
         </div>
 
@@ -111,6 +123,12 @@ const Navbar = ({ onOpenModal }) => {
         </div>
 
       </div>
+
+      {/* Render the modal outside the main layout flow */}
+      <ContactUsModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </nav>
   );
 };
