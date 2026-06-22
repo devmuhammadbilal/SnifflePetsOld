@@ -21,7 +21,8 @@ const MeetThePets = ({ onOpenModal }) => {
     { id: 8, src: "/meet_sp_8.jpg", alt: "Design 8" },
     { id: 9, src: "/meet_sp_9.jpg", alt: "Design 9" },
     { id: 10, src: "/meet_sp_10.jpg", alt: "Design 10" },
-    { id: 11, src: "/meet_sp_11.jpg", alt: "Design 11" }
+    { id: 11, src: "/meet_sp_11.jpg", alt: "Design 11" },
+    { id: 11, src: "/meet_sp_12.jpg", alt: "Design 12" }
   ];
 
   // Handlers to rotate the carousel
