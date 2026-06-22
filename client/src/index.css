@@ -2743,6 +2743,23 @@ Contact Us Modal
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* NEW: Eye Icon Hover Overlay Styles */
+.hover-eye-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
 .review-card:hover .review-avatar-wrapper {
   transform: scale(1.05); 
 }
@@ -2750,6 +2767,11 @@ Contact Us Modal
 /* Adds an extra subtle zoom directly to the image when you hover specifically over it */
 .review-avatar-wrapper:hover .review-avatar {
   transform: scale(1.05);
+}
+
+/* NEW: Show the eye icon overlay when the user hovers over the image wrapper */
+.review-avatar-wrapper:hover .hover-eye-overlay {
+  opacity: 1;
 }
 
 .review-author {
@@ -2769,7 +2791,7 @@ Contact Us Modal
 }
 
 /* ------------------------------------------------------------------------- */
-/* NEW: Lightbox Modal Styles                                                */
+/* NEW: Lightbox Modal Styles                                               */
 /* ------------------------------------------------------------------------- */
 .lightbox-overlay {
   position: fixed;
