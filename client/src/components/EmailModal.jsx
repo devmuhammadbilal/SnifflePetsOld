@@ -58,7 +58,7 @@ const EmailModal = ({ onClose }) => {
             <div className="input-group-icon">
               <input 
                 type="email" 
-                placeholder="Your Email Address" 
+                placeholder="name@example.com" 
                 required 
                 className="modal-input-pill"
               />
