@@ -20,12 +20,12 @@ const ContactUsModal = ({ isOpen, onClose }) => {
         <form className="contact-modal-form" onSubmit={(e) => e.preventDefault()}>
           <div className="contact-modal-form-group">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" placeholder="John Doe" required />
+            <input type="text" id="name" placeholder="Your Name" required />
           </div>
           
           <div className="contact-modal-form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="john@example.com" required />
+            <input type="email" id="email" placeholder="name@example.com" required />
           </div>
           
           <div className="contact-modal-form-group">
