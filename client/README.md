@@ -1,16 +1,63 @@
-# React + Vite
+# Sniffle Pets - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the repository for the Sniffle Pets landing page. This project was built using **React** and **Vite** for a blazing-fast, modern web experience.
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The site is currently live and deployed via Vercel:
+**[Insert your Vercel Live URL here, e.g., [https://my-project.vercel.app](https://www.google.com/search?q=https://my-project.vercel.app)]**
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Framework:** React
+* **Build Tool:** Vite
+* **Deployment:** Vercel
+* **Styling:** CSS
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started for Developers
+
+If you are a developer looking to run this project locally on your machine, follow the steps below.
+
+### Prerequisites
+
+Make sure you have Node.js installed on your machine.
+
+### Installation
+
+**1. Clone the repository:**
+Run `git clone [Insert the GitHub Repo URL here]` in your terminal.
+
+**2. Navigate into the project directory:**
+Run `cd client`.
+
+**3. Install the dependencies:**
+Run `npm install`.
+
+### Running the Development Server
+
+To start the local development server, run:
+`npm run dev`
+
+Open your browser and visit `http://localhost:5173` to view the site locally.
+
+---
+
+## Available Scripts
+
+In the project directory, you can run:
+
+* **`npm run dev`**: Starts the local development server.
+* **`npm run build`**: Builds the app for production to the `dist` folder.
+* **`npm run preview`**: Bootstraps a local static web server that serves the files from `dist` to preview the production build.
+
+---
+
+## Deployment
+
+This project is connected to **Vercel** for continuous deployment.
+
+Whenever changes are pushed to the `main` branch of this GitHub repository, Vercel will automatically trigger a new build and deploy the updates to the live URL.
+
+To manage the deployment, environment variables, or domains, log into the Vercel Dashboard associated with this project.
