@@ -30,7 +30,7 @@ Make sure you have Node.js installed on your machine.
 Run `git clone [Insert the GitHub Repo URL here]` in your terminal.
 
 **2. Navigate into the project directory:**
-Run `cd client`.
+Run `cd SnifflePetsLandingPage`.
 
 **3. Install the dependencies:**
 Run `npm install`.
