@@ -31,7 +31,7 @@ Run `git clone [Insert the GitHub Repo URL here]` in your terminal.
 
 **2. Navigate into the project folders:**
 First, enter the main repository folder:
-Run `cd SnifflePetsLandingPage`
+ Run `cd SnifflePetsLandingPage`
 Then, enter the frontend folder where the React app lives:
 Run `cd client`
 
