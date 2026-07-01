@@ -54,17 +54,6 @@ In the project directory, you can run:
 
 ---
 
-## Deployment
-
-This project is connected to **Vercel** for continuous deployment.
-
-Whenever changes are pushed to the `main` branch of this GitHub repository, Vercel will automatically trigger a new build and deploy the updates to the live URL.
-
-To manage the deployment, environment variables, or domains, log into the Vercel Dashboard associated with this project.
-
-
-Here is the deployment guide formatted normally so you can copy and paste it directly.
-
 ## Deployment Guide
 
 There are two ways to host this website.
@@ -73,7 +62,7 @@ There are two ways to host this website.
 
 ---
 
-### Option 1: Vercel (Free & Automated - Recommended)
+### Option 1: Vercel (Free & Automated - You can also use it to test the site for free)
 
 Vercel is the company that created the infrastructure for modern React apps. It provides free hosting for landing pages and will automatically update your live website anytime new code is saved to this GitHub repository.
 
