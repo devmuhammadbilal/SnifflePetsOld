@@ -11,7 +11,7 @@ The site is currently live and deployed via [deployed platform]:
 
 * **Framework:** React
 * **Build Tool:** Vite
-* **Deployment:** Vercel
+* **Deployment:** Vercel(Currently For testing)
 * **Styling:** tailwind CSS, CSS 
 
 ---
