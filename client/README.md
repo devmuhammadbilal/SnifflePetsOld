@@ -29,8 +29,11 @@ Make sure you have Node.js installed on your machine.
 **1. Clone the repository:**
 Run `git clone [Insert the GitHub Repo URL here]` in your terminal.
 
-**2. Navigate into the project directory:**
-Run `cd SnifflePetsLandingPage`.
+**2. Navigate into the project folders:**
+First, enter the main repository folder:
+Run `cd SnifflePetsLandingPage`
+Then, enter the frontend folder where the React app lives:
+Run `cd client`
 
 **3. Install the dependencies:**
 Run `npm install`.
