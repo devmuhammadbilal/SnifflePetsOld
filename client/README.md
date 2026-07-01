@@ -4,8 +4,8 @@ Welcome to the repository for the Sniffle Pets landing page. This project was bu
 
 ## Live Website
 
-The site is currently live and deployed via Vercel:
-**[Insert your Vercel Live URL here, e.g., [https://my-project.vercel.app](https://www.google.com/search?q=https://my-project.vercel.app)]**
+The site is currently live and deployed via [deployed platform]:
+**[Insert your Deployed Live URL here, e.g., [https://my-project.vercel.app](https://www.google.com/search?q=https://my-project.vercel.app)]**
 
 ## Tech Stack
 
