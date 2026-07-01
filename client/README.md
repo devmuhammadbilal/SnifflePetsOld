@@ -73,9 +73,10 @@ Vercel is the company that created the infrastructure for modern React apps. It 
 
 1. Go to [Vercel.com](https://vercel.com) and sign up for a free account using your GitHub login.
 2. From your Vercel dashboard, click **Add New** > **Project**.
-3. It will show a list of your GitHub repositories. Find this project and click **Import**.
-4. Vercel will automatically detect that this is a Vite/React project. Leave all the default settings exactly as they are.
-5. Click **Deploy**. Vercel will build the site and give you a live link.
+3. It will show a list of your GitHub repositories. Find **SnifflePetsLandingPage** and click **Import**.
+4. ⚠️ **CRITICAL STEP:** Before you click deploy, look for the setting labeled **"Root Directory"**. Click the **Edit** button next to it, select the **`client`** folder, and click save.
+5. Vercel will automatically detect that this is a Vite/React project. Leave all other default settings exactly as they are.
+6. Click **Deploy**. Vercel will build the site and give you a live link.
 *(Note: You can easily buy a custom domain directly through Vercel, or connect one you already own).*
 
 ---
@@ -93,9 +94,9 @@ If you prefer to use GoDaddy, you will need to purchase two things:
 Since GoDaddy does not update automatically like Vercel, a developer must manually bundle the code and upload it every time a change is made.
 
 **Step 1: Create the Production Build**
-Open the project in your terminal and run:
+Open your terminal, make sure you are inside the `client` folder (`cd client`), and run:
 `npm run build`
-This compresses the entire application into a single folder named `dist`.
+This compresses the entire application into a single folder named `dist` inside your client directory.
 
 **Step 2: Zip the Files**
 Open the new `dist` folder on your computer. Select **all the files inside it** (do not zip the folder itself, just the contents inside) and compress them into a `.zip` file.
